@@ -276,8 +276,143 @@
       line-height: 1.45;
     }
 
+    .call-motion {
+      width: min(820px, 100%);
+      margin: 0 auto 2rem;
+      padding: 1rem;
+      border: 1px solid var(--border);
+      background:
+        linear-gradient(135deg, rgba(200,169,110,.08), transparent 38%),
+        rgba(12,15,26,.74);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .call-motion::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, transparent, rgba(74,222,128,.09), transparent);
+      transform: translateX(-100%);
+      animation: scanLine 5s ease-in-out infinite;
+      pointer-events: none;
+    }
+
+    .call-motion-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      align-items: center;
+      margin-bottom: 1rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .call-motion-head span {
+      font-size: .62rem;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    .call-motion-head strong {
+      color: var(--text);
+      font-size: .72rem;
+      font-weight: 500;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .signal-track {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: var(--border);
+      position: relative;
+      z-index: 1;
+    }
+
+    .signal-track::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      width: 28%;
+      background: linear-gradient(90deg, transparent, rgba(200,169,110,.24), transparent);
+      animation: pipelineSweep 4.5s linear infinite;
+      pointer-events: none;
+    }
+
+    .signal-step {
+      min-height: 96px;
+      background: rgba(6,8,15,.72);
+      padding: .95rem;
+      text-align: left;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .signal-step::after {
+      content: '';
+      position: absolute;
+      left: .95rem;
+      right: .95rem;
+      bottom: .72rem;
+      height: 2px;
+      background: rgba(200,169,110,.14);
+    }
+
+    .signal-step span {
+      display: block;
+      color: var(--green);
+      font-size: .58rem;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      margin-bottom: .55rem;
+    }
+
+    .signal-step strong {
+      display: block;
+      color: var(--text);
+      font-size: .86rem;
+      font-weight: 500;
+      margin-bottom: .15rem;
+    }
+
+    .signal-step em {
+      display: block;
+      color: var(--muted);
+      font-size: .7rem;
+      font-style: normal;
+      line-height: 1.45;
+    }
+
+    @keyframes scanLine {
+      0%, 18% { transform: translateX(-100%); opacity: 0; }
+      35%, 68% { opacity: 1; }
+      100% { transform: translateX(100%); opacity: 0; }
+    }
+
+    @keyframes pipelineSweep {
+      0% { transform: translateX(-115%); }
+      100% { transform: translateX(410%); }
+    }
+
     @media (max-width: 700px) {
       .hero-proof { grid-template-columns: 1fr; }
+      .call-motion { padding: .75rem; }
+      .call-motion-head { align-items: flex-start; flex-direction: column; gap: .35rem; }
+      .signal-track { grid-template-columns: repeat(2, 1fr); }
+      .signal-track::before { display: none; }
+      .signal-step { min-height: 112px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .call-motion::before,
+      .signal-track::before {
+        animation: none;
+      }
     }
 
     .cta-row {
@@ -866,6 +1001,34 @@
     <div class="hero-proof-item">
       <div class="hero-proof-label">Mission</div>
       <div class="hero-proof-value">Cold call · qualification · RDV AE</div>
+    </div>
+  </div>
+  <div class="call-motion" aria-label="Progression SDR animée">
+    <div class="call-motion-head">
+      <span>Outbound live</span>
+      <strong>243 appels +1 min · 28 RDV</strong>
+    </div>
+    <div class="signal-track">
+      <div class="signal-step">
+        <span>01</span>
+        <strong>Cold call</strong>
+        <em>C-levels, data, métiers, events</em>
+      </div>
+      <div class="signal-step">
+        <span>02</span>
+        <strong>Conversation</strong>
+        <em>Accroche, contexte, objections</em>
+      </div>
+      <div class="signal-step">
+        <span>03</span>
+        <strong>Qualification</strong>
+        <em>Besoin, timing, interlocuteur</em>
+      </div>
+      <div class="signal-step">
+        <span>04</span>
+        <strong>RDV AE</strong>
+        <em>Relais propre aux équipes sales</em>
+      </div>
     </div>
   </div>
   <div class="cta-row">
