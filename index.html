@@ -225,6 +225,41 @@
       z-index: 1;
     }
 
+    .radar-targets {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .radar-target {
+      position: absolute;
+      left: var(--x);
+      top: var(--y);
+      display: inline-flex;
+      align-items: center;
+      gap: .45rem;
+      color: rgba(240,234,216,.66);
+      font-size: .58rem;
+      font-weight: 500;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      transform: translate(-50%, -50%);
+      animation: radarTarget 5.8s ease-in-out infinite;
+      animation-delay: var(--delay, 0s);
+    }
+
+    .radar-target::before {
+      content: '';
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      border: 1px solid var(--green);
+      box-shadow: 0 0 18px rgba(74,222,128,.35);
+      animation: targetPing 2.6s ease-out infinite;
+      animation-delay: var(--delay, 0s);
+    }
+
     .hero::after {
       content: '';
       position: absolute;
@@ -473,6 +508,17 @@
       to { transform: rotate(360deg) scale(1); }
     }
 
+    @keyframes radarTarget {
+      0%, 100% { opacity: .34; transform: translate(-50%, -50%) scale(.96); }
+      45%, 60% { opacity: .9; transform: translate(-50%, -50%) scale(1); }
+    }
+
+    @keyframes targetPing {
+      0% { box-shadow: 0 0 0 0 rgba(74,222,128,.34); }
+      70% { box-shadow: 0 0 0 12px rgba(74,222,128,0); }
+      100% { box-shadow: 0 0 0 0 rgba(74,222,128,0); }
+    }
+
     @keyframes heroRise {
       from { opacity: 0; transform: translateY(24px); }
       to { opacity: 1; transform: translateY(0); }
@@ -489,6 +535,7 @@
     }
 
     @media (max-width: 700px) {
+      .radar-targets { display: none; }
       .hero-proof { grid-template-columns: 1fr; }
       .call-motion { padding: .75rem; }
       .call-motion-head { align-items: flex-start; flex-direction: column; gap: .35rem; }
@@ -733,6 +780,7 @@
     .timeline-wrap {
       position: relative;
       padding-left: 2rem;
+      --timeline-progress: 0%;
     }
     .timeline-wrap::before {
       content: '';
@@ -743,6 +791,19 @@
       width: 1px;
       background: linear-gradient(to bottom, var(--gold), transparent);
       animation: lineGlow 5s ease-in-out infinite;
+    }
+    .timeline-wrap::after {
+      content: '';
+      position: absolute;
+      left: 5px;
+      top: 18px;
+      width: 1px;
+      height: var(--timeline-progress);
+      max-height: calc(100% - 36px);
+      background: linear-gradient(to bottom, var(--green), var(--gold));
+      box-shadow: 0 0 18px rgba(74,222,128,.3);
+      pointer-events: none;
+      transition: height .16s linear;
     }
 
     .timeline-dot {
@@ -898,6 +959,77 @@
       line-height: 1.6;
     }
     .kpi-value strong { color: var(--text); font-weight: 500; }
+
+    .kpi-live {
+      display: flex;
+      flex-direction: column;
+      gap: .75rem;
+    }
+
+    .kpi-live-total {
+      color: var(--gold);
+      padding-bottom: .35rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .kpi-flow {
+      display: grid;
+      gap: .58rem;
+    }
+
+    .kpi-flow-row {
+      display: grid;
+      gap: .32rem;
+      position: relative;
+    }
+
+    .kpi-flow-head {
+      display: flex;
+      justify-content: space-between;
+      gap: .8rem;
+      align-items: baseline;
+    }
+
+    .kpi-flow-head span {
+      color: var(--text);
+      font-size: .73rem;
+      font-weight: 500;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    .kpi-flow-head strong {
+      color: var(--muted);
+      font-size: .73rem;
+      font-weight: 400;
+      text-align: right;
+    }
+
+    .kpi-bar {
+      height: 4px;
+      background: rgba(200,169,110,.1);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .kpi-bar span {
+      display: block;
+      width: 0;
+      min-width: 18px;
+      height: 100%;
+      background: linear-gradient(90deg, var(--green), var(--gold));
+      box-shadow: 0 0 14px rgba(74,222,128,.24);
+    }
+
+    .visible .kpi-bar span {
+      animation: kpiBarLoad 1.05s ease forwards;
+      animation-delay: var(--delay, 0s);
+    }
+
+    @media (max-width: 600px) {
+      .kpi-flow-head { align-items: flex-start; flex-direction: column; gap: .1rem; }
+      .kpi-flow-head strong { text-align: left; }
+    }
 
     /* ── CHALLENGE GRID ── */
     .challenges-grid {
@@ -1121,6 +1253,11 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
+    @keyframes kpiBarLoad {
+      from { width: 0; }
+      to { width: var(--bar); }
+    }
+
     @keyframes statSweep {
       0%, 30% { transform: translateX(-120%); opacity: 0; }
       42%, 62% { opacity: 1; }
@@ -1190,6 +1327,13 @@
 
 <!-- ════════════════ HERO ════════════════ -->
 <section class="hero" id="top">
+  <div class="radar-targets" aria-hidden="true">
+    <span class="radar-target" style="--x:16%;--y:30%;--delay:.1s">C-level</span>
+    <span class="radar-target" style="--x:82%;--y:28%;--delay:.9s">DSI</span>
+    <span class="radar-target" style="--x:72%;--y:62%;--delay:1.7s">CDO</span>
+    <span class="radar-target" style="--x:22%;--y:64%;--delay:2.5s">Direction métier</span>
+    <span class="radar-target" style="--x:50%;--y:18%;--delay:3.3s">Event B2B</span>
+  </div>
   <img src="./1776410684605.jpg" alt="Quentin Taffin" class="hero-photo" />
   <div class="hero-eyebrow">Mis à jour · 29 juillet 2026</div>
   <h1>Quentin <em>Taffin</em></h1>
@@ -1342,11 +1486,31 @@
       </div>
       <div class="kpi-cell">
         <div class="kpi-label">KPI Alternance · Live</div>
-        <div class="kpi-value challenge-stat highlight" style="font-size:.88rem">
-          <strong>243 appels +1 min</strong> · <strong>28 RDV</strong> · <strong>11,5 % de conversion</strong><br />
-          Dont événementiel : <strong>55 appels +1 min</strong> · <strong>8 RDV</strong> · <strong>14,5 %</strong><br />
-          Dont data / logiciel : <strong>188 appels +1 min</strong> · <strong>19 RDV</strong> · <strong>10,1 %</strong><br />
-          Dont prospection directe ScaleFast via LinkedIn : <strong>1 RDV</strong>
+        <div class="kpi-value challenge-stat highlight kpi-live" style="font-size:.88rem">
+          <div class="kpi-live-total"><strong>243 appels +1 min</strong> · <strong>28 RDV</strong> · <strong>11,5 % de conversion</strong></div>
+          <div class="kpi-flow" aria-label="Répartition des RDV ScaleFast">
+            <div class="kpi-flow-row" style="--bar:68%;--delay:.1s">
+              <div class="kpi-flow-head">
+                <span>Data / logiciel</span>
+                <strong>188 appels +1 min · 19 RDV · 10,1 %</strong>
+              </div>
+              <div class="kpi-bar" aria-hidden="true"><span></span></div>
+            </div>
+            <div class="kpi-flow-row" style="--bar:29%;--delay:.24s">
+              <div class="kpi-flow-head">
+                <span>Événementiel</span>
+                <strong>55 appels +1 min · 8 RDV · 14,5 %</strong>
+              </div>
+              <div class="kpi-bar" aria-hidden="true"><span></span></div>
+            </div>
+            <div class="kpi-flow-row" style="--bar:4%;--delay:.38s">
+              <div class="kpi-flow-head">
+                <span>ScaleFast direct LinkedIn</span>
+                <strong>1 RDV</strong>
+              </div>
+              <div class="kpi-bar" aria-hidden="true"><span></span></div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -1675,8 +1839,16 @@
     const max = document.documentElement.scrollHeight - window.innerHeight;
     const progress = max > 0 ? (window.scrollY / max) * 100 : 0;
     root.style.setProperty('--scroll-progress', progress + '%');
+
+    document.querySelectorAll('.timeline-wrap').forEach(timeline => {
+      const rect = timeline.getBoundingClientRect();
+      const drawable = Math.max(rect.height - 36, 1);
+      const active = Math.min(Math.max(window.innerHeight * .62 - rect.top, 0), drawable);
+      timeline.style.setProperty('--timeline-progress', (active / drawable) * 100 + '%');
+    });
   }
   window.addEventListener('scroll', updateScrollProgress, { passive: true });
+  window.addEventListener('resize', updateScrollProgress);
   updateScrollProgress();
 
   if (!reduceMotion && window.matchMedia('(pointer: fine)').matches) {
