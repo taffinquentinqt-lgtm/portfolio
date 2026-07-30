@@ -230,6 +230,19 @@
       pointer-events: none;
     }
 
+    .radar-caption {
+      position: absolute;
+      left: clamp(1.5rem, 8vw, 7rem);
+      top: clamp(5.4rem, 16vh, 8.8rem);
+      color: var(--gold);
+      font-size: .58rem;
+      font-weight: 500;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      opacity: .78;
+      animation: radarTarget 5.8s ease-in-out infinite;
+    }
+
     .radar-target {
       position: absolute;
       left: var(--x);
@@ -1338,6 +1351,7 @@
 <!-- ════════════════ HERO ════════════════ -->
 <section class="hero" id="top">
   <div class="radar-targets" aria-hidden="true">
+    <span class="radar-caption">Cibles prospectées</span>
     <span class="radar-target" style="--x:13%;--y:30%;--delay:.1s">C-level</span>
     <span class="radar-target" style="--x:86%;--y:30%;--delay:.9s">DSI</span>
     <span class="radar-target" style="--x:80%;--y:58%;--delay:1.7s">CDO</span>
