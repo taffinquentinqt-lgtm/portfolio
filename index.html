@@ -4,1298 +4,1028 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Quentin Taffin · SDR Outbound B2B</title>
-  <meta name="description" content="Quentin Taffin · SDR en alternance chez ScaleFast, spécialiste outbound sales pour entreprises B2B tech. Cold call C-levels et RDV qualifiés." />
+  <meta name="description" content="Portfolio de Quentin Taffin, SDR outbound B2B chez ScaleFast. Cold call C-levels, cibles data et evenementiel, 243 appels +1 min et 28 RDV qualifies." />
   <meta property="og:title" content="Quentin Taffin · SDR Outbound B2B" />
-  <meta property="og:description" content="SDR en alternance chez ScaleFast, spécialiste outbound sales B2B tech. Cold call C-levels, 243 appels +1 min et 28 RDV qualifiés." />
+  <meta property="og:description" content="SDR outbound B2B · Cold call C-levels · 243 appels +1 min · 28 RDV qualifies." />
   <meta property="og:image" content="./1776410684605.jpg" />
   <meta property="og:type" content="website" />
   <meta name="twitter:card" content="summary_large_image" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garant:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --bg:       #07100f;
-      --surface:  #0d1715;
-      --surface2: #121f1c;
-      --gold:     #30e39a;
-      --gold2:    #7fffd4;
-      --gold-dim: rgba(48,227,154,.12);
-      --gold-border: rgba(48,227,154,.22);
-      --text:     #eefaf6;
-      --muted:    #8fa9a0;
-      --border:   rgba(143,169,160,.14);
-      --green:    #20b7ff;
-      --scroll-progress: 0%;
+      --bg: #07100f;
+      --bg-2: #0a1413;
+      --panel: #0f1a18;
+      --panel-2: #13211f;
+      --panel-3: #172b27;
+      --line: rgba(144, 169, 160, .16);
+      --line-strong: rgba(54, 233, 159, .28);
+      --text: #f4fbf8;
+      --muted: #9cafaa;
+      --soft: #d8e8e2;
+      --accent: #36e99f;
+      --accent-2: #21b9ff;
+      --accent-3: #f4b84a;
+      --danger: #ff6b6b;
+      --shadow: 0 26px 80px rgba(0, 0, 0, .28);
+      --radius: 8px;
+      --scroll: 0%;
     }
 
-    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
-
     body {
-      background: var(--bg);
+      min-height: 100vh;
       color: var(--text);
-      font-family: 'Inter', sans-serif;
-      font-weight: 300;
-      line-height: 1.7;
+      background:
+        linear-gradient(rgba(54, 233, 159, .045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(33, 185, 255, .035) 1px, transparent 1px),
+        var(--bg);
+      background-size: 72px 72px, 72px 72px, auto;
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.6;
       -webkit-font-smoothing: antialiased;
     }
 
-    /* ── GRAIN TEXTURE ── */
     body::before {
-      content: '';
+      content: "";
       position: fixed;
       inset: 0;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
       pointer-events: none;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      opacity: .42;
       z-index: 0;
-      opacity: .4;
     }
 
-    body::after {
-      content: '';
+    a { color: inherit; }
+    main, nav, footer { position: relative; z-index: 1; }
+
+    .topbar {
       position: fixed;
-      inset: -10%;
-      pointer-events: none;
-      z-index: 0;
-      opacity: .22;
-      background-image:
-        linear-gradient(rgba(48,227,154,.05) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(32,183,255,.04) 1px, transparent 1px);
-      background-size: 72px 72px;
-      transform: translateZ(0);
-    }
-
-    nav,
-    .mobile-menu,
-    .hero,
-    .stats-bar,
-    .section,
-    .contact-section,
-    footer {
-      position: relative;
-      z-index: 1;
-    }
-
-    /* ── NAV ── */
-    nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 100;
-      background: rgba(7,16,15,.92);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border);
+      inset: 0 0 auto;
+      height: 64px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 0 2.5rem;
-      height: 58px;
+      padding: 0 clamp(1rem, 3vw, 2.25rem);
+      background: rgba(7, 16, 15, .9);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(12px);
+      z-index: 40;
     }
 
-    nav::after {
-      content: '';
+    .topbar::after {
+      content: "";
       position: absolute;
       left: 0;
       bottom: -1px;
-      width: var(--scroll-progress);
+      width: var(--scroll);
       height: 1px;
-      background: linear-gradient(90deg, var(--gold), var(--green));
-      box-shadow: 0 0 18px rgba(48,227,154,.28);
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
       transition: width .12s linear;
     }
 
-    .nav-logo {
-      font-family: 'Cormorant Garant', serif;
-      font-weight: 400;
-      font-size: 1.1rem;
-      letter-spacing: .12em;
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: .75rem;
+      text-decoration: none;
+      font-weight: 800;
+      letter-spacing: .08em;
       text-transform: uppercase;
-      color: var(--gold);
+      font-size: .78rem;
+    }
+
+    .brand-mark {
+      display: grid;
+      place-items: center;
+      width: 30px;
+      height: 30px;
+      border: 1px solid var(--line-strong);
+      border-radius: 6px;
+      color: var(--accent);
+      font-family: "Space Grotesk", sans-serif;
     }
 
     .nav-links {
       display: flex;
-      gap: 2.2rem;
+      gap: 1.4rem;
       list-style: none;
     }
 
-    .nav-links a {
+    .nav-links a,
+    .top-contact a,
+    .mobile-menu a {
       color: var(--muted);
       text-decoration: none;
       font-size: .72rem;
-      font-weight: 500;
-      letter-spacing: .14em;
+      font-weight: 700;
+      letter-spacing: .11em;
       text-transform: uppercase;
-      transition: color .25s;
+      transition: color .2s;
     }
-    .nav-links a:hover, .nav-links a.active { color: var(--gold); }
 
-    .nav-cta {
+    .nav-links a:hover,
+    .nav-links a.active,
+    .top-contact a:hover,
+    .mobile-menu a:hover { color: var(--accent); }
+
+    .top-contact {
       display: flex;
       align-items: center;
       gap: .8rem;
     }
-    .nav-cta a {
-      color: var(--muted);
-      font-size: .72rem;
-      letter-spacing: .08em;
-      text-decoration: none;
-      transition: color .25s;
-    }
-    .nav-cta a:hover { color: var(--gold); }
-    .nav-sep { color: var(--border); }
 
-    /* Burger */
+    .top-contact span { color: rgba(156, 175, 170, .38); }
+
     .burger {
       display: none;
+      width: 38px;
+      height: 38px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      align-items: center;
+      justify-content: center;
       flex-direction: column;
       gap: 5px;
       cursor: pointer;
-      padding: .3rem;
+      background: transparent;
     }
+
     .burger span {
-      display: block;
-      width: 20px;
+      width: 18px;
       height: 1px;
-      background: var(--gold);
-      transition: all .25s;
+      background: var(--accent);
     }
 
     .mobile-menu {
       display: none;
       position: fixed;
-      top: 58px; left: 0; right: 0;
-      background: rgba(7,16,15,.98);
-      border-bottom: 1px solid var(--border);
-      padding: 1.5rem 2.5rem;
-      z-index: 99;
-      flex-direction: column;
-      gap: 1.1rem;
-    }
-    .mobile-menu a {
-      color: var(--muted);
-      text-decoration: none;
-      font-size: .8rem;
-      font-weight: 500;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-      transition: color .2s;
-    }
-    .mobile-menu a:hover { color: var(--gold); }
-    .mobile-menu.open { display: flex; }
-
-    @media (max-width: 760px) {
-      .nav-links, .nav-cta { display: none; }
-      .burger { display: flex; }
+      top: 64px;
+      left: 0;
+      right: 0;
+      z-index: 30;
+      padding: 1rem;
+      background: rgba(7, 16, 15, .98);
+      border-bottom: 1px solid var(--line);
     }
 
-    /* ── HERO ── */
+    .mobile-menu.open {
+      display: grid;
+      gap: .9rem;
+    }
+
+    .shell {
+      width: min(1180px, calc(100% - 2rem));
+      margin: 0 auto;
+    }
+
     .hero {
       min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
+      padding: 9rem 0 4.5rem;
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(320px, .65fr);
+      gap: clamp(1.2rem, 3vw, 2rem);
       align-items: center;
-      text-align: center;
-      padding: 8rem 2rem 5rem;
-      position: relative;
-      overflow: hidden;
     }
 
-    .hero::before {
-      content: '';
-      position: absolute;
-      width: min(760px, 82vw);
-      aspect-ratio: 1;
-      border: 1px solid rgba(48,227,154,.08);
-      border-radius: 50%;
-      background:
-        radial-gradient(circle, rgba(48,227,154,.10) 0 1px, transparent 2px),
-        conic-gradient(from 0deg, transparent, rgba(32,183,255,.08), transparent 34%);
-      background-size: 28px 28px, 100% 100%;
-      opacity: .55;
-      animation: radarSpin 18s linear infinite;
-      will-change: transform;
+    .hero-copy {
+      display: grid;
+      gap: 1.35rem;
     }
 
-    .hero > * {
-      position: relative;
-      z-index: 1;
-    }
-
-    .radar-targets {
-      position: absolute;
-      inset: 0;
-      z-index: 0;
-      pointer-events: none;
-    }
-
-    .radar-caption {
-      position: absolute;
-      left: clamp(1.5rem, 8vw, 7rem);
-      top: clamp(5.4rem, 16vh, 8.8rem);
-      color: var(--gold);
-      font-size: .58rem;
-      font-weight: 500;
-      letter-spacing: .2em;
-      text-transform: uppercase;
-      opacity: .78;
-      animation: radarTarget 5.8s ease-in-out infinite;
-    }
-
-    .radar-target {
-      position: absolute;
-      left: var(--x);
-      top: var(--y);
+    .eyebrow {
       display: inline-flex;
+      width: fit-content;
       align-items: center;
-      gap: .45rem;
-      color: rgba(238,250,246,.66);
-      font-size: .58rem;
-      font-weight: 500;
+      gap: .55rem;
+      color: var(--accent);
+      font-size: .7rem;
+      font-weight: 800;
       letter-spacing: .16em;
       text-transform: uppercase;
-      white-space: nowrap;
-      transform: translate(-50%, -50%);
-      animation: radarTarget 5.8s ease-in-out infinite;
-      animation-delay: var(--delay, 0s);
-      will-change: transform, opacity;
     }
 
-    .radar-target::before {
-      content: '';
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      border: 1px solid var(--green);
-      box-shadow: 0 0 10px rgba(32,183,255,.28);
-      animation: targetPing 2.6s ease-out infinite;
-      animation-delay: var(--delay, 0s);
-      will-change: transform, opacity;
+    .eyebrow::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--accent);
+      box-shadow: 0 0 0 6px rgba(54, 233, 159, .12);
     }
 
-    .hero::after {
-      content: '';
-      position: absolute;
-      bottom: 0; left: 50%;
-      transform: translateX(-50%);
-      width: 1px;
-      height: 80px;
-      background: linear-gradient(to bottom, var(--gold), transparent);
-    }
-
-    .hero-photo {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      object-fit: cover;
-      object-position: center top;
-      border: 1px solid var(--gold-border);
-      box-shadow: 0 0 40px rgba(48,227,154,.08);
-      margin-bottom: 2rem;
-      transition: box-shadow .4s ease;
-      animation: heroRise .75s ease .05s both, avatarFloat 6s ease-in-out 1s infinite;
-      z-index: 2;
-    }
-    .hero-photo:hover {
-      box-shadow: 0 0 60px rgba(48,227,154,.18);
-    }
-
-    .hero-eyebrow {
-      font-size: .7rem;
-      font-weight: 500;
-      letter-spacing: .22em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 1.4rem;
-      display: flex;
-      align-items: center;
-      gap: .8rem;
-      animation: heroRise .75s ease .14s both;
-      z-index: 3;
-    }
-    .hero-eyebrow::before,
-    .hero-eyebrow::after {
-      content: '';
-      width: 32px;
-      height: 1px;
-      background: var(--gold-border);
-    }
-
-    .hero h1 {
-      font-family: 'Cormorant Garant', serif;
-      font-weight: 300;
-      font-size: clamp(3rem, 8vw, 6.5rem);
+    h1, h2, h3 {
+      font-family: "Space Grotesk", Inter, sans-serif;
       letter-spacing: 0;
-      line-height: 1.0;
-      margin-bottom: .5rem;
-      color: var(--text);
-      animation: heroRise .75s ease .22s both;
-      z-index: 3;
+      line-height: 1.02;
     }
 
-    .hero h1 em {
-      font-style: italic;
-      color: var(--gold);
+    h1 {
+      max-width: 820px;
+      font-size: clamp(3.4rem, 8vw, 7.2rem);
+      font-weight: 700;
     }
+
+    h1 span { color: var(--accent); }
 
     .hero-sub {
-      font-size: .8rem;
-      font-weight: 400;
-      letter-spacing: .18em;
-      text-transform: uppercase;
+      max-width: 780px;
+      color: var(--soft);
+      font-size: clamp(1.1rem, 2.2vw, 1.65rem);
+      font-weight: 700;
+    }
+
+    .hero-text {
+      max-width: 720px;
       color: var(--muted);
-      margin-bottom: 2.5rem;
-      animation: heroRise .75s ease .32s both;
-      z-index: 3;
-    }
-
-    .hero-pitch {
-      max-width: 560px;
-      font-size: .9rem;
-      color: var(--muted);
-      line-height: 1.9;
-      margin-bottom: 2rem;
-      border-left: 1px solid var(--gold-border);
-      padding-left: 1.2rem;
-      text-align: left;
-      animation: heroRise .75s ease .42s both;
-    }
-    .hero-pitch strong { color: var(--text); font-weight: 500; }
-
-    .hero-proof {
-      width: min(760px, 100%);
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1px;
-      background: var(--border);
-      border: 1px solid var(--border);
-      border-radius: 3px;
-      overflow: hidden;
-      margin: 0 auto 2.4rem;
-      animation: heroRise .75s ease .52s both;
-    }
-
-    .hero-proof-item {
-      background: rgba(13,23,21,.86);
-      padding: 1rem 1.1rem;
-      text-align: left;
-    }
-
-    .hero-proof-label {
-      font-size: .6rem;
-      font-weight: 500;
-      color: var(--gold);
-      letter-spacing: .16em;
-      text-transform: uppercase;
-      margin-bottom: .35rem;
-    }
-
-    .hero-proof-value {
-      color: var(--text);
-      font-size: .82rem;
-      line-height: 1.45;
-    }
-
-    .call-motion {
-      width: min(820px, 100%);
-      margin: 0 auto 2rem;
-      padding: 1rem;
-      border: 1px solid var(--border);
-      background:
-        linear-gradient(135deg, rgba(48,227,154,.08), transparent 38%),
-        rgba(13,23,21,.74);
-      overflow: hidden;
-      position: relative;
-      animation: heroRise .75s ease .62s both;
-    }
-
-    .call-motion::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(90deg, transparent, rgba(32,183,255,.10), transparent);
-      transform: translateX(-100%);
-      animation: scanLine 5s ease-in-out infinite;
-      pointer-events: none;
-    }
-
-    .call-motion-head {
-      display: flex;
-      justify-content: space-between;
-      gap: 1rem;
-      align-items: center;
-      margin-bottom: 1rem;
-      position: relative;
-      z-index: 1;
-    }
-
-    .call-motion-head span {
-      font-size: .62rem;
-      letter-spacing: .18em;
-      text-transform: uppercase;
-      color: var(--gold);
-    }
-
-    .call-motion-head strong {
-      color: var(--text);
-      font-size: .72rem;
-      font-weight: 500;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-    }
-
-    .signal-track {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1px;
-      background: var(--border);
-      position: relative;
-      z-index: 1;
-    }
-
-    .signal-track::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      width: 28%;
-      background: linear-gradient(90deg, transparent, rgba(48,227,154,.24), transparent);
-      animation: pipelineSweep 4.5s linear infinite;
-      pointer-events: none;
-    }
-
-    .signal-step {
-      min-height: 96px;
-      background: rgba(7,16,15,.72);
-      padding: .95rem;
-      text-align: left;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .signal-step::after {
-      content: '';
-      position: absolute;
-      left: .95rem;
-      right: .95rem;
-      bottom: .72rem;
-      height: 2px;
-      background: rgba(48,227,154,.14);
-    }
-
-    .signal-step span {
-      display: block;
-      color: var(--green);
-      font-size: .58rem;
-      letter-spacing: .18em;
-      text-transform: uppercase;
-      margin-bottom: .55rem;
-    }
-
-    .signal-step strong {
-      display: block;
-      color: var(--text);
-      font-size: .86rem;
-      font-weight: 500;
-      margin-bottom: .15rem;
-    }
-
-    .signal-step em {
-      display: block;
-      color: var(--muted);
-      font-size: .7rem;
-      font-style: normal;
-      line-height: 1.45;
-    }
-
-    @keyframes scanLine {
-      0%, 18% { transform: translateX(-100%); opacity: 0; }
-      35%, 68% { opacity: 1; }
-      100% { transform: translateX(100%); opacity: 0; }
-    }
-
-    @keyframes gridDrift {
-      0% { background-position: 0 0, 0 0; }
-      100% { background-position: 72px 72px, 72px 72px; }
-    }
-
-    @keyframes radarSpin {
-      from { transform: rotate(0deg) scale(1); }
-      to { transform: rotate(360deg) scale(1); }
-    }
-
-    @keyframes radarTarget {
-      0%, 100% { opacity: .34; transform: translate(-50%, -50%) scale(.96); }
-      45%, 60% { opacity: .9; transform: translate(-50%, -50%) scale(1); }
-    }
-
-    @keyframes targetPing {
-      0% { opacity: 1; transform: scale(.82); }
-      70% { opacity: .18; transform: scale(1.85); }
-      100% { opacity: 1; transform: scale(.82); }
-    }
-
-    @keyframes heroRise {
-      from { opacity: 0; transform: translateY(24px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes avatarFloat {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-8px); }
-    }
-
-    @keyframes pipelineSweep {
-      0% { transform: translateX(-115%); }
-      100% { transform: translateX(410%); }
-    }
-
-    @media (max-width: 700px) {
-      body::after { display: none; }
-      .hero::before {
-        opacity: .32;
-        animation-duration: 32s;
-      }
-      .stat-item::before { display: none; }
-      .radar-targets { display: none; }
-      .hero-proof { grid-template-columns: 1fr; }
-      .call-motion { padding: .75rem; }
-      .call-motion-head { align-items: flex-start; flex-direction: column; gap: .35rem; }
-      .signal-track { grid-template-columns: repeat(2, 1fr); }
-      .signal-track::before { display: none; }
-      .signal-step { min-height: 112px; }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      .call-motion::before,
-      .signal-track::before {
-        animation: none;
-      }
+      font-size: .98rem;
     }
 
     .cta-row {
       display: flex;
-      gap: 1rem;
       flex-wrap: wrap;
-      justify-content: center;
-      animation: heroRise .75s ease .72s both;
+      gap: .75rem;
+      margin-top: .3rem;
     }
 
     .btn {
       display: inline-flex;
       align-items: center;
-      gap: .5rem;
-      padding: .7rem 1.8rem;
-      border-radius: 2px;
-      font-size: .72rem;
-      font-weight: 500;
-      letter-spacing: .14em;
-      text-transform: uppercase;
+      justify-content: center;
+      min-height: 42px;
+      padding: .72rem 1rem;
+      border-radius: 7px;
+      border: 1px solid transparent;
       text-decoration: none;
-      position: relative;
-      overflow: hidden;
-      transition: all .25s;
+      font-size: .74rem;
+      font-weight: 800;
+      letter-spacing: .11em;
+      text-transform: uppercase;
+      transition: transform .2s, border-color .2s, background .2s, color .2s;
     }
-    .btn::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(100deg, transparent, rgba(255,255,255,.18), transparent);
-      transform: translateX(-120%);
-      transition: transform .45s ease;
-      pointer-events: none;
-    }
+
     .btn:hover { transform: translateY(-2px); }
-    .btn:hover::after { transform: translateX(120%); }
-    .btn-gold {
-      background: var(--gold);
-      color: var(--bg);
-    }
-    .btn-gold:hover { background: var(--gold2); }
 
-    .btn-outline {
-      border: 1px solid var(--gold-border);
-      color: var(--gold);
+    .btn-primary {
+      background: var(--accent);
+      color: #04100d;
     }
-    .btn-outline:hover { border-color: var(--gold); background: var(--gold-dim); }
 
-    /* ── STATS BAR ── */
-    .stats-bar {
-      display: flex;
-      flex-wrap: wrap;
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-      position: relative;
+    .btn-secondary {
+      border-color: var(--line-strong);
+      color: var(--accent);
+      background: rgba(54, 233, 159, .06);
+    }
+
+    .btn-ghost {
+      border-color: var(--line);
+      color: var(--soft);
+      background: rgba(255, 255, 255, .02);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      margin-top: .4rem;
       overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--line);
     }
 
-    .stat-item {
-      flex: 1;
-      min-width: 50%;
-      text-align: center;
-      padding: 2rem 1rem;
-      border-right: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-      position: relative;
-      overflow: hidden;
-      transition: background .25s ease, transform .25s ease;
-    }
-    .stat-item:hover { background: rgba(48,227,154,.035); transform: translateY(-2px); }
-    .stat-item::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(100deg, transparent, rgba(48,227,154,.11), transparent);
-      transform: translateX(-120%);
-      animation: statSweep 7s ease-in-out 2;
-      animation-delay: calc(var(--i, 0) * .35s);
-      pointer-events: none;
-    }
-    .stat-item:nth-child(2), .stat-item:nth-child(4) { border-right: none; }
-    .stat-item:nth-child(3), .stat-item:nth-child(4) { border-bottom: none; }
-
-    @media (min-width: 761px) {
-      .stat-item { min-width: 25%; border-bottom: none; }
-      .stat-item:nth-child(2) { border-right: 1px solid var(--border); }
-      .stat-item:last-child { border-right: none; }
+    .hero-grid-item {
+      min-height: 92px;
+      padding: 1rem;
+      background: rgba(15, 26, 24, .82);
     }
 
-    .stat-value {
-      display: block;
-      font-family: 'Cormorant Garant', serif;
-      font-weight: 300;
-      font-size: 2.6rem;
-      color: var(--gold);
-      line-height: 1;
-      margin-bottom: .4rem;
-      letter-spacing: 0;
-      position: relative;
-      z-index: 1;
-    }
-
-    .stat-label {
-      font-size: .67rem;
-      font-weight: 500;
+    .label {
       color: var(--muted);
-      text-transform: uppercase;
+      font-size: .63rem;
+      font-weight: 800;
       letter-spacing: .14em;
-      position: relative;
-      z-index: 1;
-    }
-
-    /* ── SECTIONS ── */
-    .section {
-      max-width: 1060px;
-      margin: 0 auto;
-      padding: 6rem 2rem;
-    }
-
-    .section-header { margin-bottom: 3.5rem; }
-
-    .section-eyebrow {
-      font-size: .67rem;
-      font-weight: 500;
       text-transform: uppercase;
-      letter-spacing: .2em;
-      color: var(--gold);
-      margin-bottom: .8rem;
-      display: flex;
-      align-items: center;
-      gap: .7rem;
-    }
-    .section-eyebrow::after {
-      content: '';
-      flex: 1;
-      max-width: 40px;
-      height: 1px;
-      background: var(--gold-border);
     }
 
-    .section-title {
-      font-family: 'Cormorant Garant', serif;
-      font-weight: 300;
-      font-size: clamp(2rem, 4vw, 3rem);
-      letter-spacing: 0;
-      line-height: 1.15;
+    .value {
+      margin-top: .4rem;
+      color: var(--text);
+      font-size: .92rem;
+      font-weight: 700;
+      line-height: 1.35;
+    }
+
+    .profile-panel {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(15, 26, 24, .88);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .profile-head {
+      padding: 1rem;
+      display: grid;
+      grid-template-columns: 96px 1fr;
+      gap: 1rem;
+      align-items: center;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .profile-photo {
+      width: 96px;
+      aspect-ratio: 1;
+      border-radius: 8px;
+      object-fit: cover;
+      object-position: center top;
+      border: 1px solid var(--line-strong);
+    }
+
+    .status {
+      display: inline-flex;
+      align-items: center;
+      gap: .45rem;
+      margin-bottom: .55rem;
+      color: var(--accent-2);
+      font-size: .68rem;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .status::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: var(--accent-2);
+      animation: pulse 2.4s ease-out infinite;
+    }
+
+    .profile-title {
+      font-size: 1.15rem;
+      font-weight: 800;
+      line-height: 1.25;
+    }
+
+    .profile-sub {
+      color: var(--muted);
+      font-size: .82rem;
+      margin-top: .3rem;
+    }
+
+    .target-map {
+      padding: 1rem;
+      min-height: 300px;
+      position: relative;
+      overflow: hidden;
+      background:
+        linear-gradient(rgba(54, 233, 159, .07) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(33, 185, 255, .06) 1px, transparent 1px);
+      background-size: 34px 34px;
+    }
+
+    .target-map::before {
+      content: "";
+      position: absolute;
+      inset: 18px;
+      border: 1px solid rgba(54, 233, 159, .16);
+      border-radius: 999px;
+    }
+
+    .target-map::after {
+      content: "";
+      position: absolute;
+      width: 58%;
+      aspect-ratio: 1;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 999px;
+      border: 1px solid rgba(33, 185, 255, .18);
+      animation: radarSpin 18s linear infinite;
+    }
+
+    .target-caption {
+      position: relative;
+      z-index: 2;
+      color: var(--accent);
+      font-size: .66rem;
+      font-weight: 900;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+
+    .target {
+      position: absolute;
+      left: var(--x);
+      top: var(--y);
+      z-index: 3;
+      display: inline-flex;
+      align-items: center;
+      gap: .4rem;
+      padding: .36rem .46rem;
+      border: 1px solid rgba(54, 233, 159, .26);
+      border-radius: 6px;
+      background: rgba(7, 16, 15, .72);
+      color: var(--soft);
+      font-size: .62rem;
+      font-weight: 800;
+      letter-spacing: .09em;
+      text-transform: uppercase;
+      transform: translate(-50%, -50%);
+    }
+
+    .target::before {
+      content: "";
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: var(--accent-2);
+      box-shadow: 0 0 0 5px rgba(33, 185, 255, .12);
+    }
+
+    .quick-facts {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--line);
+      border-top: 1px solid var(--line);
+    }
+
+    .quick-fact {
+      padding: .9rem;
+      background: var(--panel-2);
+    }
+
+    .quick-fact strong {
+      display: block;
+      color: var(--text);
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 1.15rem;
+      line-height: 1;
+    }
+
+    .quick-fact span {
+      display: block;
+      color: var(--muted);
+      font-size: .62rem;
+      font-weight: 800;
+      letter-spacing: .11em;
+      text-transform: uppercase;
+      margin-top: .35rem;
+    }
+
+    .metrics-band {
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      background: rgba(15, 26, 24, .66);
+    }
+
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: var(--line);
+    }
+
+    .metric {
+      min-height: 140px;
+      padding: 1.2rem;
+      background: var(--bg-2);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .metric::after {
+      content: "";
+      position: absolute;
+      inset: auto 0 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+      transform: scaleX(0);
+      transform-origin: left;
+      animation: barIn 1s ease forwards;
+      animation-delay: calc(var(--i, 0) * .12s);
+    }
+
+    .metric-value {
+      color: var(--accent);
+      font-family: "Space Grotesk", sans-serif;
+      font-size: clamp(2rem, 4vw, 3.4rem);
+      font-weight: 700;
+      line-height: 1;
+    }
+
+    .metric-label {
+      color: var(--muted);
+      font-size: .72rem;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .section {
+      padding: clamp(4.5rem, 7vw, 7rem) 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: .72fr 1fr;
+      gap: 2rem;
+      align-items: end;
+      margin-bottom: 2rem;
+    }
+
+    .section-kicker {
+      color: var(--accent);
+      font-size: .7rem;
+      font-weight: 900;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      margin-bottom: .75rem;
+    }
+
+    .section h2 {
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      font-weight: 700;
     }
 
     .section-desc {
       color: var(--muted);
-      margin-top: .6rem;
-      font-size: .88rem;
-      max-width: 500px;
+      max-width: 680px;
+      font-size: .96rem;
     }
 
-    .section.compact { padding-top: 5rem; padding-bottom: 5rem; }
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: var(--line);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
 
-    .value-grid {
+    .grid-3 {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 1px;
-      background: var(--border);
-      border: 1px solid var(--border);
-      border-radius: 3px;
+      background: var(--line);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
       overflow: hidden;
     }
 
-    .value-card {
-      background: var(--surface);
-      padding: 1.7rem 1.5rem;
-      min-height: 210px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
+    .tile {
+      background: var(--panel);
+      padding: 1.25rem;
+      min-height: 190px;
       position: relative;
       overflow: hidden;
-      transition: background .25s, border-color .25s, transform .25s ease;
+      transition: background .2s, transform .2s;
     }
 
-    .value-card::before,
-    .challenge-card::before,
-    .skill-group::before,
-    .kpi-cell::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(135deg, rgba(48,227,154,.11), transparent 38%);
-      opacity: 0;
-      transition: opacity .25s ease;
-      pointer-events: none;
+    .tile:hover {
+      background: var(--panel-2);
+      transform: translateY(-2px);
     }
 
-    .value-card:hover { background: #10221e; transform: translateY(-4px); }
-    .value-card:hover::before,
-    .challenge-card:hover::before,
-    .skill-group:hover::before,
-    .kpi-cell:hover::before { opacity: 1; }
-
-    .value-title {
-      font-family: 'Cormorant Garant', serif;
-      font-size: 1.35rem;
-      font-weight: 400;
-      line-height: 1.15;
-      margin: .45rem 0 .9rem;
+    .tile-title {
       color: var(--text);
+      font-size: 1.05rem;
+      font-weight: 800;
+      margin: .4rem 0 .65rem;
     }
 
-    .value-card p {
-      color: var(--muted);
-      font-size: .84rem;
-      line-height: 1.7;
-    }
-
-    .value-foot {
-      color: var(--gold);
-      font-size: .65rem;
-      font-weight: 500;
-      letter-spacing: .14em;
-      text-transform: uppercase;
-      margin-top: 1.2rem;
-    }
-
-    @media (max-width: 800px) {
-      .value-grid { grid-template-columns: 1fr; }
-      .value-card { min-height: auto; }
-    }
-
-    /* ── TIMELINE ── */
-    .timeline-wrap {
-      position: relative;
-      padding-left: 2rem;
-      --timeline-progress: 0%;
-    }
-    .timeline-wrap::before {
-      content: '';
-      position: absolute;
-      left: 5px;
-      top: 18px;
-      bottom: 18px;
-      width: 1px;
-      background: linear-gradient(to bottom, var(--gold), transparent);
-      animation: lineGlow 5s ease-in-out infinite;
-    }
-    .timeline-wrap::after {
-      content: '';
-      position: absolute;
-      left: 5px;
-      top: 18px;
-      width: 1px;
-      height: var(--timeline-progress);
-      max-height: calc(100% - 36px);
-      background: linear-gradient(to bottom, var(--green), var(--gold));
-      box-shadow: 0 0 18px rgba(32,183,255,.28);
-      pointer-events: none;
-      transition: height .16s linear;
-    }
-
-    .timeline-dot {
-      position: absolute;
-      left: -2.3rem;
-      top: 2.1rem;
-      width: 11px;
-      height: 11px;
-      border-radius: 50%;
-      background: var(--surface);
-      border: 1px solid var(--gold-border);
-      z-index: 1;
-    }
-    .timeline-dot.active {
-      background: var(--green);
-      border-color: var(--green);
-      box-shadow: 0 0 12px rgba(32,183,255,.3);
-    }
-
-    /* ── EXP CARD ── */
-    .exp-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 3px;
-      padding: 2.2rem 2.5rem;
-      margin-bottom: 1.2rem;
-      position: relative;
-      overflow: hidden;
-      transition: border-color .3s, transform .25s ease, box-shadow .25s ease;
-    }
-    .exp-card:hover {
-      border-color: var(--gold-border);
-      transform: translateY(-3px);
-      box-shadow: 0 18px 70px rgba(0,0,0,.18);
-    }
-
-    .exp-card::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 1px;
-      background: linear-gradient(90deg, var(--gold), transparent);
-    }
-    .exp-card.current::before {
-      background: linear-gradient(90deg, var(--green), transparent);
-    }
-    .exp-card.current { border-color: rgba(32,183,255,.16); }
-
-    .exp-header {
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      gap: 1rem;
-      flex-wrap: wrap;
-      margin-bottom: 1.2rem;
-    }
-
-    .exp-title {
-      font-family: 'Cormorant Garant', serif;
-      font-size: 1.4rem;
-      font-weight: 400;
-      letter-spacing: .01em;
-      margin-bottom: .2rem;
-    }
-
-    .exp-company {
-      font-size: .72rem;
-      font-weight: 500;
-      letter-spacing: .14em;
-      text-transform: uppercase;
-      color: var(--gold);
-    }
-
-    .exp-period {
-      font-size: .68rem;
-      font-weight: 500;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-      color: var(--muted);
-      border: 1px solid var(--border);
-      border-radius: 2px;
-      padding: .3rem .7rem;
-      white-space: nowrap;
-    }
-
-    .exp-period.live {
-      color: var(--green);
-      border-color: rgba(32,183,255,.24);
-      background: rgba(32,183,255,.06);
-      display: inline-flex;
-      align-items: center;
-      gap: .5rem;
-    }
-
-    .exp-desc {
+    .tile p,
+    .tile li {
       color: var(--muted);
       font-size: .88rem;
-      margin-bottom: 1.8rem;
-      max-width: 720px;
     }
 
-    /* ── PULSE DOT ── */
-    .pulse-dot {
+    .tile ul {
+      display: grid;
+      gap: .45rem;
+      list-style: none;
+      margin-top: .7rem;
+    }
+
+    .tile li::before {
+      content: "";
+      display: inline-block;
       width: 6px;
       height: 6px;
-      border-radius: 50%;
-      background: var(--green);
-      flex-shrink: 0;
-      animation: pulse 2s ease-out infinite;
-    }
-    @keyframes pulse {
-      0%   { box-shadow: 0 0 0 0 rgba(32,183,255,.5); }
-      70%  { box-shadow: 0 0 0 6px rgba(32,183,255,0); }
-      100% { box-shadow: 0 0 0 0 rgba(32,183,255,0); }
-    }
-
-    /* ── KPI GRID ── */
-    .kpi-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1px;
-      background: var(--border);
-      border: 1px solid var(--border);
-      border-radius: 3px;
-      overflow: hidden;
-    }
-
-    @media (max-width: 600px) {
-      .kpi-grid { grid-template-columns: 1fr; }
-    }
-
-    .kpi-cell {
-      background: var(--surface2);
-      padding: 1.2rem 1.4rem;
-      position: relative;
-      overflow: hidden;
-      transition: background .25s ease, transform .25s ease;
-    }
-    .kpi-cell:hover { background: #142823; transform: translateY(-2px); }
-
-    .kpi-label {
-      font-size: .67rem;
-      font-weight: 500;
-      letter-spacing: .16em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: .35rem;
-    }
-
-    .kpi-value {
-      font-size: .88rem;
-      color: var(--muted);
-      line-height: 1.6;
-    }
-    .kpi-value strong { color: var(--text); font-weight: 500; }
-
-    .kpi-live {
-      display: flex;
-      flex-direction: column;
-      gap: .75rem;
-    }
-
-    .kpi-live-total {
-      color: var(--gold);
-      padding-bottom: .35rem;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .kpi-flow {
-      display: grid;
-      gap: .58rem;
-    }
-
-    .kpi-flow-row {
-      display: grid;
-      gap: .32rem;
-      position: relative;
-    }
-
-    .kpi-flow-head {
-      display: flex;
-      justify-content: space-between;
-      gap: .8rem;
-      align-items: baseline;
-    }
-
-    .kpi-flow-head span {
-      color: var(--text);
-      font-size: .73rem;
-      font-weight: 500;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-    }
-
-    .kpi-flow-head strong {
-      color: var(--muted);
-      font-size: .73rem;
-      font-weight: 400;
-      text-align: right;
-    }
-
-    .kpi-bar {
-      height: 4px;
-      background: rgba(48,227,154,.10);
-      overflow: hidden;
-      position: relative;
-    }
-
-    .kpi-bar span {
-      display: block;
-      width: 0;
-      min-width: 18px;
-      height: 100%;
-      background: linear-gradient(90deg, var(--green), var(--gold));
-      box-shadow: 0 0 14px rgba(32,183,255,.24);
-    }
-
-    .visible .kpi-bar span {
-      animation: kpiBarLoad 1.05s ease forwards;
-      animation-delay: var(--delay, 0s);
-    }
-
-    @media (max-width: 600px) {
-      .kpi-flow-head { align-items: flex-start; flex-direction: column; gap: .1rem; }
-      .kpi-flow-head strong { text-align: left; }
-    }
-
-    /* ── CHALLENGE GRID ── */
-    .challenges-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1px;
-      background: var(--border);
-      border: 1px solid var(--border);
-      border-radius: 3px;
-      overflow: hidden;
-      margin-bottom: 1px;
-    }
-
-    @media (max-width: 700px) {
-      .challenges-grid { grid-template-columns: 1fr; }
-    }
-
-    .challenge-card {
-      background: var(--surface2);
-      padding: 1.6rem 1.4rem;
-      position: relative;
-      overflow: hidden;
-      transition: background .2s, transform .25s ease;
-    }
-    .challenge-card:hover { background: #162a25; transform: translateY(-4px); }
-
-    .rank-text {
-      font-family: 'Cormorant Garant', serif;
-      font-size: 1.1rem;
-      font-weight: 600;
-      margin-bottom: .5rem;
-    }
-    .rank-text.gold { color: var(--gold); }
-    .rank-text.bronze { color: #6fb4a5; }
-
-    .challenge-name {
-      font-size: .72rem;
-      font-weight: 500;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-      margin-bottom: .8rem;
-    }
-    .challenge-name a { color: var(--text); text-decoration: none; transition: color .2s; }
-    .challenge-name a:hover { color: var(--gold); }
-
-    .sector-pill {
-      display: inline-block;
-      font-size: .6rem;
-      font-weight: 500;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-      color: var(--gold);
-      border: 1px solid var(--gold-border);
-      border-radius: 1px;
-      padding: .15rem .5rem;
-      margin-left: .5rem;
+      margin-right: .55rem;
+      border-radius: 999px;
+      background: var(--accent);
       vertical-align: middle;
     }
 
-    .challenge-stat {
-      font-size: .82rem;
-      color: var(--muted);
-      margin-bottom: .2rem;
-    }
-    .challenge-stat strong { color: var(--text); font-weight: 500; }
-    .challenge-stat.highlight { color: var(--gold); font-weight: 500; }
-
-    .challenge-note {
-      margin-top: .9rem;
-      font-size: .78rem;
-      color: var(--muted);
-      line-height: 1.6;
-      font-style: italic;
-      border-left: 1px solid var(--gold-border);
-      padding-left: .8rem;
-    }
-
-    /* ── SKILLS ── */
-    .skills-grid {
+    .scale-layout {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: .9fr 1.1fr;
       gap: 1px;
-      background: var(--border);
-      border: 1px solid var(--border);
-      border-radius: 3px;
+      background: var(--line);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
       overflow: hidden;
     }
 
-    @media (max-width: 800px) {
-      .skills-grid { grid-template-columns: repeat(2, 1fr); }
-    }
-    @media (max-width: 480px) {
-      .skills-grid { grid-template-columns: 1fr; }
-    }
-
-    .skill-group {
-      background: var(--surface);
-      padding: 1.4rem;
-      position: relative;
-      overflow: hidden;
-      transition: background .25s ease, transform .25s ease;
-    }
-    .skill-group:hover { background: #10221e; transform: translateY(-3px); }
-
-    .skill-group-title {
-      font-size: .63rem;
-      font-weight: 500;
-      text-transform: uppercase;
-      letter-spacing: .18em;
-      color: var(--gold);
-      margin-bottom: 1rem;
-      padding-bottom: .6rem;
-      border-bottom: 1px solid var(--border);
+    .scale-main,
+    .scale-side {
+      background: var(--panel);
+      padding: clamp(1.25rem, 3vw, 2rem);
     }
 
-    .skill-tag {
-      display: inline-block;
-      font-size: .75rem;
+    .scale-main h3 {
+      font-size: clamp(1.7rem, 3vw, 2.6rem);
+      margin-bottom: .9rem;
+    }
+
+    .scale-main p {
       color: var(--muted);
-      padding: .2rem 0;
-      margin: .15rem .4rem .15rem 0;
-      transition: color .2s, transform .2s ease;
+      margin-bottom: 1.2rem;
     }
-    .skill-tag:hover { color: var(--text); transform: translateY(-2px); }
 
-    /* ── DIVIDER ── */
-    .divider { border: none; border-top: 1px solid var(--border); }
-
-    /* ── CONTACT ── */
-    .contact-section {
-      border-top: 1px solid var(--border);
-    }
-    .contact-inner {
-      max-width: 700px;
-      margin: 0 auto;
-      padding: 6rem 2rem;
-      text-align: center;
-    }
-    .contact-inner p {
-      color: var(--muted);
-      font-size: .88rem;
-      margin: .8rem 0 2.5rem;
-      line-height: 1.8;
-    }
-    .contact-links {
+    .sector-tags,
+    .skill-tags {
       display: flex;
-      justify-content: center;
+      flex-wrap: wrap;
+      gap: .5rem;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      min-height: 30px;
+      padding: .32rem .55rem;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--soft);
+      background: rgba(255, 255, 255, .02);
+      font-size: .68rem;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .pipeline {
+      display: grid;
+      gap: .85rem;
+    }
+
+    .pipeline-row {
+      display: grid;
+      gap: .35rem;
+    }
+
+    .pipeline-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      color: var(--soft);
+      font-size: .82rem;
+      font-weight: 800;
+    }
+
+    .pipeline-head span:last-child {
+      color: var(--muted);
+      text-align: right;
+      font-weight: 700;
+    }
+
+    .progress {
+      height: 7px;
+      overflow: hidden;
+      border-radius: 999px;
+      background: rgba(143, 169, 160, .13);
+    }
+
+    .progress span {
+      display: block;
+      width: var(--w);
+      height: 100%;
+      border-radius: inherit;
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+      transform-origin: left;
+      animation: barIn 1s ease both;
+      animation-delay: var(--d, 0s);
+    }
+
+    .timeline {
+      position: relative;
+      display: grid;
+      gap: 1rem;
+      padding-left: 1.5rem;
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 5px;
+      top: 8px;
+      bottom: 8px;
+      width: 1px;
+      background: linear-gradient(var(--accent), rgba(33, 185, 255, .18));
+    }
+
+    .timeline-card {
+      position: relative;
+      padding: 1.25rem;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--panel);
+    }
+
+    .timeline-card::before {
+      content: "";
+      position: absolute;
+      left: -1.75rem;
+      top: 1.45rem;
+      width: 11px;
+      height: 11px;
+      border-radius: 999px;
+      border: 1px solid var(--accent);
+      background: var(--bg);
+      box-shadow: 0 0 0 5px rgba(54, 233, 159, .08);
+    }
+
+    .timeline-card.current::before {
+      background: var(--accent-2);
+      border-color: var(--accent-2);
+    }
+
+    .timeline-top {
+      display: flex;
+      justify-content: space-between;
       gap: 1rem;
       flex-wrap: wrap;
+      margin-bottom: .75rem;
     }
 
-    /* ── FOOTER ── */
-    footer {
-      text-align: center;
-      padding: 2.5rem 2rem;
-      border-top: 1px solid var(--border);
+    .timeline-title {
+      font-size: 1.25rem;
+      font-weight: 800;
     }
-    .footer-name {
-      font-family: 'Cormorant Garant', serif;
-      font-size: 1rem;
-      font-weight: 300;
-      letter-spacing: .2em;
+
+    .timeline-company,
+    .timeline-period {
+      color: var(--muted);
+      font-size: .72rem;
+      font-weight: 800;
+      letter-spacing: .1em;
       text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: .5rem;
     }
+
+    .timeline-period {
+      color: var(--accent-2);
+      border: 1px solid rgba(33, 185, 255, .22);
+      border-radius: 6px;
+      padding: .28rem .5rem;
+    }
+
+    .timeline-card p {
+      color: var(--muted);
+      font-size: .9rem;
+    }
+
+    .challenge-list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      margin-top: 1rem;
+      background: var(--line);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+
+    .challenge {
+      background: var(--panel-2);
+      padding: 1rem;
+    }
+
+    .challenge strong {
+      display: block;
+      color: var(--text);
+      margin-bottom: .4rem;
+    }
+
+    .challenge span {
+      color: var(--muted);
+      font-size: .82rem;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--line);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+
+    .skill-box {
+      background: var(--panel);
+      padding: 1.25rem;
+    }
+
+    .skill-box h3 {
+      font-size: 1rem;
+      margin-bottom: .8rem;
+    }
+
+    .cert-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--line);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+
+    .cert {
+      background: var(--panel);
+      padding: 1rem;
+      display: grid;
+      gap: .85rem;
+    }
+
+    .cert img {
+      width: 100%;
+      display: block;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      opacity: .88;
+      transition: opacity .2s, border-color .2s;
+    }
+
+    .cert a:hover img { opacity: 1; border-color: var(--line-strong); }
+
+    .badge-link {
+      display: grid;
+      place-items: center;
+      min-height: 190px;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      text-decoration: none;
+      background: var(--panel-2);
+    }
+
+    .badge-link svg { width: 72px; height: 72px; margin-bottom: .8rem; }
+
+    .contact {
+      padding: clamp(4rem, 7vw, 6rem) 0;
+      text-align: center;
+    }
+
+    .contact h2 {
+      font-size: clamp(2.4rem, 5vw, 4.5rem);
+      margin-bottom: .8rem;
+    }
+
+    .contact p {
+      max-width: 620px;
+      margin: 0 auto 1.5rem;
+      color: var(--muted);
+    }
+
+    footer {
+      padding: 2rem 0 2.4rem;
+      color: var(--muted);
+      text-align: center;
+      border-top: 1px solid var(--line);
+    }
+
     .footer-links {
       display: flex;
-      justify-content: center;
-      gap: 1.5rem;
       flex-wrap: wrap;
-      margin: .6rem 0 1rem;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: .8rem;
     }
+
     .footer-links a {
-      font-size: .7rem;
-      letter-spacing: .1em;
       color: var(--muted);
       text-decoration: none;
-      text-transform: uppercase;
-      transition: color .2s;
-    }
-    .footer-links a:hover { color: var(--gold); }
-    .footer-copy {
-      font-size: .65rem;
+      font-size: .72rem;
+      font-weight: 800;
       letter-spacing: .1em;
-      color: #41544e;
       text-transform: uppercase;
     }
 
-    /* ── FADE-IN ── */
+    .footer-links a:hover { color: var(--accent); }
+
     .fade-in {
       opacity: 0;
-      transform: translateY(26px);
+      transform: translateY(18px);
       transition: opacity .55s ease, transform .55s ease;
     }
-    .fade-in.visible { opacity: 1; transform: translateY(0); }
 
-    .visible .value-card,
-    .visible .kpi-cell,
-    .visible .challenge-card,
-    .visible .skill-group,
-    .visible .signal-step,
-    #certs-grid.visible > div {
-      animation: cardRise .7s ease backwards;
-      animation-delay: calc(var(--i, 0) * .08s);
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
 
-    .visible .skill-tag {
-      animation: tagPop .42s ease backwards;
-      animation-delay: calc(var(--i, 0) * .035s);
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(33, 185, 255, .46); }
+      70% { box-shadow: 0 0 0 8px rgba(33, 185, 255, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(33, 185, 255, 0); }
     }
 
-    @keyframes cardRise {
-      from { opacity: 0; transform: translateY(18px); }
-      to { opacity: 1; transform: translateY(0); }
+    @keyframes radarSpin {
+      from { transform: translate(-50%, -50%) rotate(0deg); }
+      to { transform: translate(-50%, -50%) rotate(360deg); }
     }
 
-    @keyframes tagPop {
-      from { opacity: 0; transform: translateY(8px); }
-      to { opacity: 1; transform: translateY(0); }
+    @keyframes barIn {
+      from { transform: scaleX(0); }
+      to { transform: scaleX(1); }
     }
 
-    @keyframes kpiBarLoad {
-      from { width: 0; }
-      to { width: var(--bar); }
+    @media (max-width: 980px) {
+      .hero,
+      .scale-layout,
+      .section-head {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 7rem;
+      }
+
+      .profile-panel {
+        max-width: 620px;
+      }
+
+      .metrics,
+      .skills-grid,
+      .cert-grid,
+      .grid-3 {
+        grid-template-columns: repeat(2, 1fr);
+      }
     }
 
-    @keyframes statSweep {
-      0%, 30% { transform: translateX(-120%); opacity: 0; }
-      42%, 62% { opacity: 1; }
-      80%, 100% { transform: translateX(120%); opacity: 0; }
-    }
+    @media (max-width: 760px) {
+      body {
+        background-size: 54px 54px, 54px 54px, auto;
+      }
 
-    @keyframes lineGlow {
-      0%, 100% { opacity: .45; }
-      50% { opacity: 1; }
-    }
+      .nav-links,
+      .top-contact {
+        display: none;
+      }
 
-    @media (max-width: 600px) {
-      .exp-card { padding: 1.4rem 1.2rem; }
-      nav { padding: 0 1.2rem; }
-      .section { padding: 4rem 1.2rem; }
+      .burger {
+        display: flex;
+      }
+
+      .hero-grid,
+      .metrics,
+      .grid-2,
+      .grid-3,
+      .challenge-list,
+      .skills-grid,
+      .cert-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .profile-head {
+        grid-template-columns: 80px 1fr;
+      }
+
+      .profile-photo {
+        width: 80px;
+      }
+
+      .target-map {
+        min-height: 260px;
+      }
+
+      .target {
+        font-size: .54rem;
+        padding: .28rem .36rem;
+      }
+
+      .target:nth-of-type(5),
+      .target:nth-of-type(6) {
+        display: none;
+      }
+
+      .quick-facts {
+        grid-template-columns: 1fr;
+      }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -1304,606 +1034,551 @@
       *::after {
         animation-duration: .001ms !important;
         animation-iteration-count: 1 !important;
-        scroll-behavior: auto !important;
         transition-duration: .001ms !important;
+        scroll-behavior: auto !important;
       }
+
       .fade-in {
         opacity: 1;
         transform: none;
-        filter: none;
       }
     }
   </style>
 </head>
 <body>
-
-<!-- ════════════════ NAV ════════════════ -->
-<nav>
-  <span class="nav-logo">Q. Taffin</span>
-  <ul class="nav-links">
-    <li><a href="#scalefast">ScaleFast</a></li>
-    <li><a href="#bootcamp">Parcours</a></li>
-    <li><a href="#competences">Compétences</a></li>
-    <li><a href="#certifications">Certifications</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-  <div class="nav-cta">
-    <a href="https://www.linkedin.com/in/%F0%9F%9A%80quentin-taffin%F0%9F%A7%91%E2%80%8D%F0%9F%9A%80-3b9aa3246/" target="_blank" rel="noopener">LinkedIn</a>
-    <span class="nav-sep">·</span>
-    <a href="tel:0759019715">07 59 01 97 15</a>
-  </div>
-  <div class="burger" id="burger" aria-label="Menu">
-    <span></span><span></span><span></span>
-  </div>
-</nav>
-
-<div class="mobile-menu" id="mobileMenu">
-  <a href="#scalefast" onclick="closeMobile()">ScaleFast</a>
-  <a href="#bootcamp" onclick="closeMobile()">Parcours</a>
-  <a href="#competences" onclick="closeMobile()">Compétences</a>
-  <a href="#certifications" onclick="closeMobile()">Certifications</a>
-  <a href="#contact" onclick="closeMobile()">Contact</a>
-  <a href="https://www.linkedin.com/in/%F0%9F%9A%80quentin-taffin%F0%9F%A7%91%E2%80%8D%F0%9F%9A%80-3b9aa3246/" target="_blank" rel="noopener" onclick="closeMobile()">LinkedIn</a>
-  <a href="tel:0759019715" onclick="closeMobile()">07 59 01 97 15</a>
-  <a href="mailto:taffinquentin.qt@gmail.com" onclick="closeMobile()">taffinquentin.qt@gmail.com</a>
-</div>
-
-<!-- ════════════════ HERO ════════════════ -->
-<section class="hero" id="top">
-  <div class="radar-targets" aria-hidden="true">
-    <span class="radar-caption">Cibles prospectées</span>
-    <span class="radar-target" style="--x:13%;--y:30%;--delay:.1s">C-level</span>
-    <span class="radar-target" style="--x:86%;--y:30%;--delay:.9s">DSI</span>
-    <span class="radar-target" style="--x:80%;--y:58%;--delay:1.7s">CDO</span>
-    <span class="radar-target" style="--x:18%;--y:58%;--delay:2.5s">Event Manager</span>
-    <span class="radar-target" style="--x:72%;--y:18%;--delay:3.3s">Responsable communication</span>
-    <span class="radar-target" style="--x:28%;--y:18%;--delay:4.1s">Acheteur</span>
-  </div>
-  <img src="./1776410684605.jpg" alt="Quentin Taffin" class="hero-photo" />
-  <div class="hero-eyebrow">Mis à jour · 29 juillet 2026</div>
-  <h1>Quentin <em>Taffin</em></h1>
-  <p class="hero-sub">SDR Outbound B2B · Cold Call C-levels · RDV qualifiés</p>
-  <div class="hero-pitch">
-    <div style="margin-bottom:.7rem"><strong>SDR chez ScaleFast</strong> : outbound sales pour entreprises B2B tech ambitieuses · cold call C-levels sur des comptes data, logiciel et design d'espaces professionnels.</div>
-    <div style="margin-bottom:.7rem"><strong>Commercial depuis mai 2021</strong>, avec 4 ans d'expérience terrain et sédentaire · SDR outbound depuis mars 2026.</div>
-    <div><strong>Vente terrain, télévente, stand</strong> : près de 4 ans d'exécution commerciale avant le SaaS, avec une vraie résistance au volume et aux refus.</div>
-  </div>
-  <div class="hero-proof" aria-label="Résumé SDR">
-    <div class="hero-proof-item">
-      <div class="hero-proof-label">Actuel</div>
-      <div class="hero-proof-value">ScaleFast · SDR en alternance</div>
+  <nav class="topbar" aria-label="Navigation principale">
+    <a class="brand" href="#top" aria-label="Retour en haut">
+      <span class="brand-mark">QT</span>
+      <span>SDR Command Center</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#resultats">Résultats</a></li>
+      <li><a href="#scalefast">ScaleFast</a></li>
+      <li><a href="#parcours">Parcours</a></li>
+      <li><a href="#stack">Stack</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="top-contact">
+      <a href="tel:0759019715">07 59 01 97 15</a>
+      <span>·</span>
+      <a href="mailto:taffinquentin.qt@gmail.com">Email</a>
     </div>
-    <div class="hero-proof-item">
-      <div class="hero-proof-label">Cible</div>
-      <div class="hero-proof-value">C-levels · data · événementiel · communication</div>
-    </div>
-    <div class="hero-proof-item">
-      <div class="hero-proof-label">Mission</div>
-      <div class="hero-proof-value">Cold call · qualification · RDV AE</div>
-    </div>
-  </div>
-  <div class="call-motion" aria-label="Progression SDR animée">
-    <div class="call-motion-head">
-      <span>Outbound live</span>
-      <strong>243 appels +1 min · 28 RDV</strong>
-    </div>
-    <div class="signal-track">
-      <div class="signal-step">
-        <span>01</span>
-        <strong>Cold call</strong>
-        <em>C-levels, data, event managers, acheteurs</em>
-      </div>
-      <div class="signal-step">
-        <span>02</span>
-        <strong>Conversation</strong>
-        <em>Accroche, contexte, objections</em>
-      </div>
-      <div class="signal-step">
-        <span>03</span>
-        <strong>Qualification</strong>
-        <em>Besoin, timing, interlocuteur</em>
-      </div>
-      <div class="signal-step">
-        <span>04</span>
-        <strong>RDV AE</strong>
-        <em>Relais propre aux équipes sales</em>
-      </div>
-    </div>
-  </div>
-  <div class="cta-row">
-    <a href="mailto:taffinquentin.qt@gmail.com" class="btn btn-gold">Me contacter</a>
-    <a href="https://www.linkedin.com/in/%F0%9F%9A%80quentin-taffin%F0%9F%A7%91%E2%80%8D%F0%9F%9A%80-3b9aa3246/" target="_blank" rel="noopener" class="btn btn-outline">LinkedIn</a>
-    <a href="#scalefast" class="btn btn-outline">Parcours ↓</a>
-  </div>
-</section>
+    <button class="burger" id="burger" type="button" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
 
-<!-- ════════════════ STATS BAR ════════════════ -->
-<div class="stats-bar">
-  <div class="stat-item">
-    <span class="stat-value count-up" data-count="11.5" data-decimals="1" data-suffix=" %">11,5 %</span>
-    <span class="stat-label">Conversion RDV · ScaleFast</span>
-  </div>
-  <div class="stat-item">
-    <span class="stat-value">Mai 2021</span>
-    <span class="stat-label">Début commercial · 4 ans d'expérience · SDR depuis mars 2026</span>
-  </div>
-  <div class="stat-item">
-    <span class="stat-value count-up" data-count="28">28</span>
-    <span class="stat-label">RDV qualifiés · ScaleFast</span>
-  </div>
-  <div class="stat-item">
-    <span class="stat-value count-up" data-count="243">243</span>
-    <span class="stat-label">Appels +1 min · ScaleFast</span>
-  </div>
-</div>
-
-<!-- ════════════════ PREUVES RAPIDES ════════════════ -->
-<div class="section compact" id="preuves">
-  <div class="section-header fade-in">
-    <div class="section-eyebrow">Preuves rapides</div>
-    <h2 class="section-title">Ce que je sais prouver vite</h2>
-    <p class="section-desc">Un profil SDR qui sait appeler, apprendre, tenir la cadence et faire remonter un contexte exploitable.</p>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#resultats" onclick="closeMobile()">Résultats</a>
+    <a href="#scalefast" onclick="closeMobile()">ScaleFast</a>
+    <a href="#parcours" onclick="closeMobile()">Parcours</a>
+    <a href="#stack" onclick="closeMobile()">Stack</a>
+    <a href="#certifications" onclick="closeMobile()">Certifications</a>
+    <a href="#contact" onclick="closeMobile()">Contact</a>
   </div>
 
-  <div class="value-grid fade-in">
-    <div class="value-card">
-      <div>
-        <div class="kpi-label">Ouverture</div>
-        <h3 class="value-title">Créer une vraie conversation</h3>
-        <p>Poser le contexte clairement, obtenir le droit de continuer et sortir du réflexe “envoyez-moi un mail”.</p>
+  <main id="top">
+    <section class="shell hero">
+      <div class="hero-copy fade-in">
+        <div class="eyebrow">Mis à jour · 30 juillet 2026</div>
+        <h1>Quentin <span>Taffin</span></h1>
+        <p class="hero-sub">SDR Outbound B2B · Cold Call C-levels · RDV qualifiés</p>
+        <p class="hero-text">
+          SDR chez ScaleFast en alternance. Je prospecte des comptes B2B multi-secteurs, j'ouvre des conversations utiles au téléphone, je qualifie vite le contexte et je transmets des RDV exploitables aux équipes sales.
+        </p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="mailto:taffinquentin.qt@gmail.com">Me contacter</a>
+          <a class="btn btn-secondary" href="https://www.linkedin.com/in/%F0%9F%9A%80quentin-taffin%F0%9F%A7%91%E2%80%8D%F0%9F%9A%80-3b9aa3246/" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="btn btn-ghost" href="#scalefast">Voir les preuves</a>
+        </div>
+        <div class="hero-grid" aria-label="Résumé du profil">
+          <div class="hero-grid-item">
+            <div class="label">Actuel</div>
+            <div class="value">ScaleFast · SDR en alternance</div>
+          </div>
+          <div class="hero-grid-item">
+            <div class="label">Cibles</div>
+            <div class="value">C-levels · Data · Event · Achats</div>
+          </div>
+          <div class="hero-grid-item">
+            <div class="label">Expérience</div>
+            <div class="value">Commercial depuis mai 2021</div>
+          </div>
+        </div>
       </div>
-      <div class="value-foot">Cold call C-level</div>
-    </div>
-    <div class="value-card">
-      <div>
-        <div class="kpi-label">Qualification</div>
-        <h3 class="value-title">Transmettre un RDV utile</h3>
-        <p>Identifier l'enjeu, le timing, le bon interlocuteur et le prochain pas pour éviter les rendez-vous creux.</p>
-      </div>
-      <div class="value-foot">Contexte pour AE</div>
-    </div>
-    <div class="value-card">
-      <div>
-        <div class="kpi-label">Cadence</div>
-        <h3 class="value-title">Rester solide dans le volume</h3>
-        <p>Tenir le rythme, accepter les refus, relancer proprement et garder un CRM lisible sur la durée.</p>
-      </div>
-      <div class="value-foot">Terrain + SDR</div>
-    </div>
-  </div>
-</div>
 
-<!-- ════════════════ EXPÉRIENCES ════════════════ -->
-<div class="section" id="experiences">
-  <div class="section-header fade-in">
-    <div class="section-eyebrow">Parcours</div>
-    <h2 class="section-title">Expériences &amp; résultats</h2>
-    <p class="section-desc">Des chiffres réels, mesurés en conditions de marché.</p>
-  </div>
+      <aside class="profile-panel fade-in" aria-label="Tableau de bord prospecting">
+        <div class="profile-head">
+          <img src="./1776410684605.jpg" alt="Quentin Taffin" class="profile-photo" />
+          <div>
+            <div class="status">En poste</div>
+            <div class="profile-title">Outbound B2B · alternance ScaleFast</div>
+            <div class="profile-sub">3 semaines entreprise · 1 semaine formation Licence BizDev</div>
+          </div>
+        </div>
 
-  <div class="timeline-wrap">
+        <div class="target-map" aria-label="Cibles prospectées">
+          <div class="target-caption">Cibles prospectées</div>
+          <span class="target" style="--x:22%;--y:30%">C-level</span>
+          <span class="target" style="--x:76%;--y:28%">DSI</span>
+          <span class="target" style="--x:78%;--y:58%">CDO</span>
+          <span class="target" style="--x:24%;--y:58%">Event Manager</span>
+          <span class="target" style="--x:50%;--y:74%">Acheteur</span>
+          <span class="target" style="--x:54%;--y:42%">Communication</span>
+        </div>
 
-  <!-- ── SCALEFAST ── -->
-  <div class="exp-card current fade-in" id="scalefast" style="position:relative">
-    <span class="timeline-dot active"></span>
-    <div class="exp-header">
-      <div>
-        <div class="exp-title">SDR · Sales Development Representative</div>
-        <div class="exp-company"><a href="https://scalefast.fr/" target="_blank" rel="noopener" style="color:var(--gold);text-decoration:none;transition:opacity .2s" onmouseover="this.style.opacity='.7'" onmouseout="this.style.opacity='1'">ScaleFast</a> · Alternance</div>
+        <div class="quick-facts">
+          <div class="quick-fact">
+            <strong>243</strong>
+            <span>Appels +1 min</span>
+          </div>
+          <div class="quick-fact">
+            <strong>28</strong>
+            <span>RDV qualifiés</span>
+          </div>
+          <div class="quick-fact">
+            <strong>11,5%</strong>
+            <span>Conversion</span>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <section class="metrics-band" id="resultats">
+      <div class="shell metrics" aria-label="Résultats clés">
+        <div class="metric" style="--i:0">
+          <div class="metric-value count-up" data-count="11.5" data-decimals="1" data-suffix="%">11,5%</div>
+          <div class="metric-label">Conversion RDV · ScaleFast</div>
+        </div>
+        <div class="metric" style="--i:1">
+          <div class="metric-value">Mai 2021</div>
+          <div class="metric-label">Début commercial · 4 ans d'expérience</div>
+        </div>
+        <div class="metric" style="--i:2">
+          <div class="metric-value count-up" data-count="28">28</div>
+          <div class="metric-label">RDV qualifiés · ScaleFast</div>
+        </div>
+        <div class="metric" style="--i:3">
+          <div class="metric-value count-up" data-count="243">243</div>
+          <div class="metric-label">Appels +1 min · ScaleFast</div>
+        </div>
       </div>
-      <span class="exp-period live"><span class="pulse-dot"></span>En poste · depuis le 22 juin 2026</span>
-    </div>
-    <p class="exp-desc">
-      ScaleFast accompagne des entreprises B2B tech ambitieuses sur leur outbound sales. Je prospecte sur un portefeuille multi-clients dans plusieurs secteurs : data, logiciel, design d'espaces professionnels et événementiel B2B. Je contacte des C-levels, directions data, directions métiers, event managers, responsables communication, directions marketing et acheteurs pour ouvrir des conversations utiles, qualifier le contexte et transmettre des RDV exploitables aux équipes sales. Rythme alternance : <strong style="color:var(--text)">3 semaines en entreprise · 1 semaine en formation</strong> (Licence BizDev).
-    </p>
-    <div class="kpi-grid">
-      <div class="kpi-cell">
-        <div class="kpi-label">Activité principale</div>
-        <div class="kpi-value">Cold call outbound pur · <strong>prospection téléphonique intensive</strong> sur comptes B2B à enjeu · appels décrochés (durée &gt; 1 min)</div>
-      </div>
-      <div class="kpi-cell">
-        <div class="kpi-label">Cibles &amp; secteurs</div>
-        <div class="kpi-value"><strong>C-levels, DSI / CDO, directions data, directions métiers, event managers, responsables communication, directions marketing et acheteurs</strong> · comptes B2B data, logiciel, design d'espaces professionnels et événementiel</div>
-      </div>
-      <div class="kpi-cell">
-        <div class="kpi-label">Livrable</div>
-        <div class="kpi-value">RDV qualifiés avec contexte clair pour les équipes <strong>Account Executive</strong> des comptes accompagnés</div>
-      </div>
-      <div class="kpi-cell">
-        <div class="kpi-label">KPI Alternance · Live</div>
-        <div class="kpi-value challenge-stat highlight kpi-live" style="font-size:.88rem">
-          <div class="kpi-live-total"><strong>243 appels +1 min</strong> · <strong>28 RDV</strong> · <strong>11,5 % de conversion</strong></div>
-          <div class="kpi-flow" aria-label="Répartition des RDV ScaleFast">
-            <div class="kpi-flow-row" style="--bar:68%;--delay:.1s">
-              <div class="kpi-flow-head">
-                <span>Data / logiciel</span>
-                <strong>188 appels +1 min · 19 RDV · 10,1 %</strong>
-              </div>
-              <div class="kpi-bar" aria-hidden="true"><span></span></div>
+    </section>
+
+    <section class="section" id="scalefast">
+      <div class="shell">
+        <div class="section-head fade-in">
+          <div>
+            <div class="section-kicker">Mission actuelle</div>
+            <h2>ScaleFast, outbound multi-secteurs.</h2>
+          </div>
+          <p class="section-desc">
+            Portefeuille multi-clients, sans citer les noms des comptes accompagnés. Prospection téléphonique intensive, découverte rapide, traitement des objections et passage de relais propre aux équipes Account Executive.
+          </p>
+        </div>
+
+        <div class="scale-layout fade-in">
+          <div class="scale-main">
+            <h3>Cold call utile, contexte clair, RDV exploitable.</h3>
+            <p>
+              Je contacte des C-levels, DSI / CDO, directions data, directions métiers, event managers, responsables communication, directions marketing et acheteurs pour ouvrir des conversations utiles et qualifier le potentiel.
+            </p>
+            <div class="sector-tags">
+              <span class="tag">Data</span>
+              <span class="tag">Logiciel</span>
+              <span class="tag">Design d'espaces pros</span>
+              <span class="tag">Événementiel B2B</span>
+              <span class="tag">C-levels</span>
+              <span class="tag">Achats</span>
             </div>
-            <div class="kpi-flow-row" style="--bar:29%;--delay:.24s">
-              <div class="kpi-flow-head">
-                <span>Événementiel</span>
-                <strong>55 appels +1 min · 8 RDV · 14,5 %</strong>
+          </div>
+          <div class="scale-side">
+            <div class="pipeline">
+              <div class="pipeline-row">
+                <div class="pipeline-head">
+                  <span>Total live</span>
+                  <span>243 appels +1 min · 28 RDV · 11,5%</span>
+                </div>
+                <div class="progress"><span style="--w:100%;--d:.05s"></span></div>
               </div>
-              <div class="kpi-bar" aria-hidden="true"><span></span></div>
-            </div>
-            <div class="kpi-flow-row" style="--bar:4%;--delay:.38s">
-              <div class="kpi-flow-head">
-                <span>ScaleFast direct LinkedIn</span>
-                <strong>1 RDV</strong>
+              <div class="pipeline-row">
+                <div class="pipeline-head">
+                  <span>Data / logiciel</span>
+                  <span>188 appels · 19 RDV · 10,1%</span>
+                </div>
+                <div class="progress"><span style="--w:68%;--d:.15s"></span></div>
               </div>
-              <div class="kpi-bar" aria-hidden="true"><span></span></div>
+              <div class="pipeline-row">
+                <div class="pipeline-head">
+                  <span>Événementiel</span>
+                  <span>55 appels · 8 RDV · 14,5%</span>
+                </div>
+                <div class="progress"><span style="--w:29%;--d:.25s"></span></div>
+              </div>
+              <div class="pipeline-row">
+                <div class="pipeline-head">
+                  <span>ScaleFast direct LinkedIn</span>
+                  <span>1 RDV</span>
+                </div>
+                <div class="progress"><span style="--w:4%;--d:.35s"></span></div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
+    </section>
 
-  <!-- ── BOOTCAMP ── -->
-  <div class="exp-card fade-in" id="bootcamp" style="position:relative">
-    <span class="timeline-dot"></span>
-    <div class="exp-header">
-      <div>
-        <div class="exp-title">Business Developer · SDR Outbound</div>
-        <div class="exp-company">Farahon · Le Spot · Pareto · Programme Intensif Sales Development</div>
-      </div>
-      <span class="exp-period">Mars 2026 · Juin 2026 · 4 mois</span>
-    </div>
-    <p class="exp-desc">
-      Entraînement intensif aux méthodes modernes de Sales Development : construire une cible, rédiger une séquence, appeler, apprendre et mesurer. Trois entreprises clientes accompagnées lors de challenges de prospection chronométrés et évalués.
-    </p>
-
-    <div class="challenges-grid">
-      <div class="challenge-card">
-        <div class="rank-text gold">1er / 4</div>
-        <div class="challenge-name">
-          <a href="https://soscard.me/" target="_blank" rel="noopener">Farahon · soscard.me</a>
-          <span class="sector-pill">Médical</span>
+    <section class="section">
+      <div class="shell">
+        <div class="section-head fade-in">
+          <div>
+            <div class="section-kicker">Preuves rapides</div>
+            <h2>Ce que je sais prouver vite.</h2>
+          </div>
+          <p class="section-desc">Le portfolio ne vend pas une promesse floue : il montre une capacité à appeler, structurer, encaisser les refus et transmettre une information commerciale utile.</p>
         </div>
-        <div class="challenge-stat"><strong>105 appels</strong> passés</div>
-        <div class="challenge-stat"><strong>10 RDV</strong> décrochés</div>
-        <div class="challenge-stat highlight">9,5 % de conversion</div>
-        <div class="challenge-note">2 semaines de préparation : stratégie de lancement commercial, emailing, script · puis 1 semaine de call intensif.</div>
-      </div>
-      <div class="challenge-card">
-        <div class="rank-text gold">1er / 4</div>
-        <div class="challenge-name">
-          <a href="https://www.paretolearning.fr/" target="_blank" rel="noopener">Pareto Learning</a>
-          <span class="sector-pill">Formation</span>
-        </div>
-        <div class="challenge-stat"><strong>268 appels</strong> passés</div>
-        <div class="challenge-stat"><strong>3 RDV</strong> décrochés</div>
-        <div class="challenge-stat">Sur 4 présentations</div>
-        <div class="challenge-note">2 semaines pour construire la liste de leads et maîtriser le script · puis 1 semaine de call intensif.</div>
-      </div>
-      <div class="challenge-card">
-        <div class="rank-text bronze">3ème / 4</div>
-        <div class="challenge-name">
-          <a href="https://www.lespot.tech/" target="_blank" rel="noopener">Le Spot</a>
-          <span class="sector-pill">Événementiel</span>
-        </div>
-        <div class="challenge-stat"><strong>50 appels</strong> passés · 0 RDV</div>
-        <div class="challenge-note">Ciblage et proposition de valeur à clarifier. Go/no-go posé en 50 appels. Leçon retenue : sans fondations commerciales solides, le volume ne sauve pas.</div>
-      </div>
-    </div>
 
-    <div class="kpi-grid" style="margin-top:1px">
-      <div class="kpi-cell">
-        <div class="kpi-label">Méthode</div>
-        <div class="kpi-value">Cold calling intensif · traitement des objections en temps réel</div>
-      </div>
-      <div class="kpi-cell">
-        <div class="kpi-label">Data</div>
-        <div class="kpi-value">Construction &amp; enrichissement de bases prospects · Growth Hacking</div>
-      </div>
-      <div class="kpi-cell">
-        <div class="kpi-label">Pitch</div>
-        <div class="kpi-value">Structuration de discours commercial percutant axé sur la valeur</div>
-      </div>
-      <div class="kpi-cell">
-        <div class="kpi-label">Environnement</div>
-        <div class="kpi-value">SaaS B2B · méthodes modernes · outils CRM</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ── TERRAIN ── -->
-  <div class="exp-card fade-in" id="terrain" style="position:relative">
-    <span class="timeline-dot"></span>
-    <div class="exp-header">
-      <div>
-        <div class="exp-title">Commercial Terrain · Téléphonique · Animateur Stand</div>
-        <div class="exp-company">Indépendant · Multi-secteurs</div>
-      </div>
-      <span class="exp-period">Mai 2021 · Fév. 2025 · 3 ans 10 mois</span>
-    </div>
-    <p class="exp-desc">
-      Près de 4 ans en autonomie sur des cycles de vente courts et compétitifs. Porte-à-porte, GMS, télévente : régularité malgré le volume, le refus et la pression du résultat.
-    </p>
-    <div class="kpi-grid">
-      <div class="kpi-cell">
-        <div class="kpi-label">Verisure</div>
-        <div class="kpi-value">
-          <strong>3 reprises / jour</strong> · nouveaux occupants convaincus de souscrire après départ du client précédent<br /><br />
-          <strong>27 % de rétention résiliation</strong> · clients ayant demandé à résilier et convaincus de rester
+        <div class="grid-3 fade-in">
+          <article class="tile">
+            <div class="label">Ouverture</div>
+            <h3 class="tile-title">Créer une vraie conversation</h3>
+            <p>Poser le contexte, obtenir le droit de continuer et sortir du réflexe “envoyez-moi un mail”.</p>
+          </article>
+          <article class="tile">
+            <div class="label">Qualification</div>
+            <h3 class="tile-title">Transmettre un RDV utile</h3>
+            <p>Faire remonter besoin, timing, interlocuteur, objections et niveau d'intérêt exploitable.</p>
+          </article>
+          <article class="tile">
+            <div class="label">Cadence</div>
+            <h3 class="tile-title">Tenir le volume</h3>
+            <p>Garder le rythme, relancer proprement et maintenir une hygiène CRM lisible.</p>
+          </article>
         </div>
       </div>
-      <div class="kpi-cell">
-        <div class="kpi-label">Bouygues · Engie · La Voix du Nord</div>
-        <div class="kpi-value">Prospection terrain (porte-à-porte, GMS, stand) · <strong>50 ventes / mois</strong> en moyenne sur plusieurs secteurs</div>
+    </section>
+
+    <section class="section" id="parcours">
+      <div class="shell">
+        <div class="section-head fade-in">
+          <div>
+            <div class="section-kicker">Parcours</div>
+            <h2>Terrain, bootcamp, SDR.</h2>
+          </div>
+          <p class="section-desc">Un profil construit par l'exécution commerciale : vente terrain, télévente, stand, puis prospection outbound B2B.</p>
+        </div>
+
+        <div class="timeline">
+          <article class="timeline-card current fade-in">
+            <div class="timeline-top">
+              <div>
+                <div class="timeline-title">SDR · Sales Development Representative</div>
+                <div class="timeline-company"><a href="https://scalefast.fr/" target="_blank" rel="noopener">ScaleFast</a> · Alternance</div>
+              </div>
+              <div class="timeline-period">Depuis le 22 juin 2026</div>
+            </div>
+            <p>Outbound sales B2B en rythme alternance. Appels +1 min, RDV qualifiés, cibles C-levels/data/métiers/événementiel, sans citer les clients accompagnés.</p>
+          </article>
+
+          <article class="timeline-card fade-in">
+            <div class="timeline-top">
+              <div>
+                <div class="timeline-title">Business Developer · SDR Outbound</div>
+                <div class="timeline-company">Farahon · Le Spot · Pareto · Programme Intensif Sales Development</div>
+              </div>
+              <div class="timeline-period">Mars 2026 · Juin 2026</div>
+            </div>
+            <p>Entraînement intensif aux méthodes modernes de Sales Development : construire une cible, rédiger une séquence, appeler, apprendre et mesurer.</p>
+            <div class="challenge-list">
+              <div class="challenge">
+                <strong>Farahon</strong>
+                <span>105 appels · 10 RDV · 9,5% conversion</span>
+              </div>
+              <div class="challenge">
+                <strong>Pareto</strong>
+                <span>268 appels · 3 RDV · liste + script</span>
+              </div>
+              <div class="challenge">
+                <strong>Le Spot</strong>
+                <span>50 appels · leçon ciblage & proposition de valeur</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="timeline-card fade-in">
+            <div class="timeline-top">
+              <div>
+                <div class="timeline-title">Commercial terrain · téléphonique · stand</div>
+                <div class="timeline-company">Indépendant · multi-secteurs</div>
+              </div>
+              <div class="timeline-period">Mai 2021 · Fév. 2025</div>
+            </div>
+            <p>Près de 4 ans en autonomie sur des cycles courts : porte-à-porte, GMS, télévente, résistance au volume et à la pression du résultat.</p>
+            <div class="challenge-list">
+              <div class="challenge">
+                <strong>Verisure</strong>
+                <span>3 reprises / jour · 27% rétention résiliation</span>
+              </div>
+              <div class="challenge">
+                <strong>Bouygues · Engie · La Voix du Nord</strong>
+                <span>50 ventes / mois en moyenne</span>
+              </div>
+              <div class="challenge">
+                <strong>Comme J'aime</strong>
+                <span>10 ventes / semaine · closing direct</span>
+              </div>
+            </div>
+          </article>
+        </div>
       </div>
-      <div class="kpi-cell">
-        <div class="kpi-label">Comme J'aime · Télévente B2C</div>
-        <div class="kpi-value">Vente téléphonique intensive · closing direct · <strong>10 ventes / semaine</strong> en moyenne · psychologie d'achat</div>
+    </section>
+
+    <section class="section" id="stack">
+      <div class="shell">
+        <div class="section-head fade-in">
+          <div>
+            <div class="section-kicker">Stack</div>
+            <h2>Compétences & outils.</h2>
+          </div>
+          <p class="section-desc">Une boîte à outils orientée prospection, qualification, sourcing et suivi CRM.</p>
+        </div>
+
+        <div class="skills-grid fade-in">
+          <div class="skill-box">
+            <h3>Prospection outbound</h3>
+            <div class="skill-tags">
+              <span class="tag">Cold calling</span>
+              <span class="tag">Opening call</span>
+              <span class="tag">Email sequences</span>
+              <span class="tag">LinkedIn</span>
+              <span class="tag">Relances</span>
+            </div>
+          </div>
+          <div class="skill-box">
+            <h3>Sales Development</h3>
+            <div class="skill-tags">
+              <span class="tag">Qualification ICP</span>
+              <span class="tag">Prise de RDV</span>
+              <span class="tag">Objections</span>
+              <span class="tag">Découverte rapide</span>
+              <span class="tag">Hygiène CRM</span>
+            </div>
+          </div>
+          <div class="skill-box">
+            <h3>Growth & data</h3>
+            <div class="skill-tags">
+              <span class="tag">Sourcing</span>
+              <span class="tag">Enrichissement</span>
+              <span class="tag">Segmentation</span>
+              <span class="tag">KPI tracking</span>
+              <span class="tag">Scraping</span>
+            </div>
+          </div>
+          <div class="skill-box">
+            <h3>CRM · séquences · téléphonie</h3>
+            <div class="skill-tags">
+              <span class="tag">HubSpot</span>
+              <span class="tag">Notion</span>
+              <span class="tag">Apollo</span>
+              <span class="tag">Lemlist</span>
+              <span class="tag">Brevo</span>
+              <span class="tag">Ringover</span>
+            </div>
+          </div>
+          <div class="skill-box">
+            <h3>Sourcing & enrichissement</h3>
+            <div class="skill-tags">
+              <span class="tag">Sales Navigator</span>
+              <span class="tag">Zeliq</span>
+              <span class="tag">PhantomBuster</span>
+              <span class="tag">Dropcontact</span>
+              <span class="tag">ContactOut</span>
+              <span class="tag">Lusha</span>
+            </div>
+          </div>
+          <div class="skill-box">
+            <h3>Secteurs</h3>
+            <div class="skill-tags">
+              <span class="tag">SaaS B2B</span>
+              <span class="tag">Télécoms</span>
+              <span class="tag">Énergie</span>
+              <span class="tag">Sécurité</span>
+              <span class="tag">Santé</span>
+              <span class="tag">Événementiel</span>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="kpi-cell">
-        <div class="kpi-label">Compétences validées</div>
-        <div class="kpi-value">Traitement des objections · régularité haute cadence · qualification B2B/B2C · pipeline structuré</div>
+    </section>
+
+    <section class="section" id="certifications">
+      <div class="shell">
+        <div class="section-head fade-in">
+          <div>
+            <div class="section-kicker">Certifications</div>
+            <h2>Formation & preuves.</h2>
+          </div>
+          <p class="section-desc">Certifications EF English Live et badge CNES obtenus en 2026.</p>
+        </div>
+
+        <div class="cert-grid fade-in">
+          <article class="cert">
+            <div>
+              <div class="label">Business English · Telephoning</div>
+              <div class="tile-title">EF English Live</div>
+              <p>16 mai 2026</p>
+            </div>
+            <a href="./certificate-business-english-telephoning-2026-05-16.png" target="_blank" rel="noopener">
+              <img src="./certificate-business-english-telephoning-2026-05-16.png" alt="Certificate Business English Telephoning" />
+            </a>
+          </article>
+
+          <article class="cert">
+            <div>
+              <div class="label">General English · Level 7 · CEFR B1</div>
+              <div class="tile-title">EF English Live</div>
+              <p>21 juin 2026</p>
+            </div>
+            <a href="./certificate-general-english-7-2026-06-21.png" target="_blank" rel="noopener">
+              <img src="./certificate-general-english-7-2026-06-21.png" alt="Certificate General English Level 7 B1" />
+            </a>
+          </article>
+
+          <article class="cert">
+            <div>
+              <div class="label">MOOC Espace · Score ≥ 70%</div>
+              <div class="tile-title">CNES · France Université Numérique</div>
+              <p>15 mai 2026</p>
+            </div>
+            <a class="badge-link" href="./2026-05-15_mooc-espace-centre-national-d-etudes-spatiales-badge-de-reussite-fr.pdf" target="_blank" rel="noopener">
+              <div>
+                <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <circle cx="40" cy="40" r="36" fill="none" stroke="rgba(54,233,159,.35)" stroke-width="1"/>
+                  <circle cx="40" cy="40" r="26" fill="none" stroke="rgba(33,185,255,.24)" stroke-width="1"/>
+                  <circle cx="40" cy="40" r="5" fill="#36e99f"/>
+                  <ellipse cx="40" cy="40" rx="19" ry="7" fill="none" stroke="#36e99f" stroke-width="1" opacity=".55"/>
+                  <ellipse cx="40" cy="40" rx="19" ry="7" fill="none" stroke="#21b9ff" stroke-width="1" opacity=".45" transform="rotate(62 40 40)"/>
+                  <ellipse cx="40" cy="40" rx="19" ry="7" fill="none" stroke="#21b9ff" stroke-width="1" opacity=".45" transform="rotate(118 40 40)"/>
+                </svg>
+                <div class="label">Voir le badge PDF</div>
+              </div>
+            </a>
+          </article>
+        </div>
       </div>
-    </div>
-  </div>
+    </section>
 
-  </div>
-</div>
-
-<!-- ════════════════ COMPÉTENCES ════════════════ -->
-<hr class="divider" />
-
-<div class="section" id="competences">
-  <div class="section-header fade-in">
-    <div class="section-eyebrow">Stack</div>
-    <h2 class="section-title">Compétences &amp; outils</h2>
-  </div>
-
-  <div class="skills-grid fade-in">
-    <div class="skill-group">
-      <div class="skill-group-title">Prospection Outbound</div>
-      <span class="skill-tag">Cold calling</span>
-      <span class="skill-tag">Opening call</span>
-      <span class="skill-tag">Porte-à-porte</span>
-      <span class="skill-tag">Email sequences</span>
-      <span class="skill-tag">LinkedIn</span>
-      <span class="skill-tag">Relances</span>
-    </div>
-    <div class="skill-group">
-      <div class="skill-group-title">Sales Development</div>
-      <span class="skill-tag">Qualification ICP</span>
-      <span class="skill-tag">Prise de RDV</span>
-      <span class="skill-tag">Traitement objections</span>
-      <span class="skill-tag">Découverte rapide</span>
-      <span class="skill-tag">Hygiène CRM</span>
-    </div>
-    <div class="skill-group">
-      <div class="skill-group-title">Growth &amp; Data</div>
-      <span class="skill-tag">Sourcing prospects</span>
-      <span class="skill-tag">Enrichissement data</span>
-      <span class="skill-tag">Segmentation</span>
-      <span class="skill-tag">KPI tracking</span>
-    </div>
-    <div class="skill-group">
-      <div class="skill-group-title">Secteurs</div>
-      <span class="skill-tag">SaaS B2B</span>
-      <span class="skill-tag">Télécoms</span>
-      <span class="skill-tag">Énergie</span>
-      <span class="skill-tag">Sécurité</span>
-      <span class="skill-tag">Santé</span>
-    </div>
-    <div class="skill-group" style="grid-column: 1 / -1;">
-      <div class="skill-group-title">CRM · Séquences · Téléphonie</div>
-      <span class="skill-tag">HubSpot</span>
-      <span class="skill-tag">Notion</span>
-      <span class="skill-tag">Apollo</span>
-      <span class="skill-tag">Lemlist</span>
-      <span class="skill-tag">Brevo</span>
-      <span class="skill-tag">Ringover</span>
-      <span class="skill-tag">Allo</span>
-    </div>
-    <div class="skill-group" style="grid-column: 1 / -1;">
-      <div class="skill-group-title">Sourcing · Enrichissement · Scraping</div>
-      <span class="skill-tag">LinkedIn Sales Navigator</span>
-      <span class="skill-tag">Zeliq</span>
-      <span class="skill-tag">PhantomBuster</span>
-      <span class="skill-tag">Dropcontact</span>
-      <span class="skill-tag">ContactOut</span>
-      <span class="skill-tag">Lusha</span>
-      <span class="skill-tag">Jipup</span>
-      <span class="skill-tag">Instant Data Scraper</span>
-      <span class="skill-tag">SimpleScraper</span>
-    </div>
-  </div>
-</div>
-
-<!-- ════════════════ CERTIFICATIONS ════════════════ -->
-<hr class="divider" />
-
-<div class="section" id="certifications">
-  <div class="section-header fade-in">
-    <div class="section-eyebrow">Certifications</div>
-    <h2 class="section-title">Formations &amp; Certifications</h2>
-    <p class="section-desc">EF English Live · CNES · badges obtenus en 2026.</p>
-  </div>
-
-  <div class="fade-in" style="display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:3px;overflow:hidden" id="certs-grid">
-  <style>@media(max-width:800px){#certs-grid{grid-template-columns:1fr!important}}</style>
-
-    <div style="background:var(--surface2);padding:1.4rem;display:flex;flex-direction:column;gap:1.1rem">
-      <div>
-        <div class="kpi-label">Business English · Telephoning</div>
-        <div style="font-family:'Cormorant Garant',serif;font-size:1.2rem;color:var(--text);margin:.3rem 0">EF English Live</div>
-        <div style="font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)">16 mai 2026</div>
+    <section class="contact shell" id="contact">
+      <div class="fade-in">
+        <div class="section-kicker">Contact</div>
+        <h2>On discute ?</h2>
+        <p>Tu veux échanger sur mon profil, une opportunité SDR ou un sujet de prospection B2B ? Envoie-moi un message, je réponds vite.</p>
+        <div class="cta-row" style="justify-content:center">
+          <a href="mailto:taffinquentin.qt@gmail.com" class="btn btn-primary">taffinquentin.qt@gmail.com</a>
+          <a href="tel:0759019715" class="btn btn-secondary">07 59 01 97 15</a>
+          <a href="https://www.linkedin.com/in/%F0%9F%9A%80quentin-taffin%F0%9F%A7%91%E2%80%8D%F0%9F%9A%80-3b9aa3246/" target="_blank" rel="noopener" class="btn btn-ghost">LinkedIn</a>
+        </div>
       </div>
-      <a href="./certificate-business-english-telephoning-2026-05-16.png" target="_blank" rel="noopener" style="display:block;border:1px solid var(--border);border-radius:2px;overflow:hidden;transition:border-color .2s" onmouseover="this.style.borderColor='var(--gold)'" onmouseout="this.style.borderColor='var(--border)'">
-        <img src="./certificate-business-english-telephoning-2026-05-16.png" alt="Certificate Business English Telephoning" style="width:100%;display:block;opacity:.85;transition:opacity .2s" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='.85'" />
-      </a>
-    </div>
+    </section>
+  </main>
 
-    <div style="background:var(--surface2);padding:1.4rem;display:flex;flex-direction:column;gap:1.1rem">
-      <div>
-        <div class="kpi-label">General English · Level 7 · CEFR B1</div>
-        <div style="font-family:'Cormorant Garant',serif;font-size:1.2rem;color:var(--text);margin:.3rem 0">EF English Live</div>
-        <div style="font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)">21 juin 2026</div>
+  <footer>
+    <div class="shell">
+      <div class="footer-links">
+        <a href="mailto:taffinquentin.qt@gmail.com">Email</a>
+        <a href="tel:0759019715">Téléphone</a>
+        <a href="https://www.linkedin.com/in/%F0%9F%9A%80quentin-taffin%F0%9F%A7%91%E2%80%8D%F0%9F%9A%80-3b9aa3246/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://scalefast.fr/" target="_blank" rel="noopener">ScaleFast</a>
       </div>
-      <a href="./certificate-general-english-7-2026-06-21.png" target="_blank" rel="noopener" style="display:block;border:1px solid var(--border);border-radius:2px;overflow:hidden;transition:border-color .2s" onmouseover="this.style.borderColor='var(--gold)'" onmouseout="this.style.borderColor='var(--border)'">
-        <img src="./certificate-general-english-7-2026-06-21.png" alt="Certificate General English Level 7 B1" style="width:100%;display:block;opacity:.85;transition:opacity .2s" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='.85'" />
-      </a>
+      <div>© 2026 · Quentin Taffin · SDR Outbound B2B</div>
     </div>
+  </footer>
 
-    <div style="background:var(--surface2);padding:1.4rem;display:flex;flex-direction:column;gap:1.1rem">
-      <div>
-        <div class="kpi-label">MOOC Espace · Score ≥ 70 %</div>
-        <div style="font-family:'Cormorant Garant',serif;font-size:1.2rem;color:var(--text);margin:.3rem 0">CNES · France Université Numérique</div>
-        <div style="font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)">15 mai 2026</div>
-      </div>
-      <a href="./2026-05-15_mooc-espace-centre-national-d-etudes-spatiales-badge-de-reussite-fr.pdf" target="_blank" rel="noopener" style="display:block;border:1px solid var(--border);border-radius:2px;overflow:hidden;transition:border-color .2s;background:var(--surface);padding:2rem 1rem;text-align:center" onmouseover="this.style.borderColor='var(--gold)'" onmouseout="this.style.borderColor='var(--border)'">
-        <svg viewBox="0 0 80 80" width="64" height="64" xmlns="http://www.w3.org/2000/svg" style="display:block;margin:0 auto 1rem">
-          <circle cx="40" cy="40" r="36" fill="none" stroke="rgba(48,227,154,.25)" stroke-width="1"/>
-          <circle cx="40" cy="40" r="28" fill="none" stroke="rgba(32,183,255,.16)" stroke-width="1"/>
-          <circle cx="40" cy="40" r="5" fill="#30e39a" opacity=".9"/>
-          <ellipse cx="40" cy="40" rx="18" ry="7" fill="none" stroke="#30e39a" stroke-width="1" opacity=".5"/>
-          <ellipse cx="40" cy="40" rx="18" ry="7" fill="none" stroke="#20b7ff" stroke-width="1" opacity=".3" transform="rotate(60 40 40)"/>
-          <ellipse cx="40" cy="40" rx="18" ry="7" fill="none" stroke="#20b7ff" stroke-width="1" opacity=".3" transform="rotate(120 40 40)"/>
-          <circle cx="58" cy="40" r="2" fill="#30e39a" opacity=".6"/>
-          <circle cx="49" cy="26" r="1.5" fill="#20b7ff" opacity=".45"/>
-        </svg>
-        <div style="font-size:.65rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:.3rem">Open Badge · Vérifié</div>
-        <div style="font-size:.72rem;color:var(--muted)">Voir le badge PDF</div>
-      </a>
-    </div>
+  <script>
+    const root = document.documentElement;
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  </div>
-</div>
+    const fadeObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.08 });
 
-<!-- ════════════════ CONTACT ════════════════ -->
-<div class="contact-section" id="contact">
-  <div class="contact-inner fade-in">
-    <div class="section-eyebrow" style="justify-content:center">Contact</div>
-    <h2 class="section-title" style="font-size:clamp(2rem,5vw,3.5rem)">On discute ?</h2>
-    <p>Tu veux échanger sur mon profil, une opportunité SDR ou un sujet de prospection B2B ? Envoie-moi un message, je réponds vite.</p>
-    <div class="contact-links">
-      <a href="mailto:taffinquentin.qt@gmail.com" class="btn btn-gold">taffinquentin.qt@gmail.com</a>
-      <a href="tel:0759019715" class="btn btn-outline">07 59 01 97 15</a>
-      <a href="https://www.linkedin.com/in/%F0%9F%9A%80quentin-taffin%F0%9F%A7%91%E2%80%8D%F0%9F%9A%80-3b9aa3246/" target="_blank" rel="noopener" class="btn btn-outline">LinkedIn</a>
-    </div>
-  </div>
-</div>
+    document.querySelectorAll('.fade-in').forEach(el => fadeObserver.observe(el));
 
-<!-- ════════════════ FOOTER ════════════════ -->
-<footer>
-  <div class="footer-name">Quentin Taffin</div>
-  <div class="footer-links">
-    <a href="mailto:taffinquentin.qt@gmail.com">taffinquentin.qt@gmail.com</a>
-    <a href="tel:0759019715">07 59 01 97 15</a>
-    <a href="https://www.linkedin.com/in/%F0%9F%9A%80quentin-taffin%F0%9F%A7%91%E2%80%8D%F0%9F%9A%80-3b9aa3246/" target="_blank" rel="noopener">LinkedIn</a>
-    <a href="https://scalefast.fr/" target="_blank" rel="noopener">ScaleFast</a>
-    <a href="#certifications">Certifications</a>
-  </div>
-  <div class="footer-copy">© 2026 · Quentin Taffin</div>
-</footer>
-
-<script>
-  const root = document.documentElement;
-  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  document.querySelectorAll('.stat-item').forEach((el, i) => el.style.setProperty('--i', i));
-  document.querySelectorAll('.value-grid, .kpi-grid, .challenges-grid, .signal-track, #certs-grid').forEach(group => {
-    Array.from(group.children).forEach((el, i) => el.style.setProperty('--i', i));
-  });
-  document.querySelectorAll('.skill-group').forEach((group, groupIndex) => {
-    group.style.setProperty('--i', groupIndex);
-    group.querySelectorAll('.skill-tag').forEach((tag, i) => tag.style.setProperty('--i', i));
-  });
-
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-  }, { threshold: 0.08 });
-  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-
-  function formatCount(value, decimals, suffix) {
-    const formatted = Number(value).toFixed(decimals).replace('.', ',');
-    return formatted + suffix;
-  }
-
-  function animateCount(el) {
-    if (el.dataset.done) return;
-    el.dataset.done = 'true';
-
-    const target = Number(el.dataset.count);
-    const decimals = Number(el.dataset.decimals || 0);
-    const suffix = el.dataset.suffix || '';
-
-    if (reduceMotion) {
-      el.textContent = formatCount(target, decimals, suffix);
-      return;
+    function formatCount(value, decimals, suffix) {
+      return Number(value).toFixed(decimals).replace('.', ',') + suffix;
     }
 
-    const duration = 1200;
-    const start = performance.now();
-    const tick = now => {
-      const progress = Math.min((now - start) / duration, 1);
-      const eased = 1 - Math.pow(1 - progress, 3);
-      el.textContent = formatCount(target * eased, decimals, suffix);
-      if (progress < 1) requestAnimationFrame(tick);
-    };
-    requestAnimationFrame(tick);
-  }
+    function animateCount(el) {
+      if (el.dataset.done) return;
+      el.dataset.done = 'true';
+      const target = Number(el.dataset.count);
+      const decimals = Number(el.dataset.decimals || 0);
+      const suffix = el.dataset.suffix || '';
 
-  const statsObserver = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.querySelectorAll('.count-up').forEach(animateCount);
-        statsObserver.unobserve(e.target);
+      if (reduceMotion) {
+        el.textContent = formatCount(target, decimals, suffix);
+        return;
       }
-    });
-  }, { threshold: 0.35 });
-  const statsBar = document.querySelector('.stats-bar');
-  if (statsBar) statsObserver.observe(statsBar);
 
-  function updateScrollProgress() {
-    const max = document.documentElement.scrollHeight - window.innerHeight;
-    const progress = max > 0 ? (window.scrollY / max) * 100 : 0;
-    root.style.setProperty('--scroll-progress', progress + '%');
+      const start = performance.now();
+      const duration = 1100;
+      const tick = now => {
+        const progress = Math.min((now - start) / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        el.textContent = formatCount(target * eased, decimals, suffix);
+        if (progress < 1) requestAnimationFrame(tick);
+      };
+      requestAnimationFrame(tick);
+    }
 
-    document.querySelectorAll('.timeline-wrap').forEach(timeline => {
-      const rect = timeline.getBoundingClientRect();
-      const drawable = Math.max(rect.height - 36, 1);
-      const active = Math.min(Math.max(window.innerHeight * .62 - rect.top, 0), drawable);
-      timeline.style.setProperty('--timeline-progress', (active / drawable) * 100 + '%');
-    });
-  }
+    const metricObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.querySelectorAll('.count-up').forEach(animateCount);
+          metricObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.35 });
 
-  let scrollTicking = false;
-  function requestScrollUpdate() {
-    if (scrollTicking) return;
-    scrollTicking = true;
-    requestAnimationFrame(() => {
-      updateScrollProgress();
-      scrollTicking = false;
-    });
-  }
+    const metrics = document.querySelector('.metrics');
+    if (metrics) metricObserver.observe(metrics);
 
-  window.addEventListener('scroll', requestScrollUpdate, { passive: true });
-  window.addEventListener('resize', updateScrollProgress);
-  updateScrollProgress();
+    const navLinks = document.querySelectorAll('.nav-links a');
+    function updateScroll() {
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = max > 0 ? (window.scrollY / max) * 100 : 0;
+      root.style.setProperty('--scroll', progress + '%');
+    }
 
-  const navLinks = document.querySelectorAll('.nav-links a');
-  const navAliases = { terrain: 'bootcamp' };
-  const navObserver = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        const id = navAliases[e.target.id] || e.target.id;
-        navLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + id));
-      }
-    });
-  }, { rootMargin: '-40% 0px -55% 0px' });
-  document.querySelectorAll('[id]').forEach(s => navObserver.observe(s));
+    let ticking = false;
+    window.addEventListener('scroll', () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        updateScroll();
+        ticking = false;
+      });
+    }, { passive: true });
+    updateScroll();
 
-  const burger = document.getElementById('burger');
-  const mobileMenu = document.getElementById('mobileMenu');
-  burger.addEventListener('click', () => mobileMenu.classList.toggle('open'));
-  function closeMobile() { mobileMenu.classList.remove('open'); }
-</script>
+    const sectionObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          navLinks.forEach(link => {
+            link.classList.toggle('active', link.getAttribute('href') === '#' + entry.target.id);
+          });
+        }
+      });
+    }, { rootMargin: '-42% 0px -52% 0px' });
 
+    document.querySelectorAll('section[id]').forEach(section => sectionObserver.observe(section));
+
+    const burger = document.getElementById('burger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    burger.addEventListener('click', () => mobileMenu.classList.toggle('open'));
+    function closeMobile() { mobileMenu.classList.remove('open'); }
+  </script>
 </body>
 </html>
