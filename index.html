@@ -27,8 +27,6 @@
       --border:   rgba(200,169,110,.1);
       --green:    #4ade80;
       --scroll-progress: 0%;
-      --parallax-x: 0px;
-      --parallax-y: 0px;
     }
 
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -60,13 +58,12 @@
       inset: -10%;
       pointer-events: none;
       z-index: 0;
-      opacity: .34;
+      opacity: .22;
       background-image:
         linear-gradient(rgba(200,169,110,.055) 1px, transparent 1px),
         linear-gradient(90deg, rgba(200,169,110,.045) 1px, transparent 1px);
       background-size: 72px 72px;
-      transform: translate(var(--parallax-x), var(--parallax-y));
-      animation: gridDrift 28s linear infinite;
+      transform: translateZ(0);
     }
 
     nav,
@@ -86,7 +83,7 @@
       top: 0; left: 0; right: 0;
       z-index: 100;
       background: rgba(6,8,15,.92);
-      backdrop-filter: blur(20px);
+      backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--border);
       display: flex;
       align-items: center;
@@ -218,6 +215,7 @@
       background-size: 28px 28px, 100% 100%;
       opacity: .55;
       animation: radarSpin 18s linear infinite;
+      will-change: transform;
     }
 
     .hero > * {
@@ -244,9 +242,11 @@
       font-weight: 500;
       letter-spacing: .16em;
       text-transform: uppercase;
+      white-space: nowrap;
       transform: translate(-50%, -50%);
       animation: radarTarget 5.8s ease-in-out infinite;
       animation-delay: var(--delay, 0s);
+      will-change: transform, opacity;
     }
 
     .radar-target::before {
@@ -255,9 +255,10 @@
       height: 7px;
       border-radius: 50%;
       border: 1px solid var(--green);
-      box-shadow: 0 0 18px rgba(74,222,128,.35);
+      box-shadow: 0 0 10px rgba(74,222,128,.28);
       animation: targetPing 2.6s ease-out infinite;
       animation-delay: var(--delay, 0s);
+      will-change: transform, opacity;
     }
 
     .hero::after {
@@ -514,9 +515,9 @@
     }
 
     @keyframes targetPing {
-      0% { box-shadow: 0 0 0 0 rgba(74,222,128,.34); }
-      70% { box-shadow: 0 0 0 12px rgba(74,222,128,0); }
-      100% { box-shadow: 0 0 0 0 rgba(74,222,128,0); }
+      0% { opacity: 1; transform: scale(.82); }
+      70% { opacity: .18; transform: scale(1.85); }
+      100% { opacity: 1; transform: scale(.82); }
     }
 
     @keyframes heroRise {
@@ -535,6 +536,12 @@
     }
 
     @media (max-width: 700px) {
+      body::after { display: none; }
+      .hero::before {
+        opacity: .32;
+        animation-duration: 32s;
+      }
+      .stat-item::before { display: none; }
       .radar-targets { display: none; }
       .hero-proof { grid-template-columns: 1fr; }
       .call-motion { padding: .75rem; }
@@ -625,7 +632,7 @@
       inset: 0;
       background: linear-gradient(100deg, transparent, rgba(200,169,110,.11), transparent);
       transform: translateX(-120%);
-      animation: statSweep 6s ease-in-out infinite;
+      animation: statSweep 7s ease-in-out 2;
       animation-delay: calc(var(--i, 0) * .35s);
       pointer-events: none;
     }
@@ -1223,10 +1230,9 @@
     .fade-in {
       opacity: 0;
       transform: translateY(26px);
-      filter: blur(10px);
-      transition: opacity .75s ease, transform .75s ease, filter .75s ease;
+      transition: opacity .55s ease, transform .55s ease;
     }
-    .fade-in.visible { opacity: 1; transform: translateY(0); filter: blur(0); }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
 
     .visible .value-card,
     .visible .kpi-cell,
@@ -1331,8 +1337,9 @@
     <span class="radar-target" style="--x:16%;--y:30%;--delay:.1s">C-level</span>
     <span class="radar-target" style="--x:82%;--y:28%;--delay:.9s">DSI</span>
     <span class="radar-target" style="--x:72%;--y:62%;--delay:1.7s">CDO</span>
-    <span class="radar-target" style="--x:22%;--y:64%;--delay:2.5s">Direction métier</span>
-    <span class="radar-target" style="--x:50%;--y:18%;--delay:3.3s">Event B2B</span>
+    <span class="radar-target" style="--x:22%;--y:64%;--delay:2.5s">Event Manager</span>
+    <span class="radar-target" style="--x:50%;--y:18%;--delay:3.3s">Responsable communication</span>
+    <span class="radar-target" style="--x:50%;--y:73%;--delay:4.1s">Acheteur</span>
   </div>
   <img src="./1776410684605.jpg" alt="Quentin Taffin" class="hero-photo" />
   <div class="hero-eyebrow">Mis à jour · 29 juillet 2026</div>
@@ -1350,7 +1357,7 @@
     </div>
     <div class="hero-proof-item">
       <div class="hero-proof-label">Cible</div>
-      <div class="hero-proof-value">C-levels · data · événementiel B2B</div>
+      <div class="hero-proof-value">C-levels · data · événementiel · communication</div>
     </div>
     <div class="hero-proof-item">
       <div class="hero-proof-label">Mission</div>
@@ -1366,7 +1373,7 @@
       <div class="signal-step">
         <span>01</span>
         <strong>Cold call</strong>
-        <em>C-levels, data, métiers, events</em>
+        <em>C-levels, data, event managers, acheteurs</em>
       </div>
       <div class="signal-step">
         <span>02</span>
@@ -1469,7 +1476,7 @@
       <span class="exp-period live"><span class="pulse-dot"></span>En poste · depuis le 22 juin 2026</span>
     </div>
     <p class="exp-desc">
-      ScaleFast accompagne des entreprises B2B tech ambitieuses sur leur outbound sales. Je prospecte sur un portefeuille multi-clients dans plusieurs secteurs : data, logiciel, design d'espaces professionnels et événementiel B2B. Je contacte des C-levels et directions data, métiers, marketing, communication et events pour ouvrir des conversations utiles, qualifier le contexte et transmettre des RDV exploitables aux équipes sales. Rythme alternance : <strong style="color:var(--text)">3 semaines en entreprise · 1 semaine en formation</strong> (Licence BizDev).
+      ScaleFast accompagne des entreprises B2B tech ambitieuses sur leur outbound sales. Je prospecte sur un portefeuille multi-clients dans plusieurs secteurs : data, logiciel, design d'espaces professionnels et événementiel B2B. Je contacte des C-levels, directions data, directions métiers, event managers, responsables communication, directions marketing et acheteurs pour ouvrir des conversations utiles, qualifier le contexte et transmettre des RDV exploitables aux équipes sales. Rythme alternance : <strong style="color:var(--text)">3 semaines en entreprise · 1 semaine en formation</strong> (Licence BizDev).
     </p>
     <div class="kpi-grid">
       <div class="kpi-cell">
@@ -1478,7 +1485,7 @@
       </div>
       <div class="kpi-cell">
         <div class="kpi-label">Cibles &amp; secteurs</div>
-        <div class="kpi-value"><strong>C-levels, DSI / CDO, directions data, métiers, marketing, communication et events</strong> · comptes B2B data, logiciel, design d'espaces professionnels et événementiel</div>
+        <div class="kpi-value"><strong>C-levels, DSI / CDO, directions data, directions métiers, event managers, responsables communication, directions marketing et acheteurs</strong> · comptes B2B data, logiciel, design d'espaces professionnels et événementiel</div>
       </div>
       <div class="kpi-cell">
         <div class="kpi-label">Livrable</div>
@@ -1847,18 +1854,20 @@
       timeline.style.setProperty('--timeline-progress', (active / drawable) * 100 + '%');
     });
   }
-  window.addEventListener('scroll', updateScrollProgress, { passive: true });
+
+  let scrollTicking = false;
+  function requestScrollUpdate() {
+    if (scrollTicking) return;
+    scrollTicking = true;
+    requestAnimationFrame(() => {
+      updateScrollProgress();
+      scrollTicking = false;
+    });
+  }
+
+  window.addEventListener('scroll', requestScrollUpdate, { passive: true });
   window.addEventListener('resize', updateScrollProgress);
   updateScrollProgress();
-
-  if (!reduceMotion && window.matchMedia('(pointer: fine)').matches) {
-    window.addEventListener('pointermove', e => {
-      const x = ((e.clientX / window.innerWidth) - 0.5) * 18;
-      const y = ((e.clientY / window.innerHeight) - 0.5) * 12;
-      root.style.setProperty('--parallax-x', x + 'px');
-      root.style.setProperty('--parallax-y', y + 'px');
-    }, { passive: true });
-  }
 
   const navLinks = document.querySelectorAll('.nav-links a');
   const navAliases = { terrain: 'bootcamp' };
