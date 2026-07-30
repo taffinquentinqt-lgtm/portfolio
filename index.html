@@ -15,17 +15,17 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garant:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --bg:       #06080f;
-      --surface:  #0c0f1a;
-      --surface2: #111520;
-      --gold:     #c8a96e;
-      --gold2:    #e8d5a3;
-      --gold-dim: rgba(200,169,110,.12);
-      --gold-border: rgba(200,169,110,.2);
-      --text:     #f0ead8;
-      --muted:    #8a8070;
-      --border:   rgba(200,169,110,.1);
-      --green:    #4ade80;
+      --bg:       #07100f;
+      --surface:  #0d1715;
+      --surface2: #121f1c;
+      --gold:     #30e39a;
+      --gold2:    #7fffd4;
+      --gold-dim: rgba(48,227,154,.12);
+      --gold-border: rgba(48,227,154,.22);
+      --text:     #eefaf6;
+      --muted:    #8fa9a0;
+      --border:   rgba(143,169,160,.14);
+      --green:    #20b7ff;
       --scroll-progress: 0%;
     }
 
@@ -60,8 +60,8 @@
       z-index: 0;
       opacity: .22;
       background-image:
-        linear-gradient(rgba(200,169,110,.055) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(200,169,110,.045) 1px, transparent 1px);
+        linear-gradient(rgba(48,227,154,.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(32,183,255,.04) 1px, transparent 1px);
       background-size: 72px 72px;
       transform: translateZ(0);
     }
@@ -82,7 +82,7 @@
       position: fixed;
       top: 0; left: 0; right: 0;
       z-index: 100;
-      background: rgba(6,8,15,.92);
+      background: rgba(7,16,15,.92);
       backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--border);
       display: flex;
@@ -100,7 +100,7 @@
       width: var(--scroll-progress);
       height: 1px;
       background: linear-gradient(90deg, var(--gold), var(--green));
-      box-shadow: 0 0 18px rgba(200,169,110,.35);
+      box-shadow: 0 0 18px rgba(48,227,154,.28);
       transition: width .12s linear;
     }
 
@@ -165,7 +165,7 @@
       display: none;
       position: fixed;
       top: 58px; left: 0; right: 0;
-      background: rgba(6,8,15,.98);
+      background: rgba(7,16,15,.98);
       border-bottom: 1px solid var(--border);
       padding: 1.5rem 2.5rem;
       z-index: 99;
@@ -207,11 +207,11 @@
       position: absolute;
       width: min(760px, 82vw);
       aspect-ratio: 1;
-      border: 1px solid rgba(200,169,110,.08);
+      border: 1px solid rgba(48,227,154,.08);
       border-radius: 50%;
       background:
-        radial-gradient(circle, rgba(200,169,110,.10) 0 1px, transparent 2px),
-        conic-gradient(from 0deg, transparent, rgba(74,222,128,.08), transparent 34%);
+        radial-gradient(circle, rgba(48,227,154,.10) 0 1px, transparent 2px),
+        conic-gradient(from 0deg, transparent, rgba(32,183,255,.08), transparent 34%);
       background-size: 28px 28px, 100% 100%;
       opacity: .55;
       animation: radarSpin 18s linear infinite;
@@ -250,7 +250,7 @@
       display: inline-flex;
       align-items: center;
       gap: .45rem;
-      color: rgba(240,234,216,.66);
+      color: rgba(238,250,246,.66);
       font-size: .58rem;
       font-weight: 500;
       letter-spacing: .16em;
@@ -268,7 +268,7 @@
       height: 7px;
       border-radius: 50%;
       border: 1px solid var(--green);
-      box-shadow: 0 0 10px rgba(74,222,128,.28);
+      box-shadow: 0 0 10px rgba(32,183,255,.28);
       animation: targetPing 2.6s ease-out infinite;
       animation-delay: var(--delay, 0s);
       will-change: transform, opacity;
@@ -291,14 +291,14 @@
       object-fit: cover;
       object-position: center top;
       border: 1px solid var(--gold-border);
-      box-shadow: 0 0 40px rgba(200,169,110,.08);
+      box-shadow: 0 0 40px rgba(48,227,154,.08);
       margin-bottom: 2rem;
       transition: box-shadow .4s ease;
       animation: heroRise .75s ease .05s both, avatarFloat 6s ease-in-out 1s infinite;
       z-index: 2;
     }
     .hero-photo:hover {
-      box-shadow: 0 0 60px rgba(200,169,110,.18);
+      box-shadow: 0 0 60px rgba(48,227,154,.18);
     }
 
     .hero-eyebrow {
@@ -377,7 +377,7 @@
     }
 
     .hero-proof-item {
-      background: rgba(12,15,26,.86);
+      background: rgba(13,23,21,.86);
       padding: 1rem 1.1rem;
       text-align: left;
     }
@@ -403,8 +403,8 @@
       padding: 1rem;
       border: 1px solid var(--border);
       background:
-        linear-gradient(135deg, rgba(200,169,110,.08), transparent 38%),
-        rgba(12,15,26,.74);
+        linear-gradient(135deg, rgba(48,227,154,.08), transparent 38%),
+        rgba(13,23,21,.74);
       overflow: hidden;
       position: relative;
       animation: heroRise .75s ease .62s both;
@@ -414,7 +414,7 @@
       content: '';
       position: absolute;
       inset: 0;
-      background: linear-gradient(90deg, transparent, rgba(74,222,128,.09), transparent);
+      background: linear-gradient(90deg, transparent, rgba(32,183,255,.10), transparent);
       transform: translateX(-100%);
       animation: scanLine 5s ease-in-out infinite;
       pointer-events: none;
@@ -461,14 +461,14 @@
       bottom: 0;
       left: 0;
       width: 28%;
-      background: linear-gradient(90deg, transparent, rgba(200,169,110,.24), transparent);
+      background: linear-gradient(90deg, transparent, rgba(48,227,154,.24), transparent);
       animation: pipelineSweep 4.5s linear infinite;
       pointer-events: none;
     }
 
     .signal-step {
       min-height: 96px;
-      background: rgba(6,8,15,.72);
+      background: rgba(7,16,15,.72);
       padding: .95rem;
       text-align: left;
       position: relative;
@@ -482,7 +482,7 @@
       right: .95rem;
       bottom: .72rem;
       height: 2px;
-      background: rgba(200,169,110,.14);
+      background: rgba(48,227,154,.14);
     }
 
     .signal-step span {
@@ -642,12 +642,12 @@
       overflow: hidden;
       transition: background .25s ease, transform .25s ease;
     }
-    .stat-item:hover { background: rgba(200,169,110,.035); transform: translateY(-2px); }
+    .stat-item:hover { background: rgba(48,227,154,.035); transform: translateY(-2px); }
     .stat-item::before {
       content: '';
       position: absolute;
       inset: 0;
-      background: linear-gradient(100deg, transparent, rgba(200,169,110,.11), transparent);
+      background: linear-gradient(100deg, transparent, rgba(48,227,154,.11), transparent);
       transform: translateX(-120%);
       animation: statSweep 7s ease-in-out 2;
       animation-delay: calc(var(--i, 0) * .35s);
@@ -759,13 +759,13 @@
       content: '';
       position: absolute;
       inset: 0;
-      background: linear-gradient(135deg, rgba(200,169,110,.11), transparent 38%);
+      background: linear-gradient(135deg, rgba(48,227,154,.11), transparent 38%);
       opacity: 0;
       transition: opacity .25s ease;
       pointer-events: none;
     }
 
-    .value-card:hover { background: #101522; transform: translateY(-4px); }
+    .value-card:hover { background: #10221e; transform: translateY(-4px); }
     .value-card:hover::before,
     .challenge-card:hover::before,
     .skill-group:hover::before,
@@ -825,7 +825,7 @@
       height: var(--timeline-progress);
       max-height: calc(100% - 36px);
       background: linear-gradient(to bottom, var(--green), var(--gold));
-      box-shadow: 0 0 18px rgba(74,222,128,.3);
+      box-shadow: 0 0 18px rgba(32,183,255,.28);
       pointer-events: none;
       transition: height .16s linear;
     }
@@ -844,7 +844,7 @@
     .timeline-dot.active {
       background: var(--green);
       border-color: var(--green);
-      box-shadow: 0 0 12px rgba(74,222,128,.3);
+      box-shadow: 0 0 12px rgba(32,183,255,.3);
     }
 
     /* ── EXP CARD ── */
@@ -874,7 +874,7 @@
     .exp-card.current::before {
       background: linear-gradient(90deg, var(--green), transparent);
     }
-    .exp-card.current { border-color: rgba(74,222,128,.12); }
+    .exp-card.current { border-color: rgba(32,183,255,.16); }
 
     .exp-header {
       display: flex;
@@ -915,8 +915,8 @@
 
     .exp-period.live {
       color: var(--green);
-      border-color: rgba(74,222,128,.2);
-      background: rgba(74,222,128,.05);
+      border-color: rgba(32,183,255,.24);
+      background: rgba(32,183,255,.06);
       display: inline-flex;
       align-items: center;
       gap: .5rem;
@@ -939,9 +939,9 @@
       animation: pulse 2s ease-out infinite;
     }
     @keyframes pulse {
-      0%   { box-shadow: 0 0 0 0 rgba(74,222,128,.5); }
-      70%  { box-shadow: 0 0 0 6px rgba(74,222,128,0); }
-      100% { box-shadow: 0 0 0 0 rgba(74,222,128,0); }
+      0%   { box-shadow: 0 0 0 0 rgba(32,183,255,.5); }
+      70%  { box-shadow: 0 0 0 6px rgba(32,183,255,0); }
+      100% { box-shadow: 0 0 0 0 rgba(32,183,255,0); }
     }
 
     /* ── KPI GRID ── */
@@ -966,7 +966,7 @@
       overflow: hidden;
       transition: background .25s ease, transform .25s ease;
     }
-    .kpi-cell:hover { background: #141827; transform: translateY(-2px); }
+    .kpi-cell:hover { background: #142823; transform: translateY(-2px); }
 
     .kpi-label {
       font-size: .67rem;
@@ -1031,7 +1031,7 @@
 
     .kpi-bar {
       height: 4px;
-      background: rgba(200,169,110,.1);
+      background: rgba(48,227,154,.10);
       overflow: hidden;
       position: relative;
     }
@@ -1042,7 +1042,7 @@
       min-width: 18px;
       height: 100%;
       background: linear-gradient(90deg, var(--green), var(--gold));
-      box-shadow: 0 0 14px rgba(74,222,128,.24);
+      box-shadow: 0 0 14px rgba(32,183,255,.24);
     }
 
     .visible .kpi-bar span {
@@ -1078,7 +1078,7 @@
       overflow: hidden;
       transition: background .2s, transform .25s ease;
     }
-    .challenge-card:hover { background: #14182a; transform: translateY(-4px); }
+    .challenge-card:hover { background: #162a25; transform: translateY(-4px); }
 
     .rank-text {
       font-family: 'Cormorant Garant', serif;
@@ -1087,7 +1087,7 @@
       margin-bottom: .5rem;
     }
     .rank-text.gold { color: var(--gold); }
-    .rank-text.bronze { color: #a0785a; }
+    .rank-text.bronze { color: #6fb4a5; }
 
     .challenge-name {
       font-size: .72rem;
@@ -1156,7 +1156,7 @@
       overflow: hidden;
       transition: background .25s ease, transform .25s ease;
     }
-    .skill-group:hover { background: #101522; transform: translateY(-3px); }
+    .skill-group:hover { background: #10221e; transform: translateY(-3px); }
 
     .skill-group-title {
       font-size: .63rem;
@@ -1239,7 +1239,7 @@
     .footer-copy {
       font-size: .65rem;
       letter-spacing: .1em;
-      color: #3a3530;
+      color: #41544e;
       text-transform: uppercase;
     }
 
@@ -1758,14 +1758,14 @@
       </div>
       <a href="./2026-05-15_mooc-espace-centre-national-d-etudes-spatiales-badge-de-reussite-fr.pdf" target="_blank" rel="noopener" style="display:block;border:1px solid var(--border);border-radius:2px;overflow:hidden;transition:border-color .2s;background:var(--surface);padding:2rem 1rem;text-align:center" onmouseover="this.style.borderColor='var(--gold)'" onmouseout="this.style.borderColor='var(--border)'">
         <svg viewBox="0 0 80 80" width="64" height="64" xmlns="http://www.w3.org/2000/svg" style="display:block;margin:0 auto 1rem">
-          <circle cx="40" cy="40" r="36" fill="none" stroke="rgba(200,169,110,.25)" stroke-width="1"/>
-          <circle cx="40" cy="40" r="28" fill="none" stroke="rgba(200,169,110,.15)" stroke-width="1"/>
-          <circle cx="40" cy="40" r="5" fill="#c8a96e" opacity=".9"/>
-          <ellipse cx="40" cy="40" rx="18" ry="7" fill="none" stroke="#c8a96e" stroke-width="1" opacity=".5"/>
-          <ellipse cx="40" cy="40" rx="18" ry="7" fill="none" stroke="#c8a96e" stroke-width="1" opacity=".3" transform="rotate(60 40 40)"/>
-          <ellipse cx="40" cy="40" rx="18" ry="7" fill="none" stroke="#c8a96e" stroke-width="1" opacity=".3" transform="rotate(120 40 40)"/>
-          <circle cx="58" cy="40" r="2" fill="#c8a96e" opacity=".6"/>
-          <circle cx="49" cy="26" r="1.5" fill="#c8a96e" opacity=".4"/>
+          <circle cx="40" cy="40" r="36" fill="none" stroke="rgba(48,227,154,.25)" stroke-width="1"/>
+          <circle cx="40" cy="40" r="28" fill="none" stroke="rgba(32,183,255,.16)" stroke-width="1"/>
+          <circle cx="40" cy="40" r="5" fill="#30e39a" opacity=".9"/>
+          <ellipse cx="40" cy="40" rx="18" ry="7" fill="none" stroke="#30e39a" stroke-width="1" opacity=".5"/>
+          <ellipse cx="40" cy="40" rx="18" ry="7" fill="none" stroke="#20b7ff" stroke-width="1" opacity=".3" transform="rotate(60 40 40)"/>
+          <ellipse cx="40" cy="40" rx="18" ry="7" fill="none" stroke="#20b7ff" stroke-width="1" opacity=".3" transform="rotate(120 40 40)"/>
+          <circle cx="58" cy="40" r="2" fill="#30e39a" opacity=".6"/>
+          <circle cx="49" cy="26" r="1.5" fill="#20b7ff" opacity=".45"/>
         </svg>
         <div style="font-size:.65rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:.3rem">Open Badge · Vérifié</div>
         <div style="font-size:.72rem;color:var(--muted)">Voir le badge PDF</div>
