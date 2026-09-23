@@ -1,58 +1,71 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Quentin Taffin · SDR Outbound B2B</title>
+  <title>Quentin Taffin // SDR Aerospace Mission Control</title>
 
   <meta
     name="description"
-    content="Portfolio de Quentin Taffin, SDR outbound B2B chez ScaleFast. Cold call C-levels, prospection Data, IT et événementielle, 446 appels décrochés et 50 RDV qualifiés."
-  />
+    content="Quentin Taffin — SDR spécialisé en Outbound B2B, Cold Calling et Pipeline Generation. 466 appels décrochés, 50 RDV qualifiés, 10.7% de conversion."
+  >
 
-  <meta property="og:title" content="Quentin Taffin · SDR Outbound B2B" />
-  <meta
-    property="og:description"
-    content="SDR outbound B2B · Cold call C-levels · 446 appels décrochés · 50 RDV qualifiés · 11,2% de conversion."
-  />
-  <meta property="og:image" content="./1776410684605.jpg" />
-  <meta property="og:type" content="website" />
+  <meta name="author" content="Quentin Taffin">
 
-  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
+    href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap"
     rel="stylesheet"
-  />
+  >
 
   <style>
+
+    /* =========================================================
+       AEROSPACE DESIGN SYSTEM
+    ========================================================= */
+
     :root {
-      --bg: #07100f;
-      --bg-2: #0a1413;
-      --panel: #0f1a18;
-      --panel-2: #13211f;
-      --panel-3: #172b27;
-      --line: rgba(144, 169, 160, .16);
-      --line-strong: rgba(54, 233, 159, .28);
-      --text: #f4fbf8;
-      --muted: #9cafaa;
-      --soft: #d8e8e2;
-      --accent: #36e99f;
-      --accent-2: #21b9ff;
-      --accent-3: #f4b84a;
-      --danger: #ff6b6b;
-      --shadow: 0 26px 80px rgba(0, 0, 0, .28);
-      --radius: 8px;
-      --scroll: 0%;
+
+      --space: #02050a;
+      --space-2: #050b13;
+      --panel: #071321;
+      --panel-2: #091a29;
+
+      --cyan: #39bdf8;
+      --cyan-light: #7deBff;
+      --cyan-dark: #12344a;
+
+      --blue: #168bd1;
+
+      --orange: #ffb547;
+      --orange-dark: #7d4f12;
+
+      --white: #eaf4f7;
+      --text: #c4d2d9;
+      --muted: #82949e;
+      --dim: #4d626d;
+
+      --border: rgba(57,189,248,.18);
+      --border-soft: rgba(57,189,248,.08);
+
+      --mono: "DM Mono", monospace;
+      --sans: "Manrope", sans-serif;
+
+      --max: 1240px;
     }
 
+
+    /* =========================================================
+       RESET
+    ========================================================= */
+
     * {
-      box-sizing: border-box;
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
     }
 
     html {
@@ -60,1214 +73,2488 @@
     }
 
     body {
-      min-height: 100vh;
-      color: var(--text);
+
       background:
-        linear-gradient(rgba(54, 233, 159, .045) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(33, 185, 255, .035) 1px, transparent 1px),
-        var(--bg);
-      background-size: 72px 72px, 72px 72px, auto;
-      font-family: Manrope, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      line-height: 1.65;
-      -webkit-font-smoothing: antialiased;
+        radial-gradient(
+          circle at 75% 5%,
+          rgba(57,189,248,.09),
+          transparent 28%
+        ),
+        radial-gradient(
+          circle at 10% 50%,
+          rgba(22,139,209,.055),
+          transparent 30%
+        ),
+        var(--space);
+
+      color: var(--text);
+
+      font-family: var(--sans);
+
+      line-height: 1.6;
+
+      overflow-x: hidden;
     }
 
+
+    /* =========================================================
+       SPACE GRID
+    ========================================================= */
+
     body::before {
+
       content: "";
+
       position: fixed;
+
       inset: 0;
+
       pointer-events: none;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
-      opacity: .42;
-      z-index: 0;
+
+      z-index: 999;
+
+      opacity: .035;
+
+      background-image:
+
+        linear-gradient(
+          rgba(57,189,248,.7) 1px,
+          transparent 1px
+        ),
+
+        linear-gradient(
+          90deg,
+          rgba(57,189,248,.7) 1px,
+          transparent 1px
+        );
+
+      background-size: 80px 80px;
+
+      mask-image:
+        linear-gradient(
+          to bottom,
+          black,
+          transparent 90%
+        );
+    }
+
+
+    /* =========================================================
+       STARS
+    ========================================================= */
+
+    body::after {
+
+      content: "";
+
+      position: fixed;
+
+      inset: 0;
+
+      pointer-events: none;
+
+      z-index: -1;
+
+      background-image:
+
+        radial-gradient(
+          circle,
+          rgba(255,255,255,.65) 1px,
+          transparent 1px
+        ),
+
+        radial-gradient(
+          circle,
+          rgba(57,189,248,.35) 1px,
+          transparent 1px
+        );
+
+      background-size:
+        150px 150px,
+        230px 230px;
+
+      background-position:
+        20px 40px,
+        80px 120px;
+
+      opacity: .25;
+    }
+
+
+    ::selection {
+      background: var(--cyan);
+      color: var(--space);
     }
 
     a {
       color: inherit;
+      text-decoration: none;
     }
 
-    main,
-    nav,
-    footer {
-      position: relative;
-      z-index: 1;
+    .container {
+      width: min(
+        var(--max),
+        calc(100% - 48px)
+      );
+
+      margin: auto;
     }
+
+
+    /* =========================================================
+       TOPBAR
+    ========================================================= */
 
     .topbar {
+
       position: fixed;
-      inset: 0 0 auto;
-      height: 64px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 clamp(1rem, 3vw, 2.25rem);
-      background: rgba(7, 16, 15, .9);
-      border-bottom: 1px solid var(--line);
-      backdrop-filter: blur(12px);
-      z-index: 40;
+
+      top: 0;
+      left: 0;
+
+      width: 100%;
+
+      z-index: 100;
+
+      backdrop-filter: blur(20px);
+
+      background:
+        rgba(2,5,10,.82);
+
+      border-bottom:
+        1px solid var(--border-soft);
     }
 
-    .topbar::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: -1px;
-      width: var(--scroll);
-      height: 1px;
-      background: linear-gradient(90deg, var(--accent), var(--accent-2));
-      transition: width .12s linear;
+    .nav {
+
+      height: 72px;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: space-between;
     }
 
     .brand {
+
       display: flex;
+
       align-items: center;
-      gap: .75rem;
-      text-decoration: none;
-      font-weight: 800;
-      letter-spacing: .055em;
+
+      gap: 12px;
+
+      font-family: var(--mono);
+
+      font-size: 11px;
+
+      letter-spacing: .12em;
+
       text-transform: uppercase;
-      font-size: .78rem;
     }
 
     .brand-mark {
+
+      width: 34px;
+      height: 34px;
+
       display: grid;
+
       place-items: center;
-      width: 30px;
-      height: 30px;
-      border: 1px solid var(--line-strong);
-      border-radius: 6px;
-      color: var(--accent);
-      font-family: Manrope, sans-serif;
+
+      border: 1px solid var(--cyan);
+
+      color: var(--cyan);
+
+      box-shadow:
+        0 0 20px rgba(57,189,248,.15);
     }
 
     .nav-links {
+
       display: flex;
-      gap: 1.4rem;
-      list-style: none;
+
+      align-items: center;
+
+      gap: 27px;
     }
 
-    .nav-links a,
-    .top-contact a,
-    .mobile-menu a {
-      color: var(--muted);
-      text-decoration: none;
-      font-size: .72rem;
-      font-weight: 700;
-      letter-spacing: .075em;
+    .nav-links a {
+
+      font-family: var(--mono);
+
+      font-size: 10px;
+
       text-transform: uppercase;
-      transition: color .2s;
+
+      letter-spacing: .08em;
+
+      color: var(--muted);
+
+      transition: .25s ease;
     }
 
-    .nav-links a:hover,
-    .nav-links a.active,
-    .top-contact a:hover,
-    .mobile-menu a:hover {
-      color: var(--accent);
+    .nav-links a:hover {
+      color: var(--cyan);
     }
 
-    .top-contact {
+    .system-status {
+
       display: flex;
+
       align-items: center;
-      gap: .8rem;
+
+      gap: 8px;
+
+      font-family: var(--mono);
+
+      font-size: 9px;
+
+      text-transform: uppercase;
+
+      color: var(--cyan);
     }
 
-    .top-contact span {
-      color: rgba(156, 175, 170, .38);
+    .status-dot {
+
+      width: 7px;
+      height: 7px;
+
+      border-radius: 50%;
+
+      background: #35ff9b;
+
+      box-shadow:
+        0 0 12px #35ff9b;
+
+      animation: statusPulse 2s infinite;
     }
 
-    .burger {
-      display: none;
-      width: 38px;
-      height: 38px;
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      gap: 5px;
-      cursor: pointer;
-      background: transparent;
+    @keyframes statusPulse {
+
+      50% {
+        opacity: .4;
+
+        box-shadow:
+          0 0 3px #35ff9b;
+      }
     }
 
-    .burger span {
-      width: 18px;
-      height: 1px;
-      background: var(--accent);
-    }
 
-    .mobile-menu {
-      display: none;
-      position: fixed;
-      top: 64px;
-      left: 0;
-      right: 0;
-      z-index: 30;
-      padding: 1rem;
-      background: rgba(7, 16, 15, .98);
-      border-bottom: 1px solid var(--line);
-    }
-
-    .mobile-menu.open {
-      display: grid;
-      gap: .9rem;
-    }
-
-    .shell {
-      width: min(1180px, calc(100% - 2rem));
-      margin: 0 auto;
-    }
+    /* =========================================================
+       HERO
+    ========================================================= */
 
     .hero {
+
       min-height: 100vh;
-      padding: 9rem 0 4.5rem;
-      display: grid;
-      grid-template-columns: minmax(0, 1.35fr) minmax(320px, .65fr);
-      gap: clamp(1.2rem, 3vw, 2rem);
+
+      position: relative;
+
+      display: flex;
+
       align-items: center;
+
+      padding:
+        150px 0
+        100px;
+
+      overflow: hidden;
     }
 
-    .hero-copy {
-      display: grid;
-      gap: 1.35rem;
+
+    /* planet horizon */
+
+    .hero::after {
+
+      content: "";
+
+      position: absolute;
+
+      width: 1000px;
+      height: 300px;
+
+      left: 50%;
+      bottom: -230px;
+
+      transform: translateX(-50%);
+
+      border-radius: 50%;
+
+      border-top:
+        2px solid
+        rgba(57,189,248,.5);
+
+      box-shadow:
+
+        0 -20px 100px
+        rgba(57,189,248,.15),
+
+        0 -5px 30px
+        rgba(57,189,248,.1);
+
+      pointer-events: none;
     }
+
+
+    .hero-grid {
+
+      display: grid;
+
+      grid-template-columns:
+        1.1fr
+        .9fr;
+
+      gap: 80px;
+
+      align-items: center;
+
+      position: relative;
+
+      z-index: 2;
+    }
+
 
     .eyebrow {
-      display: inline-flex;
-      width: fit-content;
+
+      display: flex;
+
       align-items: center;
-      gap: .55rem;
-      color: var(--accent);
-      font-size: .7rem;
-      font-weight: 800;
-      letter-spacing: .105em;
+
+      gap: 10px;
+
+      font-family: var(--mono);
+
+      font-size: 10px;
+
+      color: var(--cyan);
+
       text-transform: uppercase;
+
+      letter-spacing: .14em;
+
+      margin-bottom: 25px;
     }
 
     .eyebrow::before {
+
       content: "";
-      width: 8px;
-      height: 8px;
-      border-radius: 999px;
-      background: var(--accent);
-      box-shadow: 0 0 0 6px rgba(54, 233, 159, .12);
+
+      width: 30px;
+      height: 1px;
+
+      background: var(--cyan);
+
+      box-shadow:
+        0 0 10px var(--cyan);
     }
 
-    h1,
-    h2,
-    h3 {
-      font-family: Manrope, sans-serif;
-      letter-spacing: 0;
-      line-height: 1.06;
-    }
 
     h1 {
-      max-width: 820px;
-      font-size: clamp(2.85rem, 6.5vw, 5.9rem);
-      font-weight: 800;
+
+      font-size:
+        clamp(
+          58px,
+          8vw,
+          108px
+        );
+
+      line-height: .88;
+
+      letter-spacing: -.065em;
+
+      color: var(--white);
+
+      margin-bottom: 30px;
     }
 
     h1 span {
-      color: var(--accent);
+
+      color: var(--cyan);
+
+      text-shadow:
+        0 0 35px rgba(57,189,248,.25);
     }
 
-    .hero-sub {
-      max-width: 780px;
-      color: var(--soft);
-      font-size: clamp(1.05rem, 1.85vw, 1.42rem);
-      font-weight: 700;
-    }
 
-    .hero-text {
-      max-width: 720px;
+    .hero-description {
+
+      max-width: 650px;
+
       color: var(--muted);
-      font-size: .98rem;
+
+      font-size: 17px;
+
+      margin-bottom: 35px;
     }
 
-    .cta-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: .75rem;
-      margin-top: .3rem;
+    .hero-description strong {
+      color: var(--white);
     }
+
+
+    .hero-actions {
+
+      display: flex;
+
+      flex-wrap: wrap;
+
+      gap: 11px;
+    }
+
 
     .btn {
+
       display: inline-flex;
+
       align-items: center;
+
       justify-content: center;
-      min-height: 42px;
-      padding: .72rem 1rem;
-      border-radius: 7px;
-      border: 1px solid transparent;
-      text-decoration: none;
-      font-size: .74rem;
-      font-weight: 800;
-      letter-spacing: .06em;
+
+      padding:
+        14px
+        19px;
+
+      border:
+        1px solid
+        var(--border);
+
+      font-family: var(--mono);
+
+      font-size: 10px;
+
       text-transform: uppercase;
-      transition: transform .2s, border-color .2s, background .2s, color .2s;
+
+      letter-spacing: .08em;
+
+      transition: .25s ease;
     }
 
-    .btn:hover {
-      transform: translateY(-2px);
-    }
 
     .btn-primary {
-      background: var(--accent);
-      color: #04100d;
+
+      background:
+        linear-gradient(
+          135deg,
+          var(--cyan),
+          #1594d4
+        );
+
+      color: #021018;
+
+      border-color:
+        var(--cyan);
+
+      box-shadow:
+        0 0 30px
+        rgba(57,189,248,.12);
     }
+
+    .btn-primary:hover {
+
+      transform:
+        translateY(-2px);
+
+      box-shadow:
+        0 0 35px
+        rgba(57,189,248,.25);
+    }
+
 
     .btn-secondary {
-      border-color: var(--line-strong);
-      color: var(--accent);
-      background: rgba(54, 233, 159, .06);
+
+      color: var(--cyan);
+
+      background:
+        rgba(57,189,248,.025);
     }
 
-    .btn-ghost {
-      border-color: var(--line);
-      color: var(--soft);
-      background: rgba(255, 255, 255, .02);
+    .btn-secondary:hover {
+
+      background:
+        rgba(57,189,248,.08);
+
+      border-color:
+        var(--cyan);
     }
 
-    .hero-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1px;
-      margin-top: .4rem;
-      overflow: hidden;
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      background: var(--line);
+
+    /* =========================================================
+       ROCKET
+    ========================================================= */
+
+    .rocket-zone {
+
+      position: relative;
+
+      min-height: 480px;
     }
 
-    .hero-grid-item {
-      min-height: 92px;
-      padding: 1rem;
-      background: rgba(15, 26, 24, .82);
+
+    .rocket {
+
+      position: absolute;
+
+      right: 90px;
+
+      top: 40px;
+
+      width: 70px;
+
+      height: 190px;
+
+      transform:
+        rotate(8deg);
+
+      animation:
+        rocketFloat 4s ease-in-out infinite;
+
+      filter:
+        drop-shadow(
+          0 0 20px
+          rgba(57,189,248,.25)
+        );
     }
 
-    .label {
-      color: var(--muted);
-      font-size: .63rem;
-      font-weight: 800;
-      letter-spacing: .08em;
-      text-transform: uppercase;
+
+    .rocket-body {
+
+      position: absolute;
+
+      left: 14px;
+
+      top: 15px;
+
+      width: 42px;
+
+      height: 120px;
+
+      background:
+        linear-gradient(
+          90deg,
+          #8297a2,
+          #f3f7f8 45%,
+          #526975
+        );
+
+      border-radius:
+        50% 50%
+        35% 35%
+        20% 20%;
     }
 
-    .value {
-      margin-top: .4rem;
-      color: var(--text);
-      font-size: .92rem;
-      font-weight: 700;
-      line-height: 1.35;
+
+    .rocket-window {
+
+      position: absolute;
+
+      top: 38px;
+
+      left: 25px;
+
+      width: 20px;
+      height: 20px;
+
+      border-radius: 50%;
+
+      background:
+        radial-gradient(
+          circle at 35% 30%,
+          #baf5ff,
+          #1574a8 65%,
+          #03121d
+        );
+
+      border:
+        2px solid
+        #304a59;
     }
 
-    .profile-panel {
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      background: rgba(15, 26, 24, .88);
-      box-shadow: var(--shadow);
-      overflow: hidden;
+
+    .rocket-fin-left,
+    .rocket-fin-right {
+
+      position: absolute;
+
+      top: 94px;
+
+      width: 18px;
+
+      height: 45px;
+
+      background:
+        #b6c4c9;
     }
 
-    .profile-head {
-      padding: 1rem;
-      display: grid;
-      grid-template-columns: 96px 1fr;
-      gap: 1rem;
-      align-items: center;
-      border-bottom: 1px solid var(--line);
+    .rocket-fin-left {
+
+      left: 0;
+
+      clip-path:
+        polygon(
+          100% 0,
+          100% 100%,
+          0 100%
+        );
     }
 
-    .profile-photo {
-      width: 96px;
-      aspect-ratio: 1;
-      border-radius: 8px;
-      object-fit: cover;
-      object-position: center top;
-      border: 1px solid var(--line-strong);
+    .rocket-fin-right {
+
+      right: 0;
+
+      clip-path:
+        polygon(
+          0 0,
+          100% 100%,
+          0 100%
+        );
     }
 
-    .status {
-      display: inline-flex;
-      align-items: center;
-      gap: .45rem;
-      margin-bottom: .55rem;
-      color: var(--accent-2);
-      font-size: .68rem;
-      font-weight: 800;
-      letter-spacing: .075em;
-      text-transform: uppercase;
+
+    .rocket-nose {
+
+      position: absolute;
+
+      top: 0;
+
+      left: 14px;
+
+      width: 42px;
+      height: 42px;
+
+      background:
+        #dfe9ec;
+
+      border-radius:
+        50% 50% 0 0;
+
+      clip-path:
+        polygon(
+          50% 0,
+          100% 100%,
+          0 100%
+        );
     }
 
-    .status::before {
-      content: "";
+
+    .flame {
+
+      position: absolute;
+
+      top: 128px;
+
+      left: 24px;
+
+      width: 22px;
+
+      height: 75px;
+
+      background:
+        linear-gradient(
+          to bottom,
+          #fff,
+          var(--orange),
+          #ff6b00,
+          transparent
+        );
+
+      clip-path:
+        polygon(
+          20% 0,
+          80% 0,
+          100% 30%,
+          65% 100%,
+          50% 75%,
+          35% 100%,
+          0 30%
+        );
+
+      filter:
+        blur(1px);
+
+      animation:
+        flame 0.15s infinite alternate;
+    }
+
+
+    @keyframes rocketFloat {
+
+      0%,
+      100% {
+        transform:
+          rotate(8deg)
+          translateY(0);
+      }
+
+      50% {
+        transform:
+          rotate(8deg)
+          translateY(-18px);
+      }
+    }
+
+
+    @keyframes flame {
+
+      from {
+        transform:
+          scaleY(.85);
+      }
+
+      to {
+        transform:
+          scaleY(1.15);
+      }
+    }
+
+
+    /* orbital path */
+
+    .orbit-path {
+
+      position: absolute;
+
+      width: 450px;
+      height: 180px;
+
+      right: -20px;
+      top: 130px;
+
+      border:
+        1px dashed
+        rgba(57,189,248,.28);
+
+      border-radius: 50%;
+
+      transform:
+        rotate(-22deg);
+    }
+
+
+    .orbit-dot {
+
+      position: absolute;
+
       width: 7px;
       height: 7px;
-      border-radius: 999px;
-      background: var(--accent-2);
-      animation: pulse 2.4s ease-out infinite;
-    }
 
-    .profile-title {
-      font-size: 1.15rem;
-      font-weight: 800;
-      line-height: 1.25;
-    }
+      border-radius: 50%;
 
-    .profile-sub {
-      color: var(--muted);
-      font-size: .82rem;
-      margin-top: .3rem;
-    }
-
-    .target-map {
-      padding: 1rem;
-      min-height: 300px;
-      position: relative;
-      overflow: hidden;
       background:
-        linear-gradient(rgba(54, 233, 159, .07) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(33, 185, 255, .06) 1px, transparent 1px);
-      background-size: 34px 34px;
-    }
+        var(--cyan);
 
-    .target-map::before {
-      content: "";
-      position: absolute;
-      inset: 18px;
-      border: 1px solid rgba(54, 233, 159, .16);
-      border-radius: 999px;
-    }
+      box-shadow:
+        0 0 15px var(--cyan);
 
-    .target-map::after {
-      content: "";
-      position: absolute;
-      width: 58%;
-      aspect-ratio: 1;
+      top: 3px;
       left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
-      border-radius: 999px;
-      border: 1px solid rgba(33, 185, 255, .18);
-      animation: radarSpin 18s linear infinite;
     }
 
-    .target-caption {
-      position: relative;
-      z-index: 2;
-      color: var(--accent);
-      font-size: .66rem;
-      font-weight: 900;
-      letter-spacing: .09em;
-      text-transform: uppercase;
-    }
 
-    .target {
+    .telemetry-card {
+
       position: absolute;
-      left: var(--x);
-      top: var(--y);
-      z-index: 3;
-      display: inline-flex;
-      align-items: center;
-      gap: .4rem;
-      padding: .36rem .46rem;
-      border: 1px solid rgba(54, 233, 159, .26);
-      border-radius: 6px;
-      background: rgba(7, 16, 15, .72);
-      color: var(--soft);
-      font-size: .62rem;
-      font-weight: 800;
-      letter-spacing: .035em;
-      text-transform: uppercase;
-      transform: translate(-50%, -50%);
+
+      left: 0;
+      bottom: 35px;
+
+      width: 280px;
+
+      padding: 20px;
+
+      background:
+        rgba(5,11,19,.9);
+
+      border:
+        1px solid
+        var(--border);
+
+      backdrop-filter:
+        blur(15px);
+
+      box-shadow:
+        0 30px 80px
+        rgba(0,0,0,.35);
     }
 
-    .target::before {
-      content: "";
-      width: 6px;
-      height: 6px;
-      border-radius: 999px;
-      background: var(--accent-2);
-      box-shadow: 0 0 0 5px rgba(33, 185, 255, .12);
-    }
 
-    .quick-facts {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1px;
-      background: var(--line);
-      border-top: 1px solid var(--line);
-    }
+    .telemetry-header {
 
-    .quick-fact {
-      padding: .9rem;
-      background: var(--panel-2);
-    }
-
-    .quick-fact strong {
-      display: block;
-      color: var(--text);
-      font-family: Manrope, sans-serif;
-      font-size: 1.15rem;
-      line-height: 1;
-    }
-
-    .quick-fact span {
-      display: block;
-      color: var(--muted);
-      font-size: .62rem;
-      font-weight: 800;
-      letter-spacing: .11em;
-      text-transform: uppercase;
-      margin-top: .35rem;
-    }
-
-    .metrics-band {
-      border-top: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
-      background: rgba(15, 26, 24, .66);
-    }
-
-    .metrics {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1px;
-      background: var(--line);
-    }
-
-    .metric {
-      min-height: 140px;
-      padding: 1.2rem;
-      background: var(--bg-2);
       display: flex;
-      flex-direction: column;
+
       justify-content: space-between;
-      position: relative;
-      overflow: hidden;
-    }
 
-    .metric::after {
-      content: "";
-      position: absolute;
-      inset: auto 0 0;
-      height: 3px;
-      background: linear-gradient(90deg, var(--accent), var(--accent-2));
-      transform: scaleX(0);
-      transform-origin: left;
-      animation: barIn 1s ease forwards;
-      animation-delay: calc(var(--i, 0) * .12s);
-    }
+      font-family: var(--mono);
 
-    .metric-value {
-      color: var(--accent);
-      font-family: Manrope, sans-serif;
-      font-size: clamp(2rem, 4vw, 3.4rem);
-      font-weight: 700;
-      line-height: 1;
-    }
+      font-size: 9px;
 
-    .metric-label {
       color: var(--muted);
-      font-size: .72rem;
-      font-weight: 800;
-      letter-spacing: .075em;
-      text-transform: uppercase;
+
+      padding-bottom: 13px;
+
+      margin-bottom: 10px;
+
+      border-bottom:
+        1px solid
+        var(--border-soft);
     }
 
-    .section {
-      padding: clamp(4.5rem, 7vw, 7rem) 0;
-      border-bottom: 1px solid var(--line);
+    .telemetry-header span:last-child {
+      color: #35ff9b;
     }
 
-    .section-head {
-      display: grid;
-      grid-template-columns: .72fr 1fr;
-      gap: 2rem;
-      align-items: end;
-      margin-bottom: 2rem;
-    }
 
-    .section-kicker {
-      color: var(--accent);
-      font-size: .7rem;
-      font-weight: 900;
-      letter-spacing: .09em;
-      text-transform: uppercase;
-      margin-bottom: .75rem;
-    }
+    .telemetry-line {
 
-    .section h2 {
-      font-size: clamp(2rem, 4vw, 3.5rem);
-      font-weight: 700;
-    }
-
-    .section-desc {
-      color: var(--muted);
-      max-width: 680px;
-      font-size: .96rem;
-    }
-
-    .grid-3 {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1px;
-      background: var(--line);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      overflow: hidden;
-    }
-
-    .tile {
-      background: var(--panel);
-      padding: 1.25rem;
-      min-height: 190px;
-      position: relative;
-      overflow: hidden;
-      transition: background .2s, transform .2s;
-    }
-
-    .tile:hover {
-      background: var(--panel-2);
-      transform: translateY(-2px);
-    }
-
-    .tile-title {
-      color: var(--text);
-      font-size: 1.05rem;
-      font-weight: 800;
-      margin: .4rem 0 .65rem;
-    }
-
-    .tile p,
-    .tile li {
-      color: var(--muted);
-      font-size: .88rem;
-    }
-
-    .tile ul {
-      display: grid;
-      gap: .45rem;
-      list-style: none;
-      margin-top: .7rem;
-    }
-
-    .tile li::before {
-      content: "";
-      display: inline-block;
-      width: 6px;
-      height: 6px;
-      margin-right: .55rem;
-      border-radius: 999px;
-      background: var(--accent);
-      vertical-align: middle;
-    }
-
-    .scale-layout {
-      display: grid;
-      grid-template-columns: .9fr 1.1fr;
-      gap: 1px;
-      background: var(--line);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      overflow: hidden;
-    }
-
-    .scale-main,
-    .scale-side {
-      background: var(--panel);
-      padding: clamp(1.25rem, 3vw, 2rem);
-    }
-
-    .scale-main h3 {
-      font-size: clamp(1.7rem, 3vw, 2.6rem);
-      margin-bottom: .9rem;
-    }
-
-    .scale-main p {
-      color: var(--muted);
-      margin-bottom: 1.2rem;
-    }
-
-    .sector-tags,
-    .skill-tags {
       display: flex;
-      flex-wrap: wrap;
-      gap: .5rem;
+
+      justify-content: space-between;
+
+      padding: 7px 0;
+
+      font-family: var(--mono);
+
+      font-size: 10px;
     }
 
-    .tag {
-      display: inline-flex;
-      align-items: center;
-      min-height: 30px;
-      padding: .32rem .55rem;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      color: var(--soft);
-      background: rgba(255, 255, 255, .02);
-      font-size: .68rem;
+    .telemetry-line span:first-child {
+      color: var(--muted);
+    }
+
+    .telemetry-line span:last-child {
+      color: var(--white);
+    }
+
+    .telemetry-line .live {
+      color: var(--cyan);
+    }
+
+
+    /* =========================================================
+       KPI
+    ========================================================= */
+
+    .kpi-strip {
+
+      position: relative;
+
+      z-index: 5;
+
+      border-top:
+        1px solid
+        var(--border);
+
+      border-bottom:
+        1px solid
+        var(--border);
+
+      background:
+        rgba(5,11,19,.82);
+
+      backdrop-filter:
+        blur(15px);
+    }
+
+
+    .kpi-grid {
+
+      display:
+        grid;
+
+      grid-template-columns:
+        repeat(4, 1fr);
+    }
+
+
+    .kpi {
+
+      padding:
+        30px 25px;
+
+      border-right:
+        1px solid
+        var(--border);
+    }
+
+    .kpi:last-child {
+      border-right: none;
+    }
+
+
+    .kpi-number {
+
+      font-size: 43px;
+
       font-weight: 800;
-      letter-spacing: .04em;
+
+      line-height: 1;
+
+      letter-spacing: -.05em;
+
+      color: var(--white);
+    }
+
+    .kpi-number span {
+      color: var(--cyan);
+    }
+
+
+    .kpi-label {
+
+      margin-top: 9px;
+
+      font-family: var(--mono);
+
+      font-size: 9px;
+
+      color: var(--muted);
+
+      text-transform: uppercase;
+
+      letter-spacing: .1em;
+    }
+
+
+    /* =========================================================
+       GENERAL SECTIONS
+    ========================================================= */
+
+    section {
+      padding: 130px 0;
+    }
+
+
+    .section-heading {
+
+      display: grid;
+
+      grid-template-columns:
+        .45fr
+        1fr;
+
+      gap: 50px;
+
+      margin-bottom: 60px;
+    }
+
+
+    .section-index {
+
+      font-family: var(--mono);
+
+      font-size: 10px;
+
+      color: var(--cyan);
+
+      letter-spacing: .12em;
+
       text-transform: uppercase;
     }
+
+
+    .section-heading h2 {
+
+      color: var(--white);
+
+      font-size:
+        clamp(
+          38px,
+          5vw,
+          65px
+        );
+
+      line-height: .95;
+
+      letter-spacing: -.055em;
+    }
+
+
+    .section-heading p {
+
+      max-width: 700px;
+
+      margin-top: 18px;
+
+      color: var(--muted);
+
+      font-size: 15px;
+    }
+
+
+    /* =========================================================
+       PIPELINE
+    ========================================================= */
 
     .pipeline {
-      display: grid;
-      gap: .85rem;
+
+      display:
+        grid;
+
+      grid-template-columns:
+        repeat(6, 1fr);
+
+      border:
+        1px solid
+        var(--border);
     }
 
-    .pipeline-row {
-      display: grid;
-      gap: .35rem;
+
+    .pipeline-step {
+
+      position: relative;
+
+      min-height: 190px;
+
+      padding: 25px;
+
+      background:
+        var(--panel);
+
+      border-right:
+        1px solid
+        var(--border);
+
+      transition:
+        .25s ease;
     }
 
-    .pipeline-head {
-      display: flex;
-      justify-content: space-between;
-      gap: 1rem;
-      color: var(--soft);
-      font-size: .82rem;
-      font-weight: 800;
+
+    .pipeline-step:last-child {
+      border-right: none;
     }
 
-    .pipeline-head span:last-child {
+
+    .pipeline-step:hover {
+
+      background:
+        var(--panel-2);
+
+      transform:
+        translateY(-5px);
+
+      box-shadow:
+        inset 0 0 30px
+        rgba(57,189,248,.025);
+    }
+
+
+    .step-number {
+
+      font-family: var(--mono);
+
+      font-size: 9px;
+
+      color: var(--cyan);
+
+      margin-bottom: 55px;
+    }
+
+
+    .pipeline-step h3 {
+
+      color: var(--white);
+
+      font-size: 16px;
+
+      margin-bottom: 8px;
+    }
+
+
+    .pipeline-step p {
+
       color: var(--muted);
-      text-align: right;
-      font-weight: 700;
+
+      font-size: 11px;
     }
 
-    .progress {
-      height: 7px;
+
+    .arrow {
+
+      position: absolute;
+
+      right: -7px;
+      top: 50%;
+
+      width: 13px;
+      height: 13px;
+
+      border-top:
+        1px solid
+        var(--cyan);
+
+      border-right:
+        1px solid
+        var(--cyan);
+
+      transform:
+        rotate(45deg);
+
+      z-index: 2;
+    }
+
+
+    /* =========================================================
+       TARGET MAP
+    ========================================================= */
+
+    .target-layout {
+
+      display: grid;
+
+      grid-template-columns:
+        1fr
+        1fr;
+
+      gap: 70px;
+
+      align-items: center;
+    }
+
+
+    .target-map {
+
+      position: relative;
+
+      aspect-ratio: 1;
+
+      max-width: 520px;
+
+      margin: auto;
+
+      border:
+        1px solid
+        var(--border);
+
+      background:
+
+        linear-gradient(
+          rgba(57,189,248,.04) 1px,
+          transparent 1px
+        ),
+
+        linear-gradient(
+          90deg,
+          rgba(57,189,248,.04) 1px,
+          transparent 1px
+        );
+
+      background-size:
+        50px 50px;
+
       overflow: hidden;
-      border-radius: 999px;
-      background: rgba(143, 169, 160, .13);
     }
 
-    .progress span {
-      display: block;
-      width: var(--w);
+
+    .target-map::before {
+
+      content: "";
+
+      position: absolute;
+
+      width: 100%;
       height: 100%;
-      border-radius: inherit;
-      background: linear-gradient(90deg, var(--accent), var(--accent-2));
-      transform-origin: left;
-      animation: barIn 1s ease both;
-      animation-delay: var(--d, 0s);
+
+      border:
+        1px solid
+        rgba(57,189,248,.12);
+
+      border-radius: 50%;
+
+      transform:
+        scale(.68);
+
+      top: 0;
+      left: 0;
     }
+
+
+    .target-map::after {
+
+      content: "";
+
+      position: absolute;
+
+      width: 100%;
+      height: 100%;
+
+      border:
+        1px solid
+        rgba(57,189,248,.08);
+
+      border-radius: 50%;
+
+      transform:
+        scale(.42);
+
+      top: 0;
+      left: 0;
+    }
+
+
+    .target-center {
+
+      position: absolute;
+
+      top: 50%;
+      left: 50%;
+
+      transform:
+        translate(-50%, -50%);
+
+      width: 105px;
+      height: 105px;
+
+      display: grid;
+
+      place-items: center;
+
+      border:
+        1px solid
+        var(--cyan);
+
+      border-radius: 50%;
+
+      color: var(--cyan);
+
+      font-family: var(--mono);
+
+      font-size: 9px;
+
+      text-align: center;
+
+      background:
+        rgba(2,5,10,.9);
+
+      box-shadow:
+        0 0 40px
+        rgba(57,189,248,.12);
+    }
+
+
+    .target {
+
+      position: absolute;
+
+      padding:
+        7px 10px;
+
+      background:
+        rgba(2,5,10,.92);
+
+      border:
+        1px solid
+        var(--border);
+
+      color: var(--muted);
+
+      font-family: var(--mono);
+
+      font-size: 8px;
+
+      text-transform: uppercase;
+
+      transition: .25s ease;
+    }
+
+
+    .target:hover {
+
+      color: var(--cyan);
+
+      border-color:
+        var(--cyan);
+
+      box-shadow:
+        0 0 20px
+        rgba(57,189,248,.12);
+    }
+
+
+    .t1 { top: 12%; left: 17%; }
+    .t2 { top: 22%; right: 10%; }
+    .t3 { top: 42%; left: 7%; }
+    .t4 { top: 43%; right: 4%; }
+    .t5 { bottom: 20%; left: 11%; }
+    .t6 { bottom: 11%; right: 14%; }
+    .t7 { bottom: 29%; left: 39%; }
+    .t8 { top: 10%; left: 43%; }
+    .t9 { bottom: 7%; left: 43%; }
+
+
+    .persona-list {
+
+      display:
+        grid;
+
+      grid-template-columns:
+        repeat(2, 1fr);
+
+      gap: 10px;
+    }
+
+
+    .persona {
+
+      padding:
+        15px;
+
+      background:
+        var(--panel);
+
+      border:
+        1px solid
+        var(--border);
+
+      color:
+        var(--muted);
+
+      font-family:
+        var(--mono);
+
+      font-size: 9px;
+    }
+
+
+    .persona::before {
+
+      content:
+        "● ";
+
+      color:
+        var(--cyan);
+    }
+
+
+    /* =========================================================
+       CAMPAIGNS
+    ========================================================= */
+
+    .campaign-grid {
+
+      display:
+        grid;
+
+      grid-template-columns:
+        repeat(3, 1fr);
+
+      gap: 15px;
+    }
+
+
+    .campaign {
+
+      padding:
+        30px;
+
+      background:
+        var(--panel);
+
+      border:
+        1px solid
+        var(--border);
+
+      transition:
+        .3s ease;
+    }
+
+
+    .campaign:hover {
+
+      transform:
+        translateY(-6px);
+
+      border-color:
+        rgba(57,189,248,.4);
+
+      box-shadow:
+        0 25px 70px
+        rgba(0,0,0,.35);
+    }
+
+
+    .campaign-tag {
+
+      font-family:
+        var(--mono);
+
+      font-size:
+        9px;
+
+      color:
+        var(--cyan);
+
+      text-transform:
+        uppercase;
+
+      letter-spacing:
+        .1em;
+
+      margin-bottom:
+        20px;
+    }
+
+
+    .campaign h3 {
+
+      color:
+        var(--white);
+
+      font-size:
+        24px;
+
+      margin-bottom:
+        8px;
+    }
+
+
+    .campaign-description {
+
+      color:
+        var(--muted);
+
+      font-size:
+        12px;
+
+      min-height:
+        60px;
+    }
+
+
+    .campaign-stat {
+
+      display:
+        flex;
+
+      align-items:
+        baseline;
+
+      gap:
+        10px;
+
+      margin-top:
+        30px;
+    }
+
+
+    .campaign-number {
+
+      font-size:
+        55px;
+
+      line-height:
+        1;
+
+      font-weight:
+        800;
+
+      color:
+        var(--cyan);
+
+      text-shadow:
+        0 0 20px
+        rgba(57,189,248,.12);
+    }
+
+
+    .campaign-unit {
+
+      font-family:
+        var(--mono);
+
+      font-size:
+        9px;
+
+      color:
+        var(--muted);
+
+      text-transform:
+        uppercase;
+    }
+
+
+    .campaign-bar {
+
+      height:
+        3px;
+
+      margin-top:
+        25px;
+
+      background:
+        #0d1e2a;
+    }
+
+
+    .campaign-bar span {
+
+      display:
+        block;
+
+      height:
+        100%;
+
+      background:
+        var(--cyan);
+
+      box-shadow:
+        0 0 15px
+        rgba(57,189,248,.5);
+    }
+
+
+    .data-bar span {
+      width: 42%;
+    }
+
+    .event-bar span {
+      width: 40%;
+    }
+
+    .sales-bar span {
+      width: 18%;
+    }
+
+
+    /* =========================================================
+       PROOF OF WORK
+    ========================================================= */
+
+    .proof-grid {
+
+      display:
+        grid;
+
+      grid-template-columns:
+        repeat(3, 1fr);
+
+      gap:
+        1px;
+
+      background:
+        var(--border);
+
+      border:
+        1px solid
+        var(--border);
+    }
+
+
+    .proof-card {
+
+      padding:
+        38px;
+
+      background:
+        var(--space);
+    }
+
+
+    .proof-number {
+
+      font-family:
+        var(--mono);
+
+      font-size:
+        9px;
+
+      color:
+        var(--cyan);
+
+      margin-bottom:
+        35px;
+    }
+
+
+    .proof-card h3 {
+
+      color:
+        var(--white);
+
+      font-size:
+        21px;
+
+      margin-bottom:
+        12px;
+    }
+
+
+    .proof-card p {
+
+      color:
+        var(--muted);
+
+      font-size:
+        12px;
+    }
+
+
+    /* =========================================================
+       EXPERIENCE
+    ========================================================= */
 
     .timeline {
-      position: relative;
-      display: grid;
-      gap: 1rem;
-      padding-left: 1.5rem;
+
+      max-width:
+        900px;
     }
 
-    .timeline::before {
-      content: "";
-      position: absolute;
-      left: 5px;
-      top: 8px;
-      bottom: 8px;
-      width: 1px;
-      background: linear-gradient(var(--accent), rgba(33, 185, 255, .18));
+
+    .timeline-item {
+
+      display:
+        grid;
+
+      grid-template-columns:
+        150px
+        1fr;
+
+      padding:
+        30px 0;
+
+      border-top:
+        1px solid
+        var(--border);
     }
 
-    .timeline-card {
-      position: relative;
-      padding: 1.25rem;
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      background: var(--panel);
+
+    .timeline-date {
+
+      font-family:
+        var(--mono);
+
+      font-size:
+        10px;
+
+      color:
+        var(--cyan);
     }
 
-    .timeline-card::before {
-      content: "";
-      position: absolute;
-      left: -1.75rem;
-      top: 1.45rem;
-      width: 11px;
-      height: 11px;
-      border-radius: 999px;
-      border: 1px solid var(--accent);
-      background: var(--bg);
-      box-shadow: 0 0 0 5px rgba(54, 233, 159, .08);
+
+    .timeline-content h3 {
+
+      color:
+        var(--white);
+
+      font-size:
+        20px;
     }
 
-    .timeline-card.current::before {
-      background: var(--accent-2);
-      border-color: var(--accent-2);
+
+    .timeline-content p {
+
+      color:
+        var(--muted);
+
+      margin-top:
+        5px;
     }
 
-    .timeline-top {
-      display: flex;
-      justify-content: space-between;
-      gap: 1rem;
-      flex-wrap: wrap;
-      margin-bottom: .75rem;
+
+    /* =========================================================
+       SALES STACK
+    ========================================================= */
+
+    .stack-grid {
+
+      display:
+        flex;
+
+      flex-wrap:
+        wrap;
+
+      gap:
+        9px;
     }
 
-    .timeline-title {
-      font-size: 1.25rem;
-      font-weight: 800;
+
+    .stack-item {
+
+      padding:
+        12px 15px;
+
+      background:
+        var(--panel);
+
+      border:
+        1px solid
+        var(--border);
+
+      color:
+        var(--muted);
+
+      font-family:
+        var(--mono);
+
+      font-size:
+        9px;
+
+      transition:
+        .25s ease;
     }
 
-    .timeline-company,
-    .timeline-period {
-      color: var(--muted);
-      font-size: .72rem;
-      font-weight: 800;
-      letter-spacing: .1em;
-      text-transform: uppercase;
+
+    .stack-item:hover {
+
+      color:
+        var(--cyan);
+
+      border-color:
+        var(--cyan);
+
+      transform:
+        translateY(-2px);
     }
 
-    .timeline-period {
-      color: var(--accent-2);
-      border: 1px solid rgba(33, 185, 255, .22);
-      border-radius: 6px;
-      padding: .28rem .5rem;
+
+    /* =========================================================
+       CREDENTIALS
+    ========================================================= */
+
+    .credentials-grid {
+
+      display:
+        grid;
+
+      grid-template-columns:
+        repeat(3, 1fr);
+
+      gap:
+        15px;
     }
 
-    .timeline-card p {
-      color: var(--muted);
-      font-size: .9rem;
+
+    .credential {
+
+      position:
+        relative;
+
+      padding:
+        28px;
+
+      background:
+        var(--panel);
+
+      border:
+        1px solid
+        var(--border);
+
+      transition:
+        .25s ease;
     }
 
-    .challenge-list {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1px;
-      margin-top: 1rem;
-      background: var(--line);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      overflow: hidden;
+
+    .credential::before {
+
+      content:
+        "↗";
+
+      position:
+        absolute;
+
+      right:
+        18px;
+
+      top:
+        16px;
+
+      color:
+        var(--cyan);
+
+      font-family:
+        var(--mono);
     }
 
-    .challenge {
-      background: var(--panel-2);
-      padding: 1rem;
+
+    .credential:hover {
+
+      transform:
+        translateY(-4px);
+
+      border-color:
+        rgba(57,189,248,.4);
     }
 
-    .challenge strong {
-      display: block;
-      color: var(--text);
-      margin-bottom: .4rem;
+
+    .credential-icon {
+
+      color:
+        var(--cyan);
+
+      font-family:
+        var(--mono);
+
+      font-size:
+        9px;
+
+      margin-bottom:
+        28px;
     }
 
-    .challenge span {
-      color: var(--muted);
-      font-size: .82rem;
+
+    .credential h3 {
+
+      color:
+        var(--white);
+
+      font-size:
+        16px;
+
+      margin-bottom:
+        7px;
     }
 
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1px;
-      background: var(--line);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      overflow: hidden;
+
+    .credential p {
+
+      color:
+        var(--muted);
+
+      font-size:
+        11px;
+
+      margin-bottom:
+        18px;
     }
 
-    .skill-box {
-      background: var(--panel);
-      padding: 1.25rem;
+
+    .credential a {
+
+      color:
+        var(--cyan);
+
+      font-family:
+        var(--mono);
+
+      font-size:
+        9px;
+
+      text-transform:
+        uppercase;
     }
 
-    .skill-box h3 {
-      font-size: 1rem;
-      margin-bottom: .8rem;
+
+    /* =========================================================
+       CTA
+    ========================================================= */
+
+    .cta {
+
+      position:
+        relative;
+
+      overflow:
+        hidden;
+
+      padding:
+        100px 40px;
+
+      text-align:
+        center;
+
+      border:
+        1px solid
+        var(--border);
+
+      background:
+
+        radial-gradient(
+          circle at center,
+          rgba(57,189,248,.1),
+          transparent 48%
+        ),
+
+        var(--panel);
     }
 
-    .cert-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1px;
-      background: var(--line);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      overflow: hidden;
+
+    /* little rocket in CTA */
+
+    .cta::after {
+
+      content:
+        "🚀";
+
+      position:
+        absolute;
+
+      right:
+        7%;
+
+      bottom:
+        15%;
+
+      font-size:
+        55px;
+
+      opacity:
+        .12;
+
+      transform:
+        rotate(-35deg);
     }
 
-    .cert {
-      background: var(--panel);
-      padding: 1rem;
-      display: grid;
-      gap: .85rem;
+
+    .cta small {
+
+      color:
+        var(--cyan);
+
+      font-family:
+        var(--mono);
+
+      font-size:
+        9px;
+
+      text-transform:
+        uppercase;
+
+      letter-spacing:
+        .13em;
     }
 
-    .cert img {
-      width: 100%;
-      display: block;
-      border: 1px solid var(--line);
-      border-radius: 6px;
-      opacity: .88;
-      transition: opacity .2s, border-color .2s;
+
+    .cta h2 {
+
+      max-width:
+        800px;
+
+      margin:
+        22px auto 18px;
+
+      color:
+        var(--white);
+
+      font-size:
+        clamp(
+          42px,
+          6vw,
+          75px
+        );
+
+      line-height:
+        .95;
+
+      letter-spacing:
+        -.06em;
     }
 
-    .cert a:hover img {
-      opacity: 1;
-      border-color: var(--line-strong);
+
+    .cta p {
+
+      color:
+        var(--muted);
+
+      margin-bottom:
+        30px;
     }
 
-    .badge-link {
-      display: grid;
-      place-items: center;
-      min-height: 190px;
-      border: 1px solid var(--line);
-      border-radius: 6px;
-      text-decoration: none;
-      background: var(--panel-2);
-    }
 
-    .badge-link svg {
-      width: 72px;
-      height: 72px;
-      margin-bottom: .8rem;
-    }
-
-    .contact {
-      padding: clamp(4rem, 7vw, 6rem) 0;
-      text-align: center;
-    }
-
-    .contact h2 {
-      font-size: clamp(2.4rem, 5vw, 4.5rem);
-      margin-bottom: .8rem;
-    }
-
-    .contact p {
-      max-width: 620px;
-      margin: 0 auto 1.5rem;
-      color: var(--muted);
-    }
+    /* =========================================================
+       FOOTER
+    ========================================================= */
 
     footer {
-      padding: 2rem 0 2.4rem;
-      color: var(--muted);
-      text-align: center;
-      border-top: 1px solid var(--line);
+
+      padding:
+        35px 0;
+
+      border-top:
+        1px solid
+        var(--border);
+
+      font-family:
+        var(--mono);
+
+      font-size:
+        9px;
+
+      color:
+        var(--dim);
     }
+
+
+    .footer-inner {
+
+      display:
+        flex;
+
+      align-items:
+        center;
+
+      justify-content:
+        space-between;
+    }
+
 
     .footer-links {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 1rem;
-      margin-bottom: .8rem;
+
+      display:
+        flex;
+
+      gap:
+        20px;
     }
 
-    .footer-links a {
-      color: var(--muted);
-      text-decoration: none;
-      font-size: .72rem;
-      font-weight: 800;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-    }
 
     .footer-links a:hover {
-      color: var(--accent);
+      color:
+        var(--cyan);
     }
 
-    .fade-in {
-      opacity: 0;
-      transform: translateY(18px);
-      transition: opacity .55s ease, transform .55s ease;
+
+    /* =========================================================
+       REVEAL
+    ========================================================= */
+
+    .reveal {
+
+      opacity:
+        0;
+
+      transform:
+        translateY(25px);
+
+      transition:
+        opacity .7s ease,
+        transform .7s ease;
     }
 
-    .fade-in.visible {
-      opacity: 1;
-      transform: translateY(0);
+
+    .reveal.visible {
+
+      opacity:
+        1;
+
+      transform:
+        translateY(0);
     }
 
-    @keyframes pulse {
-      0% {
-        box-shadow: 0 0 0 0 rgba(33, 185, 255, .46);
-      }
 
-      70% {
-        box-shadow: 0 0 0 8px rgba(33, 185, 255, 0);
-      }
+    /* =========================================================
+       MOBILE
+    ========================================================= */
 
-      100% {
-        box-shadow: 0 0 0 0 rgba(33, 185, 255, 0);
-      }
-    }
-
-    @keyframes radarSpin {
-      from {
-        transform: translate(-50%, -50%) rotate(0deg);
-      }
-
-      to {
-        transform: translate(-50%, -50%) rotate(360deg);
-      }
-    }
-
-    @keyframes barIn {
-      from {
-        transform: scaleX(0);
-      }
-
-      to {
-        transform: scaleX(1);
-      }
-    }
-
-    @media (max-width: 980px) {
-
-      .hero,
-      .scale-layout,
-      .section-head {
-        grid-template-columns: 1fr;
-      }
-
-      .hero {
-        padding-top: 7rem;
-      }
-
-      .profile-panel {
-        max-width: 620px;
-      }
-
-      .metrics,
-      .skills-grid,
-      .cert-grid,
-      .grid-3 {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    @media (max-width: 760px) {
-
-      body {
-        background-size: 54px 54px, 54px 54px, auto;
-      }
-
-      .nav-links,
-      .top-contact {
-        display: none;
-      }
-
-      .burger {
-        display: flex;
-      }
+    @media(max-width: 950px) {
 
       .hero-grid,
-      .metrics,
-      .grid-3,
-      .challenge-list,
-      .skills-grid,
-      .cert-grid {
-        grid-template-columns: 1fr;
+      .target-layout,
+      .section-heading {
+
+        grid-template-columns:
+          1fr;
       }
 
-      .profile-head {
-        grid-template-columns: 80px 1fr;
+
+      .rocket-zone {
+        min-height:
+          400px;
       }
 
-      .profile-photo {
-        width: 80px;
+
+      .pipeline {
+
+        grid-template-columns:
+          repeat(2, 1fr);
       }
 
-      .target-map {
-        min-height: 260px;
+
+      .campaign-grid,
+      .proof-grid,
+      .credentials-grid {
+
+        grid-template-columns:
+          1fr;
       }
 
-      .target {
-        font-size: .54rem;
-        padding: .28rem .36rem;
+
+      .kpi-grid {
+
+        grid-template-columns:
+          repeat(2, 1fr);
       }
 
-      .target:nth-of-type(5),
-      .target:nth-of-type(6) {
-        display: none;
+
+      .kpi:nth-child(2) {
+        border-right:
+          none;
       }
 
-      .quick-facts {
-        grid-template-columns: 1fr;
+
+      .nav-links {
+        display:
+          none;
+      }
+    }
+
+
+    @media(max-width: 600px) {
+
+      .container {
+
+        width:
+          calc(100% - 30px);
+      }
+
+
+      section {
+        padding:
+          90px 0;
+      }
+
+
+      h1 {
+        font-size:
+          55px;
+      }
+
+
+      .pipeline {
+
+        grid-template-columns:
+          1fr;
+      }
+
+
+      .pipeline-step {
+
+        border-right:
+          none;
+
+        border-bottom:
+          1px solid
+          var(--border);
+      }
+
+
+      .kpi-grid {
+
+        grid-template-columns:
+          1fr 1fr;
+      }
+
+
+      .kpi {
+        padding:
+          24px 15px;
+      }
+
+
+      .kpi-number {
+        font-size:
+          31px;
+      }
+
+
+      .persona-list {
+
+        grid-template-columns:
+          1fr;
+      }
+
+
+      .rocket {
+
+        right:
+          30px;
+      }
+
+
+      .orbit-path {
+
+        right:
+          -130px;
+      }
+
+
+      .timeline-item {
+
+        grid-template-columns:
+          1fr;
+
+        gap:
+          10px;
+      }
+
+
+      .footer-inner {
+
+        flex-direction:
+          column;
+
+        gap:
+          18px;
+      }
+
+
+      .cta {
+
+        padding:
+          70px 20px;
       }
     }
 
-    @media (prefers-reduced-motion: reduce) {
-
-      *,
-      *::before,
-      *::after {
-        animation-duration: .001ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: .001ms !important;
-        scroll-behavior: auto !important;
-      }
-
-      .fade-in {
-        opacity: 1;
-        transform: none;
-      }
-    }
   </style>
 </head>
 
+
 <body>
 
-  <nav class="topbar" aria-label="Navigation principale">
 
-    <a class="brand" href="#top" aria-label="Retour en haut">
-      <span class="brand-mark">QT</span>
-      <span>SDR Command Center</span>
-    </a>
+  <!-- =======================================================
+       NAVIGATION
+  ======================================================== -->
 
-    <ul class="nav-links">
-      <li><a href="#resultats">Résultats</a></li>
-      <li><a href="#scalefast">ScaleFast</a></li>
-      <li><a href="#parcours">Parcours</a></li>
-      <li><a href="#stack">Stack</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
+  <header class="topbar">
 
-    <div class="top-contact">
-      <a href="tel:0759019715">07 59 01 97 15</a>
-      <span>·</span>
-      <a href="mailto:taffinquentin.qt@gmail.com">Email</a>
+    <div class="container nav">
+
+      <a href="#top" class="brand">
+
+        <span class="brand-mark">
+          QT
+        </span>
+
+        <span>
+          MISSION CONTROL // 026
+        </span>
+
+      </a>
+
+
+      <nav class="nav-links">
+
+        <a href="#pipeline">
+          Pipeline
+        </a>
+
+        <a href="#targets">
+          Targets
+        </a>
+
+        <a href="#campaigns">
+          Results
+        </a>
+
+        <a href="#proof">
+          Proof
+        </a>
+
+        <a href="#credentials">
+          Credentials
+        </a>
+
+      </nav>
+
+
+      <div class="system-status">
+
+        <span class="status-dot"></span>
+
+        System Online
+
+      </div>
+
     </div>
 
-    <button
-      class="burger"
-      id="burger"
-      type="button"
-      aria-label="Menu"
-    >
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
+  </header>
 
-  </nav>
-
-
-  <div class="mobile-menu" id="mobileMenu">
-
-    <a href="#resultats" onclick="closeMobile()">
-      Résultats
-    </a>
-
-    <a href="#scalefast" onclick="closeMobile()">
-      ScaleFast
-    </a>
-
-    <a href="#parcours" onclick="closeMobile()">
-      Parcours
-    </a>
-
-    <a href="#stack" onclick="closeMobile()">
-      Stack
-    </a>
-
-    <a href="#certifications" onclick="closeMobile()">
-      Certifications
-    </a>
-
-    <a href="#contact" onclick="closeMobile()">
-      Contact
-    </a>
-
-  </div>
 
 
   <main id="top">
 
 
-    <!-- ========================= -->
-    <!-- HERO -->
-    <!-- ========================= -->
+    <!-- =======================================================
+         HERO
+    ======================================================== -->
 
-    <section class="shell hero">
+    <section class="hero">
 
-      <div class="hero-copy fade-in">
-
-        <div class="eyebrow">
-          Mis à jour · 21 septembre 2026
-        </div>
-
-        <h1>
-          Quentin <span>Taffin</span>
-        </h1>
-
-        <p class="hero-sub">
-          SDR Outbound B2B · Cold Call C-levels · RDV qualifiés
-        </p>
-
-        <p class="hero-text">
-          SDR chez ScaleFast. Je prospecte des comptes B2B multi-secteurs,
-          j'ouvre des conversations utiles au téléphone, je qualifie rapidement
-          le contexte et je transmets des RDV exploitables aux équipes sales.
-        </p>
-
-        <div class="cta-row">
-
-          <a
-            class="btn btn-primary"
-            href="mailto:taffinquentin.qt@gmail.com"
-          >
-            Me contacter
-          </a>
-
-          <a
-            class="btn btn-secondary"
-            href="https://www.linkedin.com/in/quentin-taffin-3b9aa3246/"
-            target="_blank"
-            rel="noopener"
-          >
-            LinkedIn
-          </a>
-
-          <a
-            class="btn btn-ghost"
-            href="#parcours"
-          >
-            Voir mon parcours
-          </a>
-
-        </div>
+      <div class="container hero-grid">
 
 
-        <div
-          class="hero-grid"
-          aria-label="Résumé du profil"
-        >
+        <div class="reveal">
 
-          <div class="hero-grid-item">
+          <div class="eyebrow">
 
-            <div class="label">
-              Actuel
-            </div>
-
-            <div class="value">
-              ScaleFast · SDR
-            </div>
+            SDR
+            //
+            OUTBOUND
+            //
+            PIPELINE GENERATION
 
           </div>
 
 
-          <div class="hero-grid-item">
+          <h1>
 
-            <div class="label">
-              Cibles
-            </div>
+            Quentin<br>
 
-            <div class="value">
-              DSI · Data · Event · C-levels
-            </div>
+            <span>Taffin.</span>
+
+          </h1>
+
+
+          <p class="hero-description">
+
+            Je transforme des
+            <strong>ICP précis</strong>
+            en conversations commerciales :
+
+            ciblage, data, outbound,
+            cold calling, qualification
+            et génération de rendez-vous.
+
+          </p>
+
+
+          <div class="hero-actions">
+
+            <a
+              href="https://www.linkedin.com/in/quentin-taffin-sdrb2b/"
+              target="_blank"
+              rel="noopener"
+              class="btn btn-primary">
+
+              LinkedIn ↗
+
+            </a>
+
+
+            <a
+              href="mailto:taffinquentin.qt@gmail.com"
+              class="btn btn-secondary">
+
+              Contact
+
+            </a>
+
+
+            <a
+              href="https://github.com/taffinquentinqt-lgtm/portfolio"
+              target="_blank"
+              rel="noopener"
+              class="btn btn-secondary">
+
+              GitHub ↗
+
+            </a>
+
+          </div>
+
+        </div>
+
+
+
+        <!-- ===================================================
+             SPACE / ROCKET VISUAL
+        ==================================================== -->
+
+        <div class="rocket-zone reveal">
+
+
+          <div class="orbit-path">
+
+            <div class="orbit-dot"></div>
 
           </div>
 
 
-          <div class="hero-grid-item">
+          <div class="rocket">
 
-            <div class="label">
-              Expérience
+            <div class="rocket-nose"></div>
+
+            <div class="rocket-body"></div>
+
+            <div class="rocket-window"></div>
+
+            <div class="rocket-fin-left"></div>
+
+            <div class="rocket-fin-right"></div>
+
+            <div class="flame"></div>
+
+          </div>
+
+
+          <!-- telemetry -->
+
+          <div class="telemetry-card">
+
+            <div class="telemetry-header">
+
+              <span>
+                TELEMETRY // QT-026
+              </span>
+
+              <span>
+                ● LIVE
+              </span>
+
             </div>
 
-            <div class="value">
-              Commercial depuis mai 2021
+
+            <div class="telemetry-line">
+
+              <span>
+                MISSION
+              </span>
+
+              <span>
+                OUTBOUND
+              </span>
+
+            </div>
+
+
+            <div class="telemetry-line">
+
+              <span>
+                CALLS CONNECTED
+              </span>
+
+              <span class="live">
+                466
+              </span>
+
+            </div>
+
+
+            <div class="telemetry-line">
+
+              <span>
+                QUALIFIED RDV
+              </span>
+
+              <span class="live">
+                50
+              </span>
+
+            </div>
+
+
+            <div class="telemetry-line">
+
+              <span>
+                CONVERSION
+              </span>
+
+              <span class="live">
+                10.7%
+              </span>
+
+            </div>
+
+
+            <div class="telemetry-line">
+
+              <span>
+                STATUS
+              </span>
+
+              <span>
+                OPERATIONAL
+              </span>
+
             </div>
 
           </div>
@@ -1276,457 +2563,235 @@
 
       </div>
 
-
-      <!-- ========================= -->
-      <!-- PROFILE -->
-      <!-- ========================= -->
-
-      <aside
-        class="profile-panel fade-in"
-        aria-label="Tableau de bord prospecting"
-      >
-
-        <div class="profile-head">
-
-          <img
-            src="./1776410684605.jpg"
-            alt="Quentin Taffin"
-            class="profile-photo"
-          />
-
-          <div>
-
-            <div class="status">
-              En poste
-            </div>
-
-            <div class="profile-title">
-              Outbound B2B · ScaleFast
-            </div>
-
-            <div class="profile-sub">
-              Prospection · qualification · prise de rendez-vous
-            </div>
-
-          </div>
-
-        </div>
-
-
-        <div
-          class="target-map"
-          aria-label="Cibles prospectées"
-        >
-
-          <div class="target-caption">
-            Cibles prospectées
-          </div>
-
-          <span
-            class="target"
-            style="--x:22%;--y:28%"
-          >
-            DSI
-          </span>
-
-          <span
-            class="target"
-            style="--x:77%;--y:27%"
-          >
-            Chief Data Officer
-          </span>
-
-          <span
-            class="target"
-            style="--x:78%;--y:57%"
-          >
-            Data Architect
-          </span>
-
-          <span
-            class="target"
-            style="--x:23%;--y:58%"
-          >
-            Event Manager
-          </span>
-
-          <span
-            class="target"
-            style="--x:50%;--y:74%"
-          >
-            Responsable Com
-          </span>
-
-          <span
-            class="target"
-            style="--x:54%;--y:42%"
-          >
-            C-level
-          </span>
-
-        </div>
-
-
-        <div class="quick-facts">
-
-          <div class="quick-fact">
-
-            <strong>
-              446
-            </strong>
-
-            <span>
-              Appels décrochés
-            </span>
-
-          </div>
-
-
-          <div class="quick-fact">
-
-            <strong>
-              50
-            </strong>
-
-            <span>
-              RDV qualifiés
-            </span>
-
-          </div>
-
-
-          <div class="quick-fact">
-
-            <strong>
-              11,2%
-            </strong>
-
-            <span>
-              Conversion
-            </span>
-
-          </div>
-
-        </div>
-
-      </aside>
-
     </section>
 
 
-    <!-- ========================= -->
-    <!-- RESULTS -->
-    <!-- ========================= -->
 
-    <section
-      class="metrics-band"
-      id="resultats"
-    >
+    <!-- =======================================================
+         KPI
+    ======================================================== -->
 
-      <div
-        class="shell metrics"
-        aria-label="Résultats clés"
-      >
+    <div class="kpi-strip">
+
+      <div class="container kpi-grid">
 
 
-        <div
-          class="metric"
-          style="--i:0"
-        >
+        <div class="kpi reveal">
 
-          <div
-            class="metric-value count-up"
-            data-count="11.2"
-            data-decimals="1"
-            data-suffix="%"
-          >
-            11,2%
+          <div class="kpi-number">
+            466
           </div>
 
-          <div class="metric-label">
-            Conversion RDV · ScaleFast
+          <div class="kpi-label">
+            Calls connected
           </div>
 
         </div>
 
 
-        <div
-          class="metric"
-          style="--i:1"
-        >
+        <div class="kpi reveal">
 
-          <div class="metric-value">
-            Mai 2021
-          </div>
-
-          <div class="metric-label">
-            Début commercial · +5 ans d'expérience
-          </div>
-
-        </div>
-
-
-        <div
-          class="metric"
-          style="--i:2"
-        >
-
-          <div
-            class="metric-value count-up"
-            data-count="50"
-          >
+          <div class="kpi-number">
             50
           </div>
 
-          <div class="metric-label">
-            RDV qualifiés · ScaleFast
+          <div class="kpi-label">
+            Qualified meetings
           </div>
 
         </div>
 
 
-        <div
-          class="metric"
-          style="--i:3"
-        >
+        <div class="kpi reveal">
 
-          <div
-            class="metric-value count-up"
-            data-count="446"
-          >
-            446
+          <div class="kpi-number">
+            10.7<span>%</span>
           </div>
 
-          <div class="metric-label">
-            Appels décrochés · ScaleFast
+          <div class="kpi-label">
+            Conversion rate
           </div>
 
         </div>
+
+
+        <div class="kpi reveal">
+
+          <div class="kpi-number">
+            09
+          </div>
+
+          <div class="kpi-label">
+            Target personas
+          </div>
+
+        </div>
+
 
       </div>
 
-    </section>
+    </div>
 
 
-    <!-- ========================= -->
-    <!-- SCALEFAST -->
-    <!-- ========================= -->
 
-    <section
-      class="section"
-      id="scalefast"
-    >
+    <!-- =======================================================
+         PIPELINE
+    ======================================================== -->
 
-      <div class="shell">
+    <section id="pipeline">
 
-        <div class="section-head fade-in">
+      <div class="container">
 
-          <div>
 
-            <div class="section-kicker">
-              Mission actuelle
-            </div>
+        <div class="section-heading reveal">
 
-            <h2>
-              ScaleFast, outbound multi-secteurs.
-            </h2>
+          <div class="section-index">
+
+            01 //
+            PIPELINE ENGINE
 
           </div>
 
-          <p class="section-desc">
-            Prospection B2B multi-secteurs. Cold call intensif,
-            découverte rapide, traitement des objections et passage
-            de relais propre aux équipes Account Executive.
-          </p>
+
+          <div>
+
+            <h2>
+
+              How I build<br>
+              pipeline.
+
+            </h2>
+
+
+            <p>
+
+              Une approche structurée :
+              partir de l'ICP, construire la donnée,
+              lancer l'outbound, qualifier les conversations
+              et convertir l'activité en rendez-vous commerciaux.
+
+            </p>
+
+          </div>
 
         </div>
 
 
-        <div class="scale-layout fade-in">
+
+        <div class="pipeline reveal">
 
 
-          <div class="scale-main">
+          <div class="pipeline-step">
+
+            <div class="step-number">
+              01
+            </div>
 
             <h3>
-              Cold call utile, contexte clair, RDV exploitable.
+              ICP
             </h3>
 
             <p>
-              Je contacte des DSI, Chief Data Officers, Data Architects,
-              responsables de salon, Event Managers, responsables communication,
-              ainsi que des CRO, VP Sales, CMO et CEO selon l'ICP de la campagne.
+              Définition des comptes et personas prioritaires.
             </p>
 
-            <div class="sector-tags">
-
-              <span class="tag">
-                Data
-              </span>
-
-              <span class="tag">
-                IT
-              </span>
-
-              <span class="tag">
-                DSI
-              </span>
-
-              <span class="tag">
-                Chief Data Officer
-              </span>
-
-              <span class="tag">
-                Data Architect
-              </span>
-
-              <span class="tag">
-                Événementiel B2B
-              </span>
-
-              <span class="tag">
-                Event Manager
-              </span>
-
-              <span class="tag">
-                Communication
-              </span>
-
-              <span class="tag">
-                CRO
-              </span>
-
-              <span class="tag">
-                VP Sales
-              </span>
-
-              <span class="tag">
-                CMO
-              </span>
-
-              <span class="tag">
-                CEO
-              </span>
-
-            </div>
+            <span class="arrow"></span>
 
           </div>
 
 
-          <div class="scale-side">
+          <div class="pipeline-step">
 
-            <div class="pipeline">
-
-
-              <!-- TOTAL -->
-
-              <div class="pipeline-row">
-
-                <div class="pipeline-head">
-
-                  <span>
-                    Total · depuis le 22 juin 2026
-                  </span>
-
-                  <span>
-                    446 appels · 50 RDV · 11,2%
-                  </span>
-
-                </div>
-
-                <div class="progress">
-
-                  <span
-                    style="--w:100%;--d:.05s"
-                  ></span>
-
-                </div>
-
-              </div>
-
-
-              <!-- DATA IT -->
-
-              <div class="pipeline-row">
-
-                <div class="pipeline-head">
-
-                  <span>
-                    Data / IT
-                  </span>
-
-                  <span>
-                    21 RDV
-                  </span>
-
-                </div>
-
-                <div class="progress">
-
-                  <span
-                    style="--w:42%;--d:.15s"
-                  ></span>
-
-                </div>
-
-              </div>
-
-
-              <!-- EVENT -->
-
-              <div class="pipeline-row">
-
-                <div class="pipeline-head">
-
-                  <span>
-                    Événementiel
-                  </span>
-
-                  <span>
-                    20 RDV
-                  </span>
-
-                </div>
-
-                <div class="progress">
-
-                  <span
-                    style="--w:40%;--d:.25s"
-                  ></span>
-
-                </div>
-
-              </div>
-
-
-              <!-- SCALEFAST -->
-
-              <div class="pipeline-row">
-
-                <div class="pipeline-head">
-
-                  <span>
-                    ScaleFast
-                  </span>
-
-                  <span>
-                    9 RDV
-                  </span>
-
-                </div>
-
-                <div class="progress">
-
-                  <span
-                    style="--w:18%;--d:.35s"
-                  ></span>
-
-                </div>
-
-              </div>
-
+            <div class="step-number">
+              02
             </div>
 
+            <h3>
+              DATA
+            </h3>
+
+            <p>
+              Construction et enrichissement des listes.
+            </p>
+
+            <span class="arrow"></span>
+
           </div>
+
+
+          <div class="pipeline-step">
+
+            <div class="step-number">
+              03
+            </div>
+
+            <h3>
+              OUTBOUND
+            </h3>
+
+            <p>
+              Approche multicanale adaptée au persona.
+            </p>
+
+            <span class="arrow"></span>
+
+          </div>
+
+
+          <div class="pipeline-step">
+
+            <div class="step-number">
+              04
+            </div>
+
+            <h3>
+              COLD CALL
+            </h3>
+
+            <p>
+              Accroche, découverte et identification du besoin.
+            </p>
+
+            <span class="arrow"></span>
+
+          </div>
+
+
+          <div class="pipeline-step">
+
+            <div class="step-number">
+              05
+            </div>
+
+            <h3>
+              QUALIFY
+            </h3>
+
+            <p>
+              Qualification du contexte et du potentiel.
+            </p>
+
+            <span class="arrow"></span>
+
+          </div>
+
+
+          <div class="pipeline-step">
+
+            <div class="step-number">
+              06
+            </div>
+
+            <h3>
+              RDV
+            </h3>
+
+            <p>
+              Transformation de la conversation en rendez-vous.
+            </p>
+
+          </div>
+
 
         </div>
 
@@ -1735,144 +2800,326 @@
     </section>
 
 
-    <!-- ========================= -->
-    <!-- SEGMENTS -->
-    <!-- ========================= -->
 
-    <section class="section">
+    <!-- =======================================================
+         TARGETS
+    ======================================================== -->
 
-      <div class="shell">
+    <section id="targets">
 
-        <div class="section-head fade-in">
+      <div class="container">
 
-          <div>
 
-            <div class="section-kicker">
-              Résultats par ICP
-            </div>
+        <div class="section-heading reveal">
 
-            <h2>
-              50 RDV. 3 segments.
-            </h2>
+          <div class="section-index">
+
+            02 //
+            TARGET ACQUISITION
 
           </div>
 
-          <p class="section-desc">
-            Répartition des rendez-vous générés selon les secteurs,
-            profils ciblés et ICP définis sur les campagnes.
-          </p>
+
+          <div>
+
+            <h2>
+
+              Know the<br>
+              target.
+
+            </h2>
+
+
+            <p>
+
+              La prospection commence avant l'appel.
+              Comprendre le marché, l'ICP et le rôle du décideur
+              permet de construire une approche beaucoup plus précise.
+
+            </p>
+
+          </div>
 
         </div>
 
 
-        <div class="grid-3 fade-in">
+
+        <div class="target-layout">
 
 
-          <!-- DATA / IT -->
+          <div class="target-map reveal">
 
-          <article class="tile">
 
-            <div class="label">
-              Data / IT
+            <div class="target-center">
+
+              ICP<br>
+              TARGET<br>
+              LOCK
+
             </div>
 
-            <h3 class="tile-title">
-              21 RDV qualifiés
-            </h3>
 
-            <p>
-              Cibles :
-            </p>
+            <div class="target t1">
+              DSI
+            </div>
 
-            <ul>
+            <div class="target t2">
+              CDO
+            </div>
 
-              <li>
+            <div class="target t3">
+              DATA ARCHITECT
+            </div>
+
+            <div class="target t4">
+              CRO
+            </div>
+
+            <div class="target t5">
+              VP SALES
+            </div>
+
+            <div class="target t6">
+              CMO
+            </div>
+
+            <div class="target t7">
+              CEO
+            </div>
+
+            <div class="target t8">
+              EVENT MANAGER
+            </div>
+
+            <div class="target t9">
+              RESPONSABLE COM
+            </div>
+
+
+          </div>
+
+
+
+          <div class="reveal">
+
+            <div class="persona-list">
+
+
+              <div class="persona">
                 DSI
-              </li>
+              </div>
 
-              <li>
+              <div class="persona">
                 Chief Data Officer
-              </li>
+              </div>
 
-              <li>
+              <div class="persona">
                 Data Architect
-              </li>
+              </div>
 
-            </ul>
+              <div class="persona">
+                CRO
+              </div>
 
-          </article>
+              <div class="persona">
+                VP Sales
+              </div>
 
+              <div class="persona">
+                CMO
+              </div>
 
-          <!-- EVENT -->
+              <div class="persona">
+                CEO
+              </div>
 
-          <article class="tile">
-
-            <div class="label">
-              Événementiel
-            </div>
-
-            <h3 class="tile-title">
-              20 RDV qualifiés
-            </h3>
-
-            <p>
-              Cibles :
-            </p>
-
-            <ul>
-
-              <li>
-                Responsable de salon
-              </li>
-
-              <li>
+              <div class="persona">
                 Event Manager
-              </li>
+              </div>
 
-              <li>
+              <div class="persona">
                 Responsable Communication
-              </li>
+              </div>
 
-            </ul>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =======================================================
+         CAMPAIGNS
+    ======================================================== -->
+
+    <section id="campaigns">
+
+      <div class="container">
+
+
+        <div class="section-heading reveal">
+
+          <div class="section-index">
+
+            03 //
+            MISSION RESULTS
+
+          </div>
+
+
+          <div>
+
+            <h2>
+
+              50 meetings.<br>
+              3 environments.
+
+            </h2>
+
+
+            <p>
+
+              Répartition des rendez-vous qualifiés générés
+              au 21 septembre 2026.
+
+            </p>
+
+          </div>
+
+        </div>
+
+
+
+        <div class="campaign-grid">
+
+
+          <article class="campaign reveal">
+
+            <div class="campaign-tag">
+              SECTOR // DATA & IT
+            </div>
+
+            <h3>
+              Data / IT
+            </h3>
+
+            <p class="campaign-description">
+
+              Ciblage de décideurs IT et Data :
+              DSI, Chief Data Officer et Data Architect.
+
+            </p>
+
+
+            <div class="campaign-stat">
+
+              <div class="campaign-number">
+                21
+              </div>
+
+              <div class="campaign-unit">
+
+                qualified<br>
+                meetings
+
+              </div>
+
+            </div>
+
+
+            <div class="campaign-bar data-bar">
+              <span></span>
+            </div>
 
           </article>
 
 
-          <!-- SCALEFAST -->
 
-          <article class="tile">
+          <article class="campaign reveal">
 
-            <div class="label">
-              ScaleFast
+            <div class="campaign-tag">
+              SECTOR // EVENTS
             </div>
 
-            <h3 class="tile-title">
-              9 RDV qualifiés
+            <h3>
+              Événementiel
             </h3>
 
-            <p>
-              ICP :
+            <p class="campaign-description">
+
+              Ciblage de responsables de salon,
+              Event Managers et responsables Communication.
+
             </p>
 
-            <ul>
 
-              <li>
-                CRO
-              </li>
+            <div class="campaign-stat">
 
-              <li>
-                VP Sales
-              </li>
+              <div class="campaign-number">
+                20
+              </div>
 
-              <li>
-                CMO
-              </li>
+              <div class="campaign-unit">
 
-              <li>
-                CEO
-              </li>
+                qualified<br>
+                meetings
 
-            </ul>
+              </div>
+
+            </div>
+
+
+            <div class="campaign-bar event-bar">
+              <span></span>
+            </div>
+
+          </article>
+
+
+
+          <article class="campaign reveal">
+
+            <div class="campaign-tag">
+              SECTOR // SALES
+            </div>
+
+            <h3>
+              ScaleFast
+            </h3>
+
+            <p class="campaign-description">
+
+              ICP Sales & Direction :
+              CRO, VP Sales, CMO et CEO.
+
+            </p>
+
+
+            <div class="campaign-stat">
+
+              <div class="campaign-number">
+                9
+              </div>
+
+              <div class="campaign-unit">
+
+                qualified<br>
+                meetings
+
+              </div>
+
+            </div>
+
+
+            <div class="campaign-bar sales-bar">
+              <span></span>
+            </div>
 
           </article>
 
@@ -1884,606 +3131,557 @@
     </section>
 
 
-    <!-- ========================= -->
-    <!-- PARCOURS -->
-    <!-- ========================= -->
 
-    <section
-      class="section"
-      id="parcours"
-    >
+    <!-- =======================================================
+         PROOF
+    ======================================================== -->
 
-      <div class="shell">
+    <section id="proof">
 
-        <div class="section-head fade-in">
+      <div class="container">
 
-          <div>
 
-            <div class="section-kicker">
-              Parcours
-            </div>
+        <div class="section-heading reveal">
 
-            <h2>
-              Terrain, bootcamp, SDR.
-            </h2>
+          <div class="section-index">
+
+            04 //
+            PROOF OF WORK
 
           </div>
 
-          <p class="section-desc">
-            Un profil construit par l'exécution commerciale :
-            vente terrain, télévente, stand, puis prospection outbound B2B.
-          </p>
+
+          <div>
+
+            <h2>
+
+              More than<br>
+              activity.
+
+            </h2>
+
+
+            <p>
+
+              Un bon SDR ne mesure pas uniquement le volume d'appels.
+              Il construit un système cohérent entre ciblage,
+              message, conversation et qualification.
+
+            </p>
+
+          </div>
 
         </div>
+
+
+
+        <div class="proof-grid">
+
+
+          <article class="proof-card reveal">
+
+            <div class="proof-number">
+              01 // TARGETING
+            </div>
+
+            <h3>
+              Right account.<br>
+              Right persona.
+            </h3>
+
+            <p>
+              Segmentation des comptes et identification
+              des décideurs avant l'activation de la prospection.
+            </p>
+
+          </article>
+
+
+
+          <article class="proof-card reveal">
+
+            <div class="proof-number">
+              02 // OUTBOUND
+            </div>
+
+            <h3>
+              Message.<br>
+              Timing. Channel.
+            </h3>
+
+            <p>
+              Cold calling, LinkedIn et séquences multicanales
+              adaptés au contexte du prospect.
+            </p>
+
+          </article>
+
+
+
+          <article class="proof-card reveal">
+
+            <div class="proof-number">
+              03 // QUALIFICATION
+            </div>
+
+            <h3>
+              Conversation →<br>
+              meeting.
+            </h3>
+
+            <p>
+              Qualification du contexte et création
+              d'un rendez-vous pertinent pour la suite du cycle.
+            </p>
+
+          </article>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =======================================================
+         EXPERIENCE
+    ======================================================== -->
+
+    <section>
+
+      <div class="container">
+
+
+        <div class="section-heading reveal">
+
+          <div class="section-index">
+
+            05 //
+            FLIGHT LOG
+
+          </div>
+
+
+          <div>
+
+            <h2>
+
+              Experience<br>
+              log.
+
+            </h2>
+
+
+            <p>
+
+              Un parcours commercial construit autour
+              de la prospection, de la vente terrain
+              et de la génération de pipeline.
+
+            </p>
+
+          </div>
+
+        </div>
+
 
 
         <div class="timeline">
 
 
-          <!-- SCALEFAST -->
+          <div class="timeline-item reveal">
 
-          <article class="timeline-card current fade-in">
-
-            <div class="timeline-top">
-
-              <div>
-
-                <div class="timeline-title">
-                  SDR · Sales Development Representative
-                </div>
-
-                <div class="timeline-company">
-
-                  <a
-                    href="https://scalefast.fr/"
-                    target="_blank"
-                    rel="noopener"
-                  >
-                    ScaleFast
-                  </a>
-
-                  · SDR
-
-                </div>
-
-              </div>
-
-              <div class="timeline-period">
-                Depuis le 22 juin 2026
-              </div>
-
+            <div class="timeline-date">
+              2026 — NOW
             </div>
 
-            <p>
-              Outbound sales B2B. 446 appels décrochés,
-              50 RDV qualifiés et prospection ciblée auprès de
-              décideurs Data / IT, responsables événementiels
-              et profils C-level.
-            </p>
-
-          </article>
-
-
-          <!-- FORMATION -->
-
-          <article class="timeline-card fade-in">
-
-            <div class="timeline-top">
-
-              <div>
-
-                <div class="timeline-title">
-                  Business Developer · SDR Outbound
-                </div>
-
-                <div class="timeline-company">
-                  Farahon · Le Spot · Pareto · Programme Intensif Sales Development
-                </div>
-
-              </div>
-
-              <div class="timeline-period">
-                Mars 2026 · Juin 2026
-              </div>
-
-            </div>
-
-            <p>
-              Entraînement intensif aux méthodes modernes de Sales Development :
-              construire une cible, rédiger une séquence, appeler,
-              apprendre et mesurer.
-            </p>
-
-            <div class="challenge-list">
-
-              <div class="challenge">
-
-                <strong>
-                  Farahon
-                </strong>
-
-                <span>
-                  105 appels · 10 RDV · 9,5% conversion
-                </span>
-
-              </div>
-
-              <div class="challenge">
-
-                <strong>
-                  Pareto
-                </strong>
-
-                <span>
-                  268 appels · 3 RDV · liste + script
-                </span>
-
-              </div>
-
-              <div class="challenge">
-
-                <strong>
-                  Le Spot
-                </strong>
-
-                <span>
-                  50 appels · ciblage &amp; proposition de valeur
-                </span>
-
-              </div>
-
-            </div>
-
-          </article>
-
-
-          <!-- EXPERIENCE -->
-
-          <article class="timeline-card fade-in">
-
-            <div class="timeline-top">
-
-              <div>
-
-                <div class="timeline-title">
-                  Commercial terrain · téléphonique · stand
-                </div>
-
-                <div class="timeline-company">
-                  Indépendant · multi-secteurs
-                </div>
-
-              </div>
-
-              <div class="timeline-period">
-                Mai 2021 · Fév. 2025
-              </div>
-
-            </div>
-
-            <p>
-              Près de 4 ans en autonomie sur des cycles courts :
-              porte-à-porte, GMS, télévente, résistance au volume
-              et à la pression du résultat.
-            </p>
-
-            <div class="challenge-list">
-
-              <div class="challenge">
-
-                <strong>
-                  Verisure
-                </strong>
-
-                <span>
-                  3 reprises / jour · 27% rétention résiliation
-                </span>
-
-              </div>
-
-              <div class="challenge">
-
-                <strong>
-                  Bouygues · Engie · La Voix du Nord
-                </strong>
-
-                <span>
-                  50 ventes / mois en moyenne
-                </span>
-
-              </div>
-
-              <div class="challenge">
-
-                <strong>
-                  Comme J'aime
-                </strong>
-
-                <span>
-                  10 ventes / semaine · closing direct
-                </span>
-
-              </div>
-
-            </div>
-
-          </article>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- ========================= -->
-    <!-- STACK -->
-    <!-- ========================= -->
-
-    <section
-      class="section"
-      id="stack"
-    >
-
-      <div class="shell">
-
-        <div class="section-head fade-in">
-
-          <div>
-
-            <div class="section-kicker">
-              Stack
-            </div>
-
-            <h2>
-              Compétences &amp; outils.
-            </h2>
-
-          </div>
-
-          <p class="section-desc">
-            Une boîte à outils orientée prospection,
-            qualification, sourcing et suivi CRM.
-          </p>
-
-        </div>
-
-
-        <div class="skills-grid fade-in">
-
-
-          <div class="skill-box">
-
-            <h3>
-              Prospection outbound
-            </h3>
-
-            <div class="skill-tags">
-
-              <span class="tag">Cold calling</span>
-              <span class="tag">Opening call</span>
-              <span class="tag">Email sequences</span>
-              <span class="tag">LinkedIn</span>
-              <span class="tag">Relances</span>
-
-            </div>
-
-          </div>
-
-
-          <div class="skill-box">
-
-            <h3>
-              Sales Development
-            </h3>
-
-            <div class="skill-tags">
-
-              <span class="tag">Qualification ICP</span>
-              <span class="tag">Prise de RDV</span>
-              <span class="tag">Objections</span>
-              <span class="tag">Découverte rapide</span>
-              <span class="tag">Hygiène CRM</span>
-
-            </div>
-
-          </div>
-
-
-          <div class="skill-box">
-
-            <h3>
-              Data &amp; prospection
-            </h3>
-
-            <div class="skill-tags">
-
-              <span class="tag">Sourcing</span>
-              <span class="tag">Enrichissement</span>
-              <span class="tag">Segmentation</span>
-              <span class="tag">KPI tracking</span>
-              <span class="tag">Scraping</span>
-
-            </div>
-
-          </div>
-
-
-          <div class="skill-box">
-
-            <h3>
-              CRM · séquences · téléphonie
-            </h3>
-
-            <div class="skill-tags">
-
-              <span class="tag">HubSpot</span>
-              <span class="tag">Notion</span>
-              <span class="tag">Apollo</span>
-              <span class="tag">Lemlist</span>
-              <span class="tag">Brevo</span>
-              <span class="tag">Ringover</span>
-
-            </div>
-
-          </div>
-
-
-          <div class="skill-box">
-
-            <h3>
-              Sourcing &amp; enrichissement
-            </h3>
-
-            <div class="skill-tags">
-
-              <span class="tag">Sales Navigator</span>
-              <span class="tag">Zeliq</span>
-              <span class="tag">PhantomBuster</span>
-              <span class="tag">Dropcontact</span>
-              <span class="tag">ContactOut</span>
-              <span class="tag">Lusha</span>
-
-            </div>
-
-          </div>
-
-
-          <div class="skill-box">
-
-            <h3>
-              Secteurs
-            </h3>
-
-            <div class="skill-tags">
-
-              <span class="tag">SaaS B2B</span>
-              <span class="tag">Data</span>
-              <span class="tag">IT</span>
-              <span class="tag">Télécoms</span>
-              <span class="tag">Sécurité</span>
-              <span class="tag">Santé</span>
-              <span class="tag">Événementiel</span>
-
-            </div>
-
-          </div>
-
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- ========================= -->
-    <!-- CERTIFICATIONS -->
-    <!-- ========================= -->
-
-    <section
-      class="section"
-      id="certifications"
-    >
-
-      <div class="shell">
-
-        <div class="section-head fade-in">
-
-          <div>
-
-            <div class="section-kicker">
-              Certifications
-            </div>
-
-            <h2>
-              Formation &amp; preuves.
-            </h2>
-
-          </div>
-
-          <p class="section-desc">
-            Certifications EF English Live et badge CNES obtenus en 2026.
-          </p>
-
-        </div>
-
-
-        <div class="cert-grid fade-in">
-
-
-          <article class="cert">
-
-            <div>
-
-              <div class="label">
-                Business English · Telephoning
-              </div>
-
-              <div class="tile-title">
-                EF English Live
-              </div>
+            <div class="timeline-content">
+
+              <h3>
+                SDR — ScaleFast
+              </h3>
 
               <p>
-                16 mai 2026
+
+                Outbound B2B · Pipeline Generation ·
+                Cold Calling · Qualification ·
+                Prospection multicanale
+
               </p>
 
             </div>
+
+          </div>
+
+
+
+          <div class="timeline-item reveal">
+
+            <div class="timeline-date">
+              EXPERIENCE
+            </div>
+
+            <div class="timeline-content">
+
+              <h3>
+                Commercial — Verisure
+              </h3>
+
+              <p>
+
+                Vente sédentaire · Rétention ·
+                Qualification · Relation commerciale
+
+              </p>
+
+            </div>
+
+          </div>
+
+
+
+          <div class="timeline-item reveal">
+
+            <div class="timeline-date">
+              EXPERIENCE
+            </div>
+
+            <div class="timeline-content">
+
+              <h3>
+                Commercial terrain
+              </h3>
+
+              <p>
+
+                Bouygues Telecom · ENGIE ·
+                La Voix du Nord
+
+              </p>
+
+            </div>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =======================================================
+         STACK
+    ======================================================== -->
+
+    <section>
+
+      <div class="container">
+
+
+        <div class="section-heading reveal">
+
+          <div class="section-index">
+
+            06 //
+            SALES STACK
+
+          </div>
+
+
+          <div>
+
+            <h2>
+
+              The<br>
+              toolkit.
+
+            </h2>
+
+
+            <p>
+
+              Outils utilisés pour rechercher, enrichir,
+              contacter, qualifier et piloter les prospects.
+
+            </p>
+
+          </div>
+
+        </div>
+
+
+
+        <div class="stack-grid reveal">
+
+          <div class="stack-item">
+            Sales Navigator
+          </div>
+
+          <div class="stack-item">
+            PhantomBuster
+          </div>
+
+          <div class="stack-item">
+            Waalaxy
+          </div>
+
+          <div class="stack-item">
+            Lemlist
+          </div>
+
+          <div class="stack-item">
+            Brevo
+          </div>
+
+          <div class="stack-item">
+            Kaspr
+          </div>
+
+          <div class="stack-item">
+            Airtable
+          </div>
+
+          <div class="stack-item">
+            HubSpot
+          </div>
+
+          <div class="stack-item">
+            Pipedrive
+          </div>
+
+          <div class="stack-item">
+            Salesforce
+          </div>
+
+          <div class="stack-item">
+            Ringover
+          </div>
+
+          <div class="stack-item">
+            Make
+          </div>
+
+          <div class="stack-item">
+            Zapier
+          </div>
+
+          <div class="stack-item">
+            n8n
+          </div>
+
+          <div class="stack-item">
+            Instant Data Scraper
+          </div>
+
+          <div class="stack-item">
+            SimpleScraper
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =======================================================
+         CREDENTIALS
+    ======================================================== -->
+
+    <section id="credentials">
+
+      <div class="container">
+
+
+        <div class="section-heading reveal">
+
+          <div class="section-index">
+
+            07 //
+            CREDENTIALS
+
+          </div>
+
+
+          <div>
+
+            <h2>
+
+              Certified<br>
+              & curious.
+
+            </h2>
+
+
+            <p>
+
+              Certifications qui complètent
+              une approche commerciale orientée
+              technologie, communication et apprentissage continu.
+
+            </p>
+
+          </div>
+
+        </div>
+
+
+
+        <div class="credentials-grid">
+
+
+          <article class="credential reveal">
+
+            <div class="credential-icon">
+              CREDENTIAL // 01
+            </div>
+
+            <h3>
+              MOOC Espace — CNES
+            </h3>
+
+            <p>
+              Centre National d'Études Spatiales
+            </p>
+
+            <a
+              href="./2026-05-15_mooc-espace-centre-national-d-etudes-spatiales-badge-de-reussite-fr.pdf"
+              target="_blank">
+
+              View credential ↗
+
+            </a>
+
+          </article>
+
+
+
+          <article class="credential reveal">
+
+            <div class="credential-icon">
+              CREDENTIAL // 02
+            </div>
+
+            <h3>
+              Business English
+            </h3>
+
+            <p>
+              Telephoning — 16 mai 2026
+            </p>
 
             <a
               href="./certificate-business-english-telephoning-2026-05-16.png"
-              target="_blank"
-              rel="noopener"
-            >
+              target="_blank">
 
-              <img
-                src="./certificate-business-english-telephoning-2026-05-16.png"
-                alt="Certificate Business English Telephoning"
-              />
+              View credential ↗
 
             </a>
 
           </article>
 
 
-          <article class="cert">
 
-            <div>
+          <article class="credential reveal">
 
-              <div class="label">
-                General English · Level 7 · CEFR B1
-              </div>
-
-              <div class="tile-title">
-                EF English Live
-              </div>
-
-              <p>
-                21 juin 2026
-              </p>
-
+            <div class="credential-icon">
+              CREDENTIAL // 03
             </div>
+
+            <h3>
+              General English
+            </h3>
+
+            <p>
+              English training — 21 juin 2026
+            </p>
 
             <a
               href="./certificate-general-english-7-2026-06-21.png"
-              target="_blank"
-              rel="noopener"
-            >
+              target="_blank">
 
-              <img
-                src="./certificate-general-english-7-2026-06-21.png"
-                alt="Certificate General English Level 7 B1"
-              />
+              View credential ↗
 
             </a>
 
           </article>
 
 
-          <article class="cert">
+        </div>
 
-            <div>
+      </div>
 
-              <div class="label">
-                MOOC Espace · Score ≥ 70%
-              </div>
+    </section>
 
-              <div class="tile-title">
-                CNES · France Université Numérique
-              </div>
 
-              <p>
-                15 mai 2026
-              </p>
 
-            </div>
+    <!-- =======================================================
+         CTA
+    ======================================================== -->
+
+    <section>
+
+      <div class="container">
+
+
+        <div class="cta reveal">
+
+
+          <small>
+            TRANSMISSION // OPEN CHANNEL
+          </small>
+
+
+          <h2>
+
+            Let's build<br>
+            pipeline.
+
+          </h2>
+
+
+          <p>
+
+            Vous cherchez un SDR orienté outbound,
+            prospection et génération de pipeline ?
+
+          </p>
+
+
+          <div
+            class="hero-actions"
+            style="justify-content:center;"
+          >
+
 
             <a
-              class="badge-link"
-              href="./2026-05-15_mooc-espace-centre-national-d-etudes-spatiales-badge-de-reussite-fr.pdf"
-              target="_blank"
-              rel="noopener"
-            >
+              href="mailto:taffinquentin.qt@gmail.com"
+              class="btn btn-primary">
 
-              <div>
-
-                <svg
-                  viewBox="0 0 80 80"
-                  xmlns="http://www.w3.org/2000/svg"
-                  aria-hidden="true"
-                >
-
-                  <circle
-                    cx="40"
-                    cy="40"
-                    r="36"
-                    fill="none"
-                    stroke="rgba(54,233,159,.35)"
-                    stroke-width="1"
-                  />
-
-                  <circle
-                    cx="40"
-                    cy="40"
-                    r="26"
-                    fill="none"
-                    stroke="rgba(33,185,255,.24)"
-                    stroke-width="1"
-                  />
-
-                  <circle
-                    cx="40"
-                    cy="40"
-                    r="5"
-                    fill="#36e99f"
-                  />
-
-                  <ellipse
-                    cx="40"
-                    cy="40"
-                    rx="19"
-                    ry="7"
-                    fill="none"
-                    stroke="#36e99f"
-                    stroke-width="1"
-                    opacity=".55"
-                  />
-
-                  <ellipse
-                    cx="40"
-                    cy="40"
-                    rx="19"
-                    ry="7"
-                    fill="none"
-                    stroke="#21b9ff"
-                    stroke-width="1"
-                    opacity=".45"
-                    transform="rotate(62 40 40)"
-                  />
-
-                  <ellipse
-                    cx="40"
-                    cy="40"
-                    rx="19"
-                    ry="7"
-                    fill="none"
-                    stroke="#21b9ff"
-                    stroke-width="1"
-                    opacity=".45"
-                    transform="rotate(118 40 40)"
-                  />
-
-                </svg>
-
-                <div class="label">
-                  Voir le badge PDF
-                </div>
-
-              </div>
+              Email Quentin ↗
 
             </a>
 
-          </article>
+
+            <a
+              href="https://www.linkedin.com/in/quentin-taffin-sdrb2b/"
+              target="_blank"
+              rel="noopener"
+              class="btn btn-secondary">
+
+              LinkedIn ↗
+
+            </a>
+
+
+          </div>
+
 
         </div>
 
@@ -2491,221 +3689,152 @@
 
     </section>
 
-
-    <!-- ========================= -->
-    <!-- CONTACT -->
-    <!-- ========================= -->
-
-    <section
-      class="contact shell"
-      id="contact"
-    >
-
-      <div class="fade-in">
-
-        <div class="section-kicker">
-          Contact
-        </div>
-
-        <h2>
-          On discute ?
-        </h2>
-
-        <p>
-          Tu veux échanger sur mon profil, une opportunité SDR
-          ou un sujet de prospection B2B ? Envoie-moi un message,
-          je réponds vite.
-        </p>
-
-        <div
-          class="cta-row"
-          style="justify-content:center"
-        >
-
-          <a
-            href="mailto:taffinquentin.qt@gmail.com"
-            class="btn btn-primary"
-          >
-            taffinquentin.qt@gmail.com
-          </a>
-
-          <a
-            href="tel:0759019715"
-            class="btn btn-secondary"
-          >
-            07 59 01 97 15
-          </a>
-
-          <a
-            href="https://www.linkedin.com/in/quentin-taffin-3b9aa3246/"
-            target="_blank"
-            rel="noopener"
-            class="btn btn-ghost"
-          >
-            LinkedIn
-          </a>
-
-        </div>
-
-      </div>
-
-    </section>
 
   </main>
 
 
-  <!-- ========================= -->
-  <!-- FOOTER -->
-  <!-- ========================= -->
+
+  <!-- =======================================================
+       FOOTER
+  ======================================================== -->
 
   <footer>
 
-    <div class="shell">
+    <div class="container footer-inner">
+
+
+      <div>
+
+        QT //
+        SDR OUTBOUND //
+        2026
+
+      </div>
+
 
       <div class="footer-links">
 
-        <a href="mailto:taffinquentin.qt@gmail.com">
-          Email
-        </a>
-
-        <a href="tel:0759019715">
-          Téléphone
-        </a>
 
         <a
-          href="https://www.linkedin.com/in/quentin-taffin-3b9aa3246/"
+          href="https://www.linkedin.com/in/quentin-taffin-sdrb2b/"
           target="_blank"
-          rel="noopener"
-        >
+          rel="noopener">
+
           LinkedIn
+
         </a>
+
 
         <a
-          href="https://scalefast.fr/"
+          href="https://github.com/taffinquentinqt-lgtm/portfolio"
           target="_blank"
-          rel="noopener"
-        >
-          ScaleFast
+          rel="noopener">
+
+          GitHub
+
         </a>
 
+
+        <a
+          href="mailto:taffinquentin.qt@gmail.com">
+
+          Email
+
+        </a>
+
+
       </div>
 
-      <div>
-        © 2026 · Quentin Taffin · SDR Outbound B2B
-      </div>
 
     </div>
 
   </footer>
 
 
+
+  <!-- =======================================================
+       JAVASCRIPT
+  ======================================================== -->
+
   <script>
 
-    const root = document.documentElement;
 
-    const reduceMotion =
-      window.matchMedia(
-        '(prefers-reduced-motion: reduce)'
-      ).matches;
+    /* =====================================================
+       SCROLL REVEAL
+    ===================================================== */
+
+    const revealElements =
+      document.querySelectorAll(".reveal");
 
 
-    /* ========================= */
-    /* FADE IN */
-    /* ========================= */
-
-    const fadeObserver =
+    const revealObserver =
       new IntersectionObserver(
-        entries => {
+
+        (entries) => {
 
           entries.forEach(entry => {
 
-            if (entry.isIntersecting) {
-              entry.target.classList.add('visible');
+            if (
+              entry.isIntersecting
+            ) {
+
+              entry.target.classList.add(
+                "visible"
+              );
+
+              revealObserver.unobserve(
+                entry.target
+              );
+
             }
 
           });
 
         },
+
         {
-          threshold: 0.08
+          threshold: .12
         }
+
       );
 
 
-    document
-      .querySelectorAll('.fade-in')
-      .forEach(el =>
-        fadeObserver.observe(el)
+    revealElements.forEach(
+      element =>
+        revealObserver.observe(element)
+    );
+
+
+
+    /* =====================================================
+       KPI COUNT
+    ===================================================== */
+
+    const counters =
+      document.querySelectorAll(
+        ".kpi-number"
       );
 
 
-    /* ========================= */
-    /* COUNTERS */
-    /* ========================= */
-
-    function formatCount(
-      value,
-      decimals,
-      suffix
+    function countUp(
+      element,
+      target
     ) {
 
-      return (
-        Number(value)
-          .toFixed(decimals)
-          .replace('.', ',')
-        + suffix
-      );
+      let current = 0;
 
-    }
-
-
-    function animateCount(el) {
-
-      if (el.dataset.done) {
-        return;
-      }
-
-      el.dataset.done = 'true';
-
-
-      const target =
-        Number(el.dataset.count);
-
-      const decimals =
-        Number(
-          el.dataset.decimals || 0
-        );
-
-      const suffix =
-        el.dataset.suffix || '';
-
-
-      if (reduceMotion) {
-
-        el.textContent =
-          formatCount(
-            target,
-            decimals,
-            suffix
-          );
-
-        return;
-
-      }
-
+      const duration = 1200;
 
       const start =
         performance.now();
 
-      const duration =
-        1100;
 
-
-      const tick = now => {
+      function update(time) {
 
         const progress =
           Math.min(
-            (now - start) / duration,
+            (time - start) /
+            duration,
             1
           );
 
@@ -2718,39 +3847,71 @@
           );
 
 
-        el.textContent =
-          formatCount(
-            target * eased,
-            decimals,
-            suffix
+        current =
+          Math.floor(
+            eased * target
           );
 
 
-        if (progress < 1) {
-          requestAnimationFrame(tick);
+        element.textContent =
+          current;
+
+
+        if (
+          progress < 1
+        ) {
+
+          requestAnimationFrame(
+            update
+          );
+
+        } else {
+
+          element.textContent =
+            target;
+
         }
 
-      };
+      }
 
 
-      requestAnimationFrame(tick);
+      requestAnimationFrame(
+        update
+      );
 
     }
 
 
-    const metricObserver =
+    const counterObserver =
       new IntersectionObserver(
-        entries => {
+
+        (entries, observer) => {
 
           entries.forEach(entry => {
 
-            if (entry.isIntersecting) {
+            if (
+              entry.isIntersecting
+            ) {
 
-              entry.target
-                .querySelectorAll('.count-up')
-                .forEach(animateCount);
+              const value =
+                entry.target
+                .textContent
+                .trim();
 
-              metricObserver.unobserve(
+
+              if (
+                /^\d+$/.test(value)
+              ) {
+
+                countUp(
+                  entry.target,
+                  Number(value)
+                );
+
+              }
+
+
+              observer.unobserve(
                 entry.target
               );
 
@@ -2759,165 +3920,97 @@
           });
 
         },
+
         {
-          threshold: 0.35
+          threshold: .7
         }
+
       );
 
 
-    const metrics =
-      document.querySelector(
-        '.metrics'
+    counters.forEach(counter => {
+
+      counterObserver.observe(
+        counter
       );
 
-
-    if (metrics) {
-      metricObserver.observe(metrics);
-    }
+    });
 
 
-    /* ========================= */
-    /* SCROLL PROGRESS */
-    /* ========================= */
+
+    /* =====================================================
+       ACTIVE NAV
+    ===================================================== */
+
+    const sections =
+      document.querySelectorAll(
+        "section[id]"
+      );
+
 
     const navLinks =
       document.querySelectorAll(
-        '.nav-links a'
+        ".nav-links a"
       );
 
 
-    function updateScroll() {
-
-      const max =
-        document.documentElement
-          .scrollHeight -
-        window.innerHeight;
-
-
-      const progress =
-        max > 0
-          ? (
-              window.scrollY / max
-            ) * 100
-          : 0;
-
-
-      root.style.setProperty(
-        '--scroll',
-        progress + '%'
-      );
-
-    }
-
-
-    let ticking = false;
-
-
-    window.addEventListener(
-      'scroll',
-      () => {
-
-        if (ticking) {
-          return;
-        }
-
-        ticking = true;
-
-
-        requestAnimationFrame(() => {
-
-          updateScroll();
-
-          ticking = false;
-
-        });
-
-      },
-      {
-        passive: true
-      }
-    );
-
-
-    updateScroll();
-
-
-    /* ========================= */
-    /* ACTIVE NAV */
-    /* ========================= */
-
-    const sectionObserver =
+    const navObserver =
       new IntersectionObserver(
+
         entries => {
 
           entries.forEach(entry => {
 
-            if (entry.isIntersecting) {
+            if (
+              entry.isIntersecting
+            ) {
 
               navLinks.forEach(link => {
 
-                link.classList.toggle(
-                  'active',
-                  link.getAttribute('href') ===
-                  '#' + entry.target.id
-                );
+                link.style.color =
+                  "";
 
               });
+
+
+              const active =
+                document.querySelector(
+                  `.nav-links a[href="#${entry.target.id}"]`
+                );
+
+
+              if (active) {
+
+                active.style.color =
+                  "var(--cyan)";
+
+              }
 
             }
 
           });
 
         },
+
         {
           rootMargin:
-            '-42% 0px -52% 0px'
+            "-35% 0px -55% 0px"
         }
+
       );
 
 
-    document
-      .querySelectorAll(
-        'section[id]'
-      )
-      .forEach(section =>
-        sectionObserver.observe(
-          section
-        )
+    sections.forEach(section => {
+
+      navObserver.observe(
+        section
       );
 
+    });
 
-    /* ========================= */
-    /* MOBILE MENU */
-    /* ========================= */
-
-    const burger =
-      document.getElementById(
-        'burger'
-      );
-
-    const mobileMenu =
-      document.getElementById(
-        'mobileMenu'
-      );
-
-
-    burger.addEventListener(
-      'click',
-      () =>
-        mobileMenu.classList.toggle(
-          'open'
-        )
-    );
-
-
-    function closeMobile() {
-      mobileMenu.classList.remove(
-        'open'
-      );
-    }
 
   </script>
+
 
 </body>
 </html>
