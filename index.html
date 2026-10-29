@@ -2772,7 +2772,7 @@ section { scroll-margin-top:84px; }
       <div><h2 id="campaigns-title">Résultats<br>actualisés automatiquement.</h2><p>Les indicateurs se mettent à jour à partir des données synchronisées depuis Google Sheets. Les appels sont suivis au global ; les rendez-vous sont ventilés selon le client renseigné.</p></div>
     </div>
     <div class="kpi-strip campaign-kpi-strip"><div class="kpi-grid">
-      <div class="kpi reveal"><div class="kpi-number" id="portfolio-total-calls">649</div><div class="kpi-label">Appels émis</div></div>
+      <div class="kpi reveal"><div class="kpi-number" id="portfolio-total-calls">649</div><div class="kpi-label">Appels décrochés</div></div>
       <div class="kpi reveal"><div class="kpi-number" id="portfolio-total-rdv">59</div><div class="kpi-label">RDV générés</div></div>
       <div class="kpi reveal"><div class="kpi-number" id="portfolio-ratio">9,1<span>%</span></div><div class="kpi-label">Ratio RDV / appels décrochés</div></div>
       <div class="kpi reveal"><div class="kpi-number">05</div><div class="kpi-label">Familles d’ICP</div></div>
@@ -2801,7 +2801,7 @@ section { scroll-margin-top:84px; }
         <p class="campaign-icp"><strong>ICP associés</strong><br>CRO, VP Sales, CEO et CMO selon le périmètre de la campagne.</p>
       </article>
     </div>
-    <p class="section-footnote"><strong>Lecture des chiffres :</strong> 22 + 27 + 10 = 59 rendez-vous. Le ratio de 9,1 % correspond à 59 RDV rapportés aux 649 appels déclarés ; il ne représente pas un taux de transformation en opportunités ou en ventes. Ces derniers indicateurs ne sont pas affichés ici.</p>
+    <p class="section-footnote"><strong>Lecture des chiffres :</strong> le ratio est calculé en rapportant les rendez-vous générés aux appels décrochés. Il ne représente pas un taux de transformation en opportunités ou en ventes.</p>
   </div>
 </section>
 
@@ -2979,7 +2979,7 @@ section { scroll-margin-top:84px; }
         if (!data || !data.totals) return;
 
         const totals = data.totals;
-        const calls = Number(totals.appelsEmis || 0);
+        const calls = Number(totals.appelsDecroches || 0);
         const callsAnswered = Number(totals.appelsDecroches || 0);
         const rdv = Number(totals.rdv || 0);
 
