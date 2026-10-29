@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-29T13:33:30.231Z",
+  "updatedAt": "2026-10-29T13:44:51.301Z",
   "totals": {
     "appelsEmis": 0,
     "appelsDecroches": 649,
@@ -50,7 +50,7 @@
     },
     {
       "date": "2026-10-29",
-      "client": "Actian",
+      "client": "FG Design",
       "rdv": 0,
       "leads": 0
     }
