@@ -1,26 +1,19 @@
 {
-  "updatedAt": "2026-10-29T13:20:50.254Z",
+  "updatedAt": "2026-10-29T13:20:59.099Z",
   "totals": {
     "appelsEmis": 20,
-    "appelsDecroches": 10,
+    "appelsDecroches": 649,
     "rdv": 1,
     "leads": 1,
-    "tauxConversionSurAppelsDecroches": 10
+    "tauxConversionSurAppelsDecroches": 0.15
   },
   "dailyActivity": [
     {
       "date": "2026-10-28",
       "appelsEmis": 20,
-      "appelsDecroches": 10,
+      "appelsDecroches": 649,
       "rdv": 1,
       "leads": 1
-    },
-    {
-      "date": "0648-12-29",
-      "appelsEmis": 0,
-      "appelsDecroches": 0,
-      "rdv": 0,
-      "leads": 0
     },
     {
       "date": "1959-01-01",
