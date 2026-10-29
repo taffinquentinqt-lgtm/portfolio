@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-29T13:27:54.054Z",
+  "updatedAt": "2026-10-29T13:27:58.086Z",
   "totals": {
     "appelsEmis": 0,
     "appelsDecroches": 699,
@@ -51,13 +51,13 @@
     {
       "date": "2026-10-29",
       "client": "Actian",
-      "rdv": 0,
+      "rdv": 1,
       "leads": 0
     }
   ],
   "byClient": {
     "Actian": {
-      "rdv": 19,
+      "rdv": 20,
       "leads": 0
     },
     "ControlUp": {
