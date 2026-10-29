@@ -2769,7 +2769,7 @@ section { scroll-margin-top:84px; }
   <div class="container">
     <div class="section-heading reveal">
       <div class="section-index">03 // RÉSULTATS DE CAMPAGNES</div>
-      <div><h2 id="campaigns-title">59 RDV générés.<br>4 campagnes. 3 familles.</h2><p>Répartition des rendez-vous déclarés sur les campagnes listées, au 29 octobre 2026. Actian et ControlUp sont regroupés dans la famille Data &amp; IT, avec leurs périmètres respectifs conservés.</p></div>
+      <div><h2 id="campaigns-title">Résultats<br>actualisés automatiquement.</h2><p>Les indicateurs se mettent à jour à partir des données synchronisées depuis Google Sheets. Les appels sont suivis au global ; les rendez-vous sont ventilés selon le client renseigné.</p></div>
     </div>
     <div class="kpi-strip campaign-kpi-strip"><div class="kpi-grid">
       <div class="kpi reveal"><div class="kpi-number" id="portfolio-total-calls">649</div><div class="kpi-label">Appels émis</div></div>
@@ -2783,21 +2783,21 @@ section { scroll-margin-top:84px; }
         <p class="campaign-description">Deux environnements IT distincts : Actian sur les enjeux Data / IT ; ControlUp sur le Digital Workplace, la DEX et la performance des postes de travail.</p>
         <div class="campaign-substats"><div><strong id="portfolio-rdv-actian">19</strong><span>Actian</span></div><div><strong id="portfolio-rdv-controlup">3</strong><span>ControlUp</span></div></div>
         <div class="campaign-stat"><span class="campaign-number" id="portfolio-rdv-datait">22</span><span class="campaign-unit">RDV générés</span></div>
-        <div class="campaign-bar"><span style="width:37.3%"></span></div><div class="campaign-share">37,3 % des RDV recensés</div>
+        <div class="campaign-bar"><span id="portfolio-bar-datait" style="width:37.3%"></span></div><div class="campaign-share" id="portfolio-share-datait">37,3 % des RDV recensés</div>
         <p class="campaign-icp"><strong>ICP associés</strong><br>CIO / CTO, CDO, Data Architect, VP Digital Workplace, VP Desktop Engineering, Service Desk, DEX et Modern Workplace.</p>
       </article>
       <article class="campaign reveal">
         <div class="campaign-tag">ÉVÉNEMENTIEL // FG DESIGN</div><h3>FG Design</h3>
         <p class="campaign-description">Ciblage de décideurs liés aux salons, aux événements, à l’expérience de marque, à la communication et aux achats spécialisés.</p>
         <div class="campaign-stat"><span class="campaign-number" id="portfolio-rdv-fgdesign">27</span><span class="campaign-unit">RDV générés</span></div>
-        <div class="campaign-bar"><span style="width:45.8%"></span></div><div class="campaign-share">45,8 % des RDV recensés</div>
+        <div class="campaign-bar"><span id="portfolio-bar-fgdesign" style="width:45.8%"></span></div><div class="campaign-share" id="portfolio-share-fgdesign">45,8 % des RDV recensés</div>
         <p class="campaign-icp"><strong>ICP associés</strong><br>Event Director, Head of Events, Events &amp; Exhibitions Manager, Brand Experience, Marketing / Communication et Procurement – Events.</p>
       </article>
       <article class="campaign reveal">
         <div class="campaign-tag">SALES &amp; DIRECTION // SCALEFAST</div><h3>ScaleFast</h3>
         <p class="campaign-description">Prospection B2B auprès de profils de direction commerciale et de décision, avec un ciblage adapté aux objectifs de la campagne.</p>
         <div class="campaign-stat"><span class="campaign-number" id="portfolio-rdv-scalefast">10</span><span class="campaign-unit">RDV générés</span></div>
-        <div class="campaign-bar"><span style="width:16.9%"></span></div><div class="campaign-share">16,9 % des RDV recensés</div>
+        <div class="campaign-bar"><span id="portfolio-bar-scalefast" style="width:16.9%"></span></div><div class="campaign-share" id="portfolio-share-scalefast">16,9 % des RDV recensés</div>
         <p class="campaign-icp"><strong>ICP associés</strong><br>CRO, VP Sales, CEO et CMO selon le périmètre de la campagne.</p>
       </article>
     </div>
@@ -3001,13 +3001,45 @@ section { scroll-margin-top:84px; }
 
         // Update client-specific RDV totals when client names match the sheet.
         const byClient = data.byClient || {};
+
+        // Normalise les noms de clients pour accepter quelques variantes courantes.
+        const normaliseClient = name => String(name || "")
+          .normalize("NFD").replace(/[\\u0300-\\u036f]/g, "")
+          .toLowerCase().replace(/[^a-z0-9]/g, "");
+
+        const rdvForAliases = aliases => {
+          const wanted = aliases.map(normaliseClient);
+          return Object.entries(byClient).reduce((total, [name, stats]) => {
+            return total + (wanted.includes(normaliseClient(name))
+              ? Number((stats || {}).rdv || 0)
+              : 0);
+          }, 0);
+        };
+
         const clientTotals = {
-          "Actian": Number((byClient["Actian"] || {}).rdv || 0),
-          "ControlUp": Number((byClient["ControlUp"] || {}).rdv || 0),
-          "FG Design": Number((byClient["FG Design"] || {}).rdv || 0),
-          "ScaleFast": Number((byClient["ScaleFast"] || {}).rdv || 0)
+          "Actian": rdvForAliases(["Actian"]),
+          "ControlUp": rdvForAliases(["ControlUp", "Control Up"]),
+          "FG Design": rdvForAliases(["FG Design", "FGDesign", "FG"]),
+          "ScaleFast": rdvForAliases(["ScaleFast", "Scale Fast"])
         };
         const dataItRdv = clientTotals["Actian"] + clientTotals["ControlUp"];
+
+        const campaignTotal = dataItRdv + clientTotals["FG Design"] + clientTotals["ScaleFast"];
+        const campaignShares = [
+          { key: "datait", value: dataItRdv },
+          { key: "fgdesign", value: clientTotals["FG Design"] },
+          { key: "scalefast", value: clientTotals["ScaleFast"] }
+        ];
+        campaignShares.forEach(item => {
+          const percent = campaignTotal > 0 ? item.value / campaignTotal * 100 : 0;
+          const bar = document.getElementById("portfolio-bar-" + item.key);
+          const label = document.getElementById("portfolio-share-" + item.key);
+          if (bar) bar.style.width = percent.toFixed(1) + "%";
+          if (label) label.textContent = percent.toLocaleString("fr-FR", {
+            minimumFractionDigits: 1,
+            maximumFractionDigits: 1
+          }) + " % des RDV attribués";
+        });
         const clientElements = {
           actian: document.getElementById("portfolio-rdv-actian"),
           controlup: document.getElementById("portfolio-rdv-controlup"),
