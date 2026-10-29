@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-29T13:22:50.052Z",
+  "updatedAt": "2026-10-29T13:27:37.935Z",
   "totals": {
     "appelsEmis": 0,
     "appelsDecroches": 649,
@@ -13,6 +13,13 @@
       "appelsEmis": 0,
       "appelsDecroches": 649,
       "rdv": 59,
+      "leads": 0
+    },
+    {
+      "date": "2026-10-29",
+      "appelsEmis": 0,
+      "appelsDecroches": 0,
+      "rdv": 0,
       "leads": 0
     }
   ],
