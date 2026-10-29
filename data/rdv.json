@@ -1,20 +1,20 @@
 [
   {
-    "Date": "2026-10-06T22:00:00.000Z",
-    "Campagne": "",
-    "Appels émis": "",
-    "Appels décrochés": "",
-    "RDV": "",
-    "Leads": "",
-    "Commentaires": ""
+    "Date": ""
   },
   {
-    "Date": "2026-10-06T22:00:00.000Z",
-    "Campagne": "",
-    "Appels émis": "",
-    "Appels décrochés": "",
-    "RDV": "",
-    "Leads": "",
-    "Commentaires": ""
+    "Date": "Client"
+  },
+  {
+    "Date": ""
+  },
+  {
+    "Date": "RDV attribués"
+  },
+  {
+    "Date": ""
+  },
+  {
+    "Date": "Leads attribués"
   }
 ]
