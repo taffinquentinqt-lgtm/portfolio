@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-29T13:27:50.875Z",
+  "updatedAt": "2026-10-29T13:27:54.054Z",
   "totals": {
     "appelsEmis": 0,
     "appelsDecroches": 699,
@@ -46,6 +46,12 @@
       "date": "2026-10-28",
       "client": "ScaleFast",
       "rdv": 10,
+      "leads": 0
+    },
+    {
+      "date": "2026-10-29",
+      "client": "Actian",
+      "rdv": 0,
       "leads": 0
     }
   ],
