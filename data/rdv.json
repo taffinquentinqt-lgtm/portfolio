@@ -1,20 +1,26 @@
 [
   {
-    "Date": ""
+    "Date": "",
+    "Client": ""
   },
   {
-    "Date": "Client"
+    "Date": "",
+    "Client": ""
   },
   {
-    "Date": ""
+    "Date": "",
+    "Client": ""
   },
   {
-    "Date": "RDV attribués"
+    "Date": "RDV attribués",
+    "Client": ""
   },
   {
-    "Date": ""
+    "Date": "",
+    "Client": ""
   },
   {
-    "Date": "Leads attribués"
+    "Date": "Leads attribués",
+    "Client": ""
   }
 ]
