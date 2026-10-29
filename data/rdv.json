@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-29T13:19:44.054Z",
+  "updatedAt": "2026-10-29T13:19:53.790Z",
   "totals": {
     "appelsEmis": 20,
     "appelsDecroches": 10,
@@ -18,6 +18,12 @@
   ],
   "clientResults": [
     {
+      "date": "2026-10-28",
+      "client": "fg design",
+      "rdv": 0,
+      "leads": 0
+    },
+    {
       "date": "2026-10-29",
       "client": "FG",
       "rdv": 1,
@@ -25,6 +31,10 @@
     }
   ],
   "byClient": {
+    "fg design": {
+      "rdv": 0,
+      "leads": 0
+    },
     "FG": {
       "rdv": 1,
       "leads": 1
