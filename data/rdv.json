@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-29T13:10:22.656Z",
+  "updatedAt": "2026-10-29T13:10:24.750Z",
   "totals": {
     "appelsEmis": 20,
     "appelsDecroches": 10,
@@ -20,13 +20,13 @@
     {
       "date": "2026-10-29",
       "client": "FG",
-      "rdv": 2,
+      "rdv": 1,
       "leads": 1
     }
   ],
   "byClient": {
     "FG": {
-      "rdv": 2,
+      "rdv": 1,
       "leads": 1
     }
   }
