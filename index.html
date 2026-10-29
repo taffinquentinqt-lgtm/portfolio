@@ -2772,9 +2772,9 @@ section { scroll-margin-top:84px; }
       <div><h2 id="campaigns-title">59 RDV générés.<br>4 campagnes. 3 familles.</h2><p>Répartition des rendez-vous déclarés sur les campagnes listées, au 29 octobre 2026. Actian et ControlUp sont regroupés dans la famille Data &amp; IT, avec leurs périmètres respectifs conservés.</p></div>
     </div>
     <div class="kpi-strip campaign-kpi-strip"><div class="kpi-grid">
-      <div class="kpi reveal"><div class="kpi-number">649</div><div class="kpi-label">Appels</div></div>
-      <div class="kpi reveal"><div class="kpi-number">59</div><div class="kpi-label">RDV générés</div></div>
-      <div class="kpi reveal"><div class="kpi-number">9,1<span>%</span></div><div class="kpi-label">Ratio RDV / appels</div></div>
+      <div class="kpi reveal"><div class="kpi-number" id="portfolio-total-calls">649</div><div class="kpi-label">Appels émis</div></div>
+      <div class="kpi reveal"><div class="kpi-number" id="portfolio-total-rdv">59</div><div class="kpi-label">RDV générés</div></div>
+      <div class="kpi reveal"><div class="kpi-number" id="portfolio-ratio">9,1<span>%</span></div><div class="kpi-label">Ratio RDV / appels</div></div>
       <div class="kpi reveal"><div class="kpi-number">05</div><div class="kpi-label">Familles d’ICP</div></div>
     </div></div>
     <div class="campaign-grid campaign-grid-enhanced">
@@ -2964,6 +2964,68 @@ section { scroll-margin-top:84px; }
 
   <script>
 
+
+    /* =====================================================
+       PORTFOLIO STATS — GOOGLE SHEETS / GITHUB JSON
+       Keep existing published figures if no valid data exists.
+    ===================================================== */
+    async function loadPortfolioStats() {
+      try {
+        const response = await fetch("./data/rdv.json?ts=" + Date.now(), {
+          cache: "no-store"
+        });
+        if (!response.ok) throw new Error("JSON stats indisponible");
+        const data = await response.json();
+        if (!data || !data.totals) return;
+
+        const totals = data.totals;
+        const calls = Number(totals.appelsEmis || 0);
+        const rdv = Number(totals.rdv || 0);
+
+        // Avoid replacing existing portfolio stats with empty/test data.
+        if (calls <= 0 && rdv <= 0) return;
+
+        const callsElement = document.getElementById("portfolio-total-calls");
+        const rdvElement = document.getElementById("portfolio-total-rdv");
+        const ratioElement = document.getElementById("portfolio-ratio");
+
+        if (callsElement) callsElement.textContent = calls.toLocaleString("fr-FR");
+        if (rdvElement) rdvElement.textContent = rdv.toLocaleString("fr-FR");
+        if (ratioElement) {
+          const ratio = calls > 0 ? (rdv / calls * 100) : 0;
+          ratioElement.innerHTML = ratio.toLocaleString("fr-FR", {
+            minimumFractionDigits: 1,
+            maximumFractionDigits: 1
+          }) + '<span>%</span>';
+        }
+
+        // Update client-specific RDV totals when client names match the sheet.
+        const byClient = data.byClient || {};
+        const clientTotals = {
+          "Actian": Number((byClient["Actian"] || {}).rdv || 0),
+          "ControlUp": Number((byClient["ControlUp"] || {}).rdv || 0),
+          "FG Design": Number((byClient["FG Design"] || {}).rdv || 0),
+          "ScaleFast": Number((byClient["ScaleFast"] || {}).rdv || 0)
+        };
+        const dataItRdv = clientTotals["Actian"] + clientTotals["ControlUp"];
+        const clientElements = {
+          actian: document.getElementById("portfolio-rdv-actian"),
+          controlup: document.getElementById("portfolio-rdv-controlup"),
+          datait: document.getElementById("portfolio-rdv-datait"),
+          fgdesign: document.getElementById("portfolio-rdv-fgdesign"),
+          scalefast: document.getElementById("portfolio-rdv-scalefast")
+        };
+        if (clientElements.actian) clientElements.actian.textContent = clientTotals["Actian"];
+        if (clientElements.controlup) clientElements.controlup.textContent = clientTotals["ControlUp"];
+        if (clientElements.datait) clientElements.datait.textContent = dataItRdv;
+        if (clientElements.fgdesign) clientElements.fgdesign.textContent = clientTotals["FG Design"];
+        if (clientElements.scalefast) clientElements.scalefast.textContent = clientTotals["ScaleFast"];
+      } catch (error) {
+        console.warn("Statistiques du portfolio conservées :", error.message);
+      }
+    }
+
+    loadPortfolioStats();
 
     /* =====================================================
        SCROLL REVEAL
