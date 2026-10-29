@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-29T13:19:53.790Z",
+  "updatedAt": "2026-10-29T13:20:28.262Z",
   "totals": {
     "appelsEmis": 20,
     "appelsDecroches": 10,
@@ -19,25 +19,45 @@
   "clientResults": [
     {
       "date": "2026-10-28",
-      "client": "fg design",
-      "rdv": 0,
+      "client": "Actian",
+      "rdv": 19,
       "leads": 0
     },
     {
-      "date": "2026-10-29",
-      "client": "FG",
-      "rdv": 1,
-      "leads": 1
+      "date": "2026-10-28",
+      "client": "ControlUp",
+      "rdv": 3,
+      "leads": 0
+    },
+    {
+      "date": "2026-10-28",
+      "client": "FG Design",
+      "rdv": 27,
+      "leads": 0
+    },
+    {
+      "date": "2026-10-28",
+      "client": "ScaleFast",
+      "rdv": 10,
+      "leads": 0
     }
   ],
   "byClient": {
-    "fg design": {
-      "rdv": 0,
+    "Actian": {
+      "rdv": 19,
       "leads": 0
     },
-    "FG": {
-      "rdv": 1,
-      "leads": 1
+    "ControlUp": {
+      "rdv": 3,
+      "leads": 0
+    },
+    "FG Design": {
+      "rdv": 27,
+      "leads": 0
+    },
+    "ScaleFast": {
+      "rdv": 10,
+      "leads": 0
     }
   }
 }
