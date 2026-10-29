@@ -1,7 +1,7 @@
 {
-  "updatedAt": "2026-10-29T13:21:05.017Z",
+  "updatedAt": "2026-10-29T13:21:08.161Z",
   "totals": {
-    "appelsEmis": 20,
+    "appelsEmis": 0,
     "appelsDecroches": 649,
     "rdv": 59,
     "leads": 1,
@@ -10,7 +10,7 @@
   "dailyActivity": [
     {
       "date": "2026-10-28",
-      "appelsEmis": 20,
+      "appelsEmis": 0,
       "appelsDecroches": 649,
       "rdv": 59,
       "leads": 1
