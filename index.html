@@ -2774,7 +2774,7 @@ section { scroll-margin-top:84px; }
     <div class="kpi-strip campaign-kpi-strip"><div class="kpi-grid">
       <div class="kpi reveal"><div class="kpi-number" id="portfolio-total-calls">649</div><div class="kpi-label">Appels émis</div></div>
       <div class="kpi reveal"><div class="kpi-number" id="portfolio-total-rdv">59</div><div class="kpi-label">RDV générés</div></div>
-      <div class="kpi reveal"><div class="kpi-number" id="portfolio-ratio">9,1<span>%</span></div><div class="kpi-label">Ratio RDV / appels</div></div>
+      <div class="kpi reveal"><div class="kpi-number" id="portfolio-ratio">9,1<span>%</span></div><div class="kpi-label">Ratio RDV / appels décrochés</div></div>
       <div class="kpi reveal"><div class="kpi-number">05</div><div class="kpi-label">Familles d’ICP</div></div>
     </div></div>
     <div class="campaign-grid campaign-grid-enhanced">
@@ -2980,6 +2980,7 @@ section { scroll-margin-top:84px; }
 
         const totals = data.totals;
         const calls = Number(totals.appelsEmis || 0);
+        const callsAnswered = Number(totals.appelsDecroches || 0);
         const rdv = Number(totals.rdv || 0);
 
         // Avoid replacing existing portfolio stats with empty/test data.
@@ -2992,7 +2993,8 @@ section { scroll-margin-top:84px; }
         if (callsElement) callsElement.textContent = calls.toLocaleString("fr-FR");
         if (rdvElement) rdvElement.textContent = rdv.toLocaleString("fr-FR");
         if (ratioElement) {
-          const ratio = calls > 0 ? (rdv / calls * 100) : 0;
+          // Le taux de conversion est calculé sur les appels décrochés, pas sur les appels émis.
+          const ratio = callsAnswered > 0 ? (rdv / callsAnswered * 100) : 0;
           ratioElement.innerHTML = ratio.toLocaleString("fr-FR", {
             minimumFractionDigits: 1,
             maximumFractionDigits: 1
