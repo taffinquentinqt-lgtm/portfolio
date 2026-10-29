@@ -2704,14 +2704,57 @@ section { scroll-margin-top:84px; }
       </div></div>
       <div class="telemetry-pro">
         <div class="telemetry-head-pro"><span>MISSION TELEMETRY</span><span>● UPDATED</span></div>
-        <div class="tline"><span>APPELS</span><span class="cyan">649</span></div>
-        <div class="tline"><span>RDV GÉNÉRÉS</span><span class="cyan">59</span></div>
-        <div class="tline"><span>RDV / APPELS</span><span class="cyan">9,1 %</span></div>
+        <div class="tline"><span>APPELS DÉCROCHÉS</span><span class="cyan" id="portfolio-hero-calls">649</span></div>
+        <div class="tline"><span>RDV GÉNÉRÉS</span><span class="cyan" id="portfolio-hero-rdv">59</span></div>
+        <div class="tline"><span>RDV / DÉCROCHÉS</span><span class="cyan" id="portfolio-hero-ratio">9,1 %</span></div>
         <div class="tline"><span>FAMILLES D’ICP</span><span>05</span></div>
       </div>
     </div>
   </div>
 </section>
+
+
+<section id="campaigns" aria-labelledby="campaigns-title">
+  <div class="container">
+    <div class="section-heading reveal">
+      <div class="section-index">03 // RÉSULTATS DE CAMPAGNES</div>
+      <div><h2 id="campaigns-title">Résultats<br>actualisés automatiquement.</h2><p>Les indicateurs se mettent à jour à partir des données synchronisées depuis Google Sheets. Les appels sont suivis au global ; les rendez-vous sont ventilés selon le client renseigné.</p></div>
+    </div>
+    <div class="kpi-strip campaign-kpi-strip"><div class="kpi-grid">
+      <div class="kpi reveal"><div class="kpi-number" id="portfolio-total-calls">649</div><div class="kpi-label">Appels décrochés</div></div>
+      <div class="kpi reveal"><div class="kpi-number" id="portfolio-total-rdv">59</div><div class="kpi-label">RDV générés</div></div>
+      <div class="kpi reveal"><div class="kpi-number" id="portfolio-ratio">9,1<span>%</span></div><div class="kpi-label">Ratio RDV / appels décrochés</div></div>
+      <div class="kpi reveal"><div class="kpi-number">05</div><div class="kpi-label">Familles d’ICP</div></div>
+    </div></div>
+    <div class="campaign-grid campaign-grid-enhanced">
+      <article class="campaign reveal">
+        <div class="campaign-tag">DATA &amp; IT // 2 CAMPAGNES</div><h3>Actian + ControlUp</h3>
+        <p class="campaign-description">Deux environnements IT distincts : Actian sur les enjeux Data / IT ; ControlUp sur le Digital Workplace, la DEX et la performance des postes de travail.</p>
+        <div class="campaign-substats"><div><strong id="portfolio-rdv-actian">19</strong><span>Actian</span></div><div><strong id="portfolio-rdv-controlup">3</strong><span>ControlUp</span></div></div>
+        <div class="campaign-stat"><span class="campaign-number" id="portfolio-rdv-datait">22</span><span class="campaign-unit">RDV générés</span></div>
+        <div class="campaign-bar"><span id="portfolio-bar-datait" style="width:37.3%"></span></div><div class="campaign-share" id="portfolio-share-datait">37,3 % des RDV recensés</div>
+        <p class="campaign-icp"><strong>ICP associés</strong><br>CIO / CTO, CDO, Data Architect, VP Digital Workplace, VP Desktop Engineering, Service Desk, DEX et Modern Workplace.</p>
+      </article>
+      <article class="campaign reveal">
+        <div class="campaign-tag">ÉVÉNEMENTIEL // FG DESIGN</div><h3>FG Design</h3>
+        <p class="campaign-description">Ciblage de décideurs liés aux salons, aux événements, à l’expérience de marque, à la communication et aux achats spécialisés.</p>
+        <div class="campaign-stat"><span class="campaign-number" id="portfolio-rdv-fgdesign">27</span><span class="campaign-unit">RDV générés</span></div>
+        <div class="campaign-bar"><span id="portfolio-bar-fgdesign" style="width:45.8%"></span></div><div class="campaign-share" id="portfolio-share-fgdesign">45,8 % des RDV recensés</div>
+        <p class="campaign-icp"><strong>ICP associés</strong><br>Event Director, Head of Events, Events &amp; Exhibitions Manager, Brand Experience, Marketing / Communication et Procurement – Events.</p>
+      </article>
+      <article class="campaign reveal">
+        <div class="campaign-tag">SALES &amp; DIRECTION // SCALEFAST</div><h3>ScaleFast</h3>
+        <p class="campaign-description">Prospection B2B auprès de profils de direction commerciale et de décision, avec un ciblage adapté aux objectifs de la campagne.</p>
+        <div class="campaign-stat"><span class="campaign-number" id="portfolio-rdv-scalefast">10</span><span class="campaign-unit">RDV générés</span></div>
+        <div class="campaign-bar"><span id="portfolio-bar-scalefast" style="width:16.9%"></span></div><div class="campaign-share" id="portfolio-share-scalefast">16,9 % des RDV recensés</div>
+        <p class="campaign-icp"><strong>ICP associés</strong><br>CRO, VP Sales, CEO et CMO selon le périmètre de la campagne.</p>
+      </article>
+    </div>
+    <p class="section-footnote"><strong>Lecture des chiffres :</strong> le ratio est calculé en rapportant les rendez-vous générés aux appels décrochés. Il ne représente pas un taux de transformation en opportunités ou en ventes.</p>
+  </div>
+</section>
+
+
 
 
 
@@ -2765,45 +2808,7 @@ section { scroll-margin-top:84px; }
          CAMPAIGNS
     ======================================================== -->
 
-    <section id="campaigns" aria-labelledby="campaigns-title">
-  <div class="container">
-    <div class="section-heading reveal">
-      <div class="section-index">03 // RÉSULTATS DE CAMPAGNES</div>
-      <div><h2 id="campaigns-title">Résultats<br>actualisés automatiquement.</h2><p>Les indicateurs se mettent à jour à partir des données synchronisées depuis Google Sheets. Les appels sont suivis au global ; les rendez-vous sont ventilés selon le client renseigné.</p></div>
-    </div>
-    <div class="kpi-strip campaign-kpi-strip"><div class="kpi-grid">
-      <div class="kpi reveal"><div class="kpi-number" id="portfolio-total-calls">649</div><div class="kpi-label">Appels décrochés</div></div>
-      <div class="kpi reveal"><div class="kpi-number" id="portfolio-total-rdv">59</div><div class="kpi-label">RDV générés</div></div>
-      <div class="kpi reveal"><div class="kpi-number" id="portfolio-ratio">9,1<span>%</span></div><div class="kpi-label">Ratio RDV / appels décrochés</div></div>
-      <div class="kpi reveal"><div class="kpi-number">05</div><div class="kpi-label">Familles d’ICP</div></div>
-    </div></div>
-    <div class="campaign-grid campaign-grid-enhanced">
-      <article class="campaign reveal">
-        <div class="campaign-tag">DATA &amp; IT // 2 CAMPAGNES</div><h3>Actian + ControlUp</h3>
-        <p class="campaign-description">Deux environnements IT distincts : Actian sur les enjeux Data / IT ; ControlUp sur le Digital Workplace, la DEX et la performance des postes de travail.</p>
-        <div class="campaign-substats"><div><strong id="portfolio-rdv-actian">19</strong><span>Actian</span></div><div><strong id="portfolio-rdv-controlup">3</strong><span>ControlUp</span></div></div>
-        <div class="campaign-stat"><span class="campaign-number" id="portfolio-rdv-datait">22</span><span class="campaign-unit">RDV générés</span></div>
-        <div class="campaign-bar"><span id="portfolio-bar-datait" style="width:37.3%"></span></div><div class="campaign-share" id="portfolio-share-datait">37,3 % des RDV recensés</div>
-        <p class="campaign-icp"><strong>ICP associés</strong><br>CIO / CTO, CDO, Data Architect, VP Digital Workplace, VP Desktop Engineering, Service Desk, DEX et Modern Workplace.</p>
-      </article>
-      <article class="campaign reveal">
-        <div class="campaign-tag">ÉVÉNEMENTIEL // FG DESIGN</div><h3>FG Design</h3>
-        <p class="campaign-description">Ciblage de décideurs liés aux salons, aux événements, à l’expérience de marque, à la communication et aux achats spécialisés.</p>
-        <div class="campaign-stat"><span class="campaign-number" id="portfolio-rdv-fgdesign">27</span><span class="campaign-unit">RDV générés</span></div>
-        <div class="campaign-bar"><span id="portfolio-bar-fgdesign" style="width:45.8%"></span></div><div class="campaign-share" id="portfolio-share-fgdesign">45,8 % des RDV recensés</div>
-        <p class="campaign-icp"><strong>ICP associés</strong><br>Event Director, Head of Events, Events &amp; Exhibitions Manager, Brand Experience, Marketing / Communication et Procurement – Events.</p>
-      </article>
-      <article class="campaign reveal">
-        <div class="campaign-tag">SALES &amp; DIRECTION // SCALEFAST</div><h3>ScaleFast</h3>
-        <p class="campaign-description">Prospection B2B auprès de profils de direction commerciale et de décision, avec un ciblage adapté aux objectifs de la campagne.</p>
-        <div class="campaign-stat"><span class="campaign-number" id="portfolio-rdv-scalefast">10</span><span class="campaign-unit">RDV générés</span></div>
-        <div class="campaign-bar"><span id="portfolio-bar-scalefast" style="width:16.9%"></span></div><div class="campaign-share" id="portfolio-share-scalefast">16,9 % des RDV recensés</div>
-        <p class="campaign-icp"><strong>ICP associés</strong><br>CRO, VP Sales, CEO et CMO selon le périmètre de la campagne.</p>
-      </article>
-    </div>
-    <p class="section-footnote"><strong>Lecture des chiffres :</strong> le ratio est calculé en rapportant les rendez-vous générés aux appels décrochés. Il ne représente pas un taux de transformation en opportunités ou en ventes.</p>
-  </div>
-</section>
+    
 
 
 
@@ -2992,13 +2997,20 @@ section { scroll-margin-top:84px; }
 
         if (callsElement) callsElement.textContent = calls.toLocaleString("fr-FR");
         if (rdvElement) rdvElement.textContent = rdv.toLocaleString("fr-FR");
+        const heroCalls = document.getElementById("portfolio-hero-calls");
+        const heroRdv = document.getElementById("portfolio-hero-rdv");
+        const heroRatio = document.getElementById("portfolio-hero-ratio");
+        if (heroCalls) heroCalls.textContent = calls.toLocaleString("fr-FR");
+        if (heroRdv) heroRdv.textContent = rdv.toLocaleString("fr-FR");
         if (ratioElement) {
           // Le taux de conversion est calculé sur les appels décrochés, pas sur les appels émis.
           const ratio = callsAnswered > 0 ? (rdv / callsAnswered * 100) : 0;
-          ratioElement.innerHTML = ratio.toLocaleString("fr-FR", {
+          const formattedRatio = ratio.toLocaleString("fr-FR", {
             minimumFractionDigits: 1,
             maximumFractionDigits: 1
-          }) + '<span>%</span>';
+          });
+          ratioElement.innerHTML = formattedRatio + '<span>%</span>';
+          if (heroRatio) heroRatio.textContent = formattedRatio + " %";
         }
 
         // Update client-specific RDV totals when client names match the sheet.
