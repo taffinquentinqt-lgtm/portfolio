@@ -1,11 +1,11 @@
 {
-  "updatedAt": "2026-11-18T10:02:06.796Z",
+  "updatedAt": "2026-11-18T10:02:12.957Z",
   "totals": {
     "appelsEmis": 0,
-    "appelsDecroches": 649,
+    "appelsDecroches": 675,
     "rdv": 62,
     "leads": 0,
-    "tauxConversionSurAppelsDecroches": 9.55
+    "tauxConversionSurAppelsDecroches": 9.19
   },
   "dailyActivity": [
     {
@@ -18,7 +18,7 @@
     {
       "date": "2026-11-18",
       "appelsEmis": 0,
-      "appelsDecroches": 0,
+      "appelsDecroches": 26,
       "rdv": 3,
       "leads": 0
     }
