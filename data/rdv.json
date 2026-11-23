@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-23T09:33:49.867Z",
+  "updatedAt": "2026-11-23T09:33:53.490Z",
   "totals": {
     "appelsEmis": 0,
     "appelsDecroches": 675,
@@ -64,7 +64,7 @@
     {
       "date": "2026-11-23",
       "client": "FG Design",
-      "rdv": 0,
+      "rdv": 1,
       "leads": 0
     }
   ],
@@ -78,7 +78,7 @@
       "leads": 0
     },
     "FG Design": {
-      "rdv": 30,
+      "rdv": 31,
       "leads": 0
     },
     "ScaleFast": {
